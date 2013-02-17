@@ -701,9 +701,12 @@ def processUnivFormSet(commonform, univformset):
             ret_list.append( (ret, ret.valor) )
 
         for rem in rem_porcentuales:
+          if rem.remuneracion.codigo == doc_code or rem.remuneracion.codigo == master_code:
+            importe = basico.valor * rem.porcentaje / 100.
+          else:
             importe = salario_bruto * rem.porcentaje / 100.
-            acum_rem += importe
-            rem_list.append( (rem, importe) )
+          acum_rem += importe
+          rem_list.append( (rem, importe) )
 
         for rem in rem_fijas:
             acum_rem += rem.valor
