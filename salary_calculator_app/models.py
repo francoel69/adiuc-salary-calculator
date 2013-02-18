@@ -26,6 +26,12 @@ from django.db import models
 
 from salary_calculator_app.validators import *
 
+class Periodo(models.Model):
+    """ Modelo para representar periodos de tiempo. """
+    desde = models.DateField(u'Vigente desde',
+            help_text=u'Comienzo del período de tiempo')
+    hasta = models.DateField(u'Vigente hasta',
+            help_text=u'Finalización del período de tiempo')
 
 class GarantiaSalarialPreUniversitaria(models.Model):
     """ garantía salarial para cargos preuniversitarios """
@@ -36,11 +42,8 @@ class GarantiaSalarialPreUniversitaria(models.Model):
     valor = models.FloatField(u'Monto minimo', validators=[validate_isgezero],
         help_text=u'Monto mínimo, igualado éste no se aplica la garantía.')
 
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta garantía comienza a tener vigencia.')
-
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta garantía deja de ser vigente.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
 
 class GarantiaSalarialUniversitaria(models.Model):
@@ -65,17 +68,14 @@ class GarantiaSalarialUniversitaria(models.Model):
     antiguedad_max = models.IntegerField(u'Antiguedad máxima',
         help_text=u'Hasta esta antiguedad (inclusive) corresponde el monto asociado a la garantía.' )
     
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta garantía comienza a tener vigencia.')
-
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta garantía deja de ser vigente.')    
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
         ordering = ['cargo', 'valor_minimo']
 
     def __unicode__(self):
-        return unicode(self.cargo) + " $" + unicode(self.valor) + " [" + unicode(self.vigencia_desde) + " / " + unicode(self.vigencia_hasta) + "]"
+        return unicode(self.cargo) + " $" + unicode(self.valor) + " [" + unicode(self.vigencia.desde) + " / " + unicode(self.vigencia.hasta) + "]"
 
 
 class Cargo(models.Model):
@@ -241,10 +241,8 @@ class RetencionPorcentual(models.Model):
         help_text = u'La retención relacionada con esta retención porcentual.')
     porcentaje = models.FloatField(u'Porcentaje de Descuento', validators=[validate_isgezero],
         help_text=u'El porcentaje del descuento. Ingresar un valor positivo.')
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta retención porcentual comienza a tener vigencia.')
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta retención porcentual deja de ser vigente.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
         ordering = ['retencion', 'porcentaje']
@@ -277,10 +275,8 @@ class RetencionFija(models.Model):
         help_text = u'La retención relacionada con esta retención porcentual.')
     valor = models.FloatField(u'Valor de Descuento', validators=[validate_isgezero],
         help_text=u'El valor fijo que debe descontarse.')
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta retención porcentual comienza a tener vigencia.')
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta retención porcentual deja de ser vigente.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
         ordering = ['retencion', 'valor']
@@ -300,10 +296,8 @@ class RemuneracionPorcentual(models.Model):
         help_text = u'La retención relacionada con esta remuneración porcentual.')
     porcentaje = models.FloatField(u'Porcentaje de Aumento', validators=[validate_isgezero],
         help_text=u'El porcentaje del aumento. Ingresar un valor positivo.')
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta remuneración porcentual comienza a tener vigencia.')
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta remuneración porcentual deja de ser vigente.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
         ordering = ['remuneracion', 'porcentaje']
@@ -319,10 +313,8 @@ class RemuneracionFija(models.Model):
         help_text = u'La retención relacionada con esta remuneración fija.')
     valor = models.FloatField(u'Valor del Aumento', validators=[validate_isgezero],
         help_text=u'El valor fijo que se sumará al salario básico.')
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta remuneración fija comienza a tener vigencia.')
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta remuneración fija deja de ser vigente.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
         ordering = ['remuneracion', 'valor']
@@ -382,12 +374,8 @@ class AsignacionFamiliar(models.Model):
     valor_max = models.FloatField(u'Valor máximo:',
         help_text=u'Valor máximo de categoría.')
 
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual esta remuneración fija comienza a tener vigencia.')
-
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual esta remuneración fija deja de ser vigente.')
-
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     def clean(self):
         from django.core.exceptions import ValidationError
@@ -412,7 +400,7 @@ class SalarioBasico(RemuneracionFija):
         ordering = ['cargo', 'valor']
 
     def __unicode__(self):
-        return unicode(self.cargo) + u" - $" + unicode(self.valor) + u" - [" + unicode(self.vigencia_desde) + u" / " + unicode(self.vigencia_hasta) + u"]"
+        return unicode(self.cargo) + u" - $" + unicode(self.valor) + u" - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
 
 class AntiguedadUniversitaria(RemuneracionPorcentual):
@@ -425,7 +413,7 @@ class AntiguedadUniversitaria(RemuneracionPorcentual):
         ordering = ['anio']
 
     def __unicode__(self):
-        return unicode(self.anio) + u" años - " + unicode(self.porcentaje) + u"% - [" + unicode(self.vigencia_desde) + u" / " + unicode(self.vigencia_hasta) + u"]"
+        return unicode(self.anio) + u" años - " + unicode(self.porcentaje) + u"% - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
 
 class AntiguedadPreUniversitaria(RemuneracionPorcentual):
@@ -438,7 +426,7 @@ class AntiguedadPreUniversitaria(RemuneracionPorcentual):
         ordering = ['anio']
 
     def __unicode__(self):
-        return unicode(self.anio) + u" años - " + unicode(self.porcentaje) + u"% - [" + unicode(self.vigencia_desde) + u" / " + unicode(self.vigencia_hasta) + u"]"
+        return unicode(self.anio) + u" años - " + unicode(self.porcentaje) + u"% - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
 
 class ImpuestoGananciasDeducciones(models.Model):
@@ -464,16 +452,14 @@ class ImpuestoGananciasDeducciones(models.Model):
     #max_por_donaciones = models.FloatField(u'Máx. % a pagar por donaciones realizadas',
         #help_text=u'El % de la ganancia neta anual que se descuenta por donaciones realizadas a: org. nacionales, provinciales y municipales, instituciones sin fines de lucro con certificado emitido por AFIP.')
 
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual estos datos comienzan a tener vigencia.')
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual estos datos dejan de tener vigencia.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
-        ordering = ['vigencia_desde', 'vigencia_hasta']
+        ordering = ['vigencia.desde', 'vigencia.hasta']
 
     def __unicode__(self):
-        return unicode(self.vigencia_desde) + " : " + unicode(self.vigencia_hasta)
+        return unicode(self.vigencia.desde) + " : " + unicode(self.vigencia.hasta)
 
 
 class ImpuestoGananciasTabla(models.Model):
@@ -485,16 +471,14 @@ class ImpuestoGananciasTabla(models.Model):
     impuesto_porcentual = models.FloatField(u'Impuesto porcentual', help_text=u'El valor en porcentaje del impuesto a las ganancias que se aplica al exedente.')
     sobre_exedente_de = models.FloatField(u'Sobre exedente de', help_text=u'Especifica el exedente sobre el cual se le tiene que aplicar el impuesto porcentual.')
 
-    vigencia_desde = models.DateField(u'Vigente desde',
-        help_text=u'Fecha a partir de la cual estos datos comienzan a tener vigencia.')
-    vigencia_hasta = models.DateField(u'Vigente hasta',
-        help_text=u'Fecha a partir de la cual estos datos dejan de tener vigencia.')
+    vigencia = models.ForeignKey('Periodo',
+        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
-        ordering = ['vigencia_desde', 'vigencia_hasta']
+        ordering = ['vigencia.desde', 'vigencia.hasta']
 
     def __unicode__(self):
-        return unicode(self.vigencia_desde) + " : " + unicode(self.vigencia_hasta)
+        return unicode(self.vigencia.desde) + " : " + unicode(self.vigencia.hasta)
 
 
 class Configuracion(models.Model):
