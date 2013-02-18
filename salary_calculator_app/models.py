@@ -33,6 +33,9 @@ class Periodo(models.Model):
     hasta = models.DateField(u'Vigente hasta',
             help_text=u'Finalización del período de tiempo')
 
+    class Meta:
+        ordering = ['desde', 'hasta']
+
 class GarantiaSalarialPreUniversitaria(models.Model):
     """ garantía salarial para cargos preuniversitarios """
     
@@ -456,7 +459,7 @@ class ImpuestoGananciasDeducciones(models.Model):
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
-        ordering = ['vigencia.desde', 'vigencia.hasta']
+        ordering = ['vigencia']
 
     def __unicode__(self):
         return unicode(self.vigencia.desde) + " : " + unicode(self.vigencia.hasta)
@@ -475,7 +478,7 @@ class ImpuestoGananciasTabla(models.Model):
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
-        ordering = ['vigencia.desde', 'vigencia.hasta']
+        ordering = ['vigencia']
 
     def __unicode__(self):
         return unicode(self.vigencia.desde) + " : " + unicode(self.vigencia.hasta)

@@ -247,8 +247,8 @@ def processAFamiliaresFormSet(context, afamiliaresformset, afamiliaresformespeci
             concepto = afamiliar_concepto,
             valor_min__lte = total_bruto,
             valor_max__gte = total_bruto,
-            vigencia.desde__lte=fecha,
-            vigencia.hasta__gte=fecha
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
         )
 
         # De todas las anteriores tomo la de fecha vigente.
@@ -281,8 +281,8 @@ def processDetailsForm(context, detailsform):
     if fs_mayores > 0.0:
         fs_objs= FondoSolidario.objects.filter(
             retencion__codigo=fs_code,
-            vigencia.desde__lte=fecha,
-            vigencia.hasta__gte=fecha,
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha,
             concepto='Fondo solidario para una persona (mayor a 55 años)'
             )
         if not fs_objs.exists():
@@ -306,8 +306,8 @@ def processDetailsForm(context, detailsform):
             
         fs_objs= FondoSolidario.objects.filter(
             retencion__codigo=fs_code,
-                vigencia.desde__lte=fecha,
-                vigencia.hasta__gte=fecha,
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha,
                 concepto=query
             )
         if not fs_objs.exists():
@@ -320,8 +320,8 @@ def processDetailsForm(context, detailsform):
     if sis:    
         sis_objs= RetencionFija.objects.filter(
                 retencion__codigo=sis_code,
-                vigencia.desde__lte=fecha,
-                vigencia.hasta__gte=fecha
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha
             )
         if not sis_objs.exists():
             result["error_msg"] = "No existe informacion sobre Seguro Integral de Sepelio."
@@ -332,8 +332,8 @@ def processDetailsForm(context, detailsform):
     if sf:    
         sf_objs= RetencionFija.objects.filter(
                 retencion__codigo=subsidio_fallecimiento_code,
-                vigencia.desde__lte=fecha,
-                vigencia.hasta__gte=fecha
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha
             )
         if not sf_objs.exists():
             result["error_msg"] = "No existe informacion sobre Subsidio por Fallecimiento."
@@ -351,8 +351,8 @@ def calculateDASPU(fecha,total_bruto):
 
     rets_porc_daspu = RetencionPorcentual.objects.filter(
         retencion__codigo =daspu_code,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
         )
     if rets_porc_daspu.exists():
         r = rets_porc_daspu.order_by('vigencia.hasta')[rets_porc_daspu.count()-1]
@@ -370,8 +370,8 @@ def calculateDASPU(fecha,total_bruto):
             # Corroborar si no cubre el minimo de del cargo ayudante D.S.E. sin antiguedad.
             basicos = SalarioBasico.objects.filter(
                 cargo=daspu_obj.cargo_referencia,
-                vigencia.desde__lte=fecha,
-                vigencia.hasta__gte=fecha
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha
                 )
             if not basicos.exists():
                 context['error_msg']='No se encuentra información la salarial requerida para el cálculo.'
@@ -488,8 +488,8 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
         nro_suegros_yernos_nueras = float(gananciasform.cleaned_data['nro_suegros_yernos_nueras'])
         
         deducciones_objs = ImpuestoGananciasDeducciones.objects.filter(
-            vigencia.desde__lte=fecha,
-            vigencia.hasta__gte=fecha
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
         )
         if deducciones_objs.exists():
             deducciones_obj = deducciones_objs.order_by('vigencia.hasta')[deducciones_objs.count()-1]
@@ -506,8 +506,8 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
         ganancias_tablas = ImpuestoGananciasTabla.objects.filter(
             ganancia_neta_min__lte = ganancia_neta,
             ganancia_neta_max__gte = ganancia_neta,
-            vigencia.desde__lte=fecha,
-            vigencia.hasta__gte=fecha
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
         )
         if ganancias_tablas.exists():
             ganancias_tabla = ganancias_tablas.order_by('vigencia.hasta')[ganancias_tablas.count()-1]
@@ -515,7 +515,7 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
 
         ganancias_retencion_objs = Retencion.objects.filter(codigo='42/0')
         if importe_ganancias >= 0 and ganancias_retencion_objs.exists():
-            new_ret_fija = RetencionFija(retencion=ganancias_retencion_objs[0], valor=importe_ganancias / 12, vigencia.desde=fecha, vigencia.hasta=fecha)
+            new_ret_fija = RetencionFija(retencion=ganancias_retencion_objs[0], valor=importe_ganancias / 12, vigencia__desde=fecha, vigencia__hasta=fecha)
             ret_fijas_persona.append( (new_ret_fija, new_ret_fija.valor) )
             acum_ret += importe_ganancias / 12
 
@@ -550,26 +550,26 @@ def get_retenciones_remuneraciones(aplicacion, modo, fecha):
     ret_fijas = RetencionFija.objects.filter(
         retencion__aplicacion=aplicacion,
         retencion__modo=modo,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
     )
     ret_porcentuales = RetencionPorcentual.objects.filter(
         retencion__aplicacion=aplicacion,
         retencion__modo=modo,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
     )
     rem_fijas = RemuneracionFija.objects.filter(
         remuneracion__aplicacion=aplicacion,
         remuneracion__modo=modo,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
     )
     rem_porcentuales  = RemuneracionPorcentual.objects.filter(
         remuneracion__aplicacion=aplicacion,
         remuneracion__modo=modo,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
     )
     result['ret_fijas'] = ret_fijas
     result['ret_porcentuales'] = ret_porcentuales
@@ -637,8 +637,8 @@ def processUnivFormSet(commonform, univformset):
     # Obtengo la Antiguedad
     antiguedades = AntiguedadUniversitaria.objects.filter(
         anio=antiguedad,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
     )
     antiguedad = None
     if not antiguedades.exists():
@@ -659,7 +659,7 @@ def processUnivFormSet(commonform, univformset):
         cargo_obj = univform.cleaned_data['cargo']
 
         ###### Salario Bruto.
-        basicos = SalarioBasico.objects.filter(cargo=cargo_obj, vigencia.desde__lte=fecha, vigencia.hasta__gte=fecha)
+        basicos = SalarioBasico.objects.filter(cargo=cargo_obj, vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
         basico = None
         if not basicos.exists():
             context['error_msg'] = u'No existe información de Salarios Básicos \
@@ -724,7 +724,7 @@ def processUnivFormSet(commonform, univformset):
         salario_neto = salario_bruto - acum_ret + acum_rem
 
         ## Garantia salarial.
-        garantias_salariales = GarantiaSalarialUniversitaria.objects.filter(cargo=cargo_obj, vigencia.desde__lte=fecha, vigencia.hasta__gte=fecha)
+        garantias_salariales = GarantiaSalarialUniversitaria.objects.filter(cargo=cargo_obj, vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
 
         if garantias_salariales.exists():
 
@@ -826,8 +826,8 @@ def processPreUnivFormSet(commonform, preunivformset):
     # Obtengo la Antiguedad
     antiguedades = AntiguedadPreUniversitaria.objects.filter(
         anio=antiguedad,
-        vigencia.desde__lte=fecha,
-        vigencia.hasta__gte=fecha
+        vigencia__desde__lte=fecha,
+        vigencia__hasta__gte=fecha
     )
     antiguedad = None
     if not antiguedades.exists():
@@ -849,7 +849,7 @@ def processPreUnivFormSet(commonform, preunivformset):
 
 
         ###### Salario Bruto.
-        basicos = SalarioBasico.objects.filter(cargo=cargo_obj, vigencia.desde__lte=fecha, vigencia.hasta__gte=fecha)
+        basicos = SalarioBasico.objects.filter(cargo=cargo_obj, vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
         basico = None
         antiguedad_importe = 0.0
         salario_bruto = 0.0
@@ -887,8 +887,8 @@ def processPreUnivFormSet(commonform, preunivformset):
         # FONID.
         rem_fijas_cargo = RemuneracionFijaCargo.objects.filter(
             cargo=cargo_obj,
-            vigencia.desde__lte=fecha,
-            vigencia.hasta__gte=fecha
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
         )
         if rem_fijas_cargo.exists():
             for rem in rem_fijas_cargo:
@@ -933,8 +933,8 @@ def processPreUnivFormSet(commonform, preunivformset):
         ## Garantia salarial.
         garantias_salariales = GarantiaSalarialPreUniversitaria.objects.filter(
             cargo=cargo_obj,
-            vigencia.desde__lte=fecha,
-            vigencia.hasta__gte=fecha
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
         )
 
         if garantias_salariales.exists():
