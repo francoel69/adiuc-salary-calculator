@@ -106,7 +106,8 @@ class CommonForm(forms.Form):
 
     fecha = forms.DateField(
         label=u'Periodo a calcular',
-        initial=datetime.date.today,
+        #initial=str(datetime.date.today().month) + "/" + str(datetime.date.today().year),
+        widget = forms.DateInput(),
         help_text=u'Seleccione una fecha para hacer el cálculo del salario.'
     )
 

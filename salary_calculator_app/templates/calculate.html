@@ -381,7 +381,7 @@
 
 
             <!-- SUBMIT BUTTON -->
-            <input id="calculate" type="submit" value="Calcular" style="display:none"/>
+            <input id="calculate" type="submit" onclick="corregirFecha();" value="Calcular" style="display:none"/>
             <!-- FIN SUBMIT BUTTON -->
 
 
@@ -415,7 +415,7 @@
                     if(e.which == 13) return false;
                 });
 
-                $("#id_fecha").datepicker();
+//                 $("#id_fecha").datepicker();
 
                 if (!$('input#id_daspu').is(':checked')){
                     $('#detailsform').slideUp();
@@ -426,8 +426,7 @@
             
                 // general form
                 var today = new Date();
-                var date = ((today.getDate() < 10) ? "0" : "") + today.getDate() + "/" + ((today.getMonth()+1 < 10) ? "0" : "") 
-                    + (today.getMonth()+1) + "/" + today.getFullYear();
+                var date = ((today.getMonth()+1 < 10) ? "0" : "") + (today.getMonth()+1) + "/" + today.getFullYear();
                 $("input#id_fecha").val(date);
                 $("select#id_cant_hijos").val("0");
                 $("select#id_antiguedad").val("0");
@@ -476,6 +475,10 @@
                 $("select#id_nro_suegros_yernos_nueras").val("0");
 
             });
+            function corregirFecha(){
+              fecha = $("input#id_fecha").val();
+              $("input#id_fecha").val('10/'+fecha);
+            }
         </script>
 
 	</body>
