@@ -30,6 +30,8 @@ admin.site.register(DenominacionCargo)
 admin.site.register(CargoUniversitario)
 admin.site.register(CargoPreUniversitario)
 
+admin.site.register(Periodo)
+
 admin.site.register(GarantiaSalarialUniversitaria)
 admin.site.register(GarantiaSalarialPreUniversitaria)
 
