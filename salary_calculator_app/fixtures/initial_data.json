@@ -1,5 +1,45 @@
 [
   {
+    "pk":1,
+    "model": "salary_calculator_app.periodo",
+    "fields": {
+      "desde": "2011-09-01",
+      "hasta": "2020-12-31"
+    }
+  },
+  {
+    "pk":2,
+    "model": "salary_calculator_app.periodo",
+    "fields": {
+      "desde": "2011-09-01",
+      "hasta": "2012-02-29"
+    }
+  },
+  {
+    "pk":3,
+    "model": "salary_calculator_app.periodo",
+    "fields": {
+      "desde": "2012-03-01",
+      "hasta": "2012-05-31"
+    }
+  },
+  {
+    "pk":4,
+    "model": "salary_calculator_app.periodo",
+    "fields": {
+      "desde": "2012-06-01",
+      "hasta": "2012-08-31"
+    }
+  },
+  {
+    "pk":5,
+    "model": "salary_calculator_app.periodo",
+    "fields": {
+      "desde": "2012-09-01",
+      "hasta": "2020-12-31"
+    }
+  },
+  {
     "pk": 5, 
     "model": "salary_calculator_app.cargo", 
     "fields": {
@@ -2019,8 +2059,8 @@
     "model": "salary_calculator_app.retencionporcentual", 
     "fields": {
       "retencion": 2, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 2.0
     }
   }, 
@@ -2029,8 +2069,8 @@
     "model": "salary_calculator_app.retencionporcentual", 
     "fields": {
       "retencion": 3, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 11.0
     }
   }, 
@@ -2039,8 +2079,8 @@
     "model": "salary_calculator_app.retencionporcentual", 
     "fields": {
       "retencion": 4, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 4.5
     }
   }, 
@@ -2049,8 +2089,8 @@
     "model": "salary_calculator_app.retencionporcentual", 
     "fields": {
       "retencion": 5, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 3.0
     }
   }, 
@@ -2059,8 +2099,8 @@
     "model": "salary_calculator_app.retencionporcentual", 
     "fields": {
       "retencion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 3.0
     }
   }, 
@@ -2069,8 +2109,8 @@
     "model": "salary_calculator_app.retencionporcentual", 
     "fields": {
       "retencion": 6, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 1.5
     }
   }, 
@@ -2088,8 +2128,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 10, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 3.8
     }
   }, 
@@ -2098,8 +2138,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 7, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 7.0
     }
   }, 
@@ -2108,8 +2148,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 9, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 7.0
     }
   }, 
@@ -2118,8 +2158,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 7.0
     }
   }, 
@@ -2128,8 +2168,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 13.0
     }
   }, 
@@ -2138,8 +2178,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 25.0
     }
   }, 
@@ -2148,8 +2188,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 34.0
     }
   }, 
@@ -2158,8 +2198,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 40.0
     }
   }, 
@@ -2168,8 +2208,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 47.0
     }
   }, 
@@ -2178,8 +2218,8 @@
     "model": "salary_calculator_app.retencionfija", 
     "fields": {
       "retencion": 8, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 55.0
     }
   }, 
@@ -2230,8 +2270,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 0.0
     }
   }, 
@@ -2240,8 +2280,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 10.0
     }
   }, 
@@ -2250,8 +2290,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 15.0
     }
   }, 
@@ -2260,8 +2300,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 15.0
     }
   }, 
@@ -2270,8 +2310,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 15.0
     }
   }, 
@@ -2280,8 +2320,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 20.0
     }
   }, 
@@ -2290,8 +2330,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 20.0
     }
   }, 
@@ -2300,8 +2340,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 20.0
     }
   }, 
@@ -2310,8 +2350,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 20.0
     }
   }, 
@@ -2320,8 +2360,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 20.0
     }
   }, 
@@ -2330,8 +2370,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 30.0
     }
   }, 
@@ -2340,8 +2380,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 30.0
     }
   }, 
@@ -2350,8 +2390,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 30.0
     }
   }, 
@@ -2360,8 +2400,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 30.0
     }
   }, 
@@ -2370,8 +2410,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 40.0
     }
   }, 
@@ -2380,8 +2420,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 40.0
     }
   }, 
@@ -2390,8 +2430,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 40.0
     }
   }, 
@@ -2400,8 +2440,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 40.0
     }
   }, 
@@ -2410,8 +2450,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 40.0
     }
   }, 
@@ -2420,8 +2460,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 40.0
     }
   }, 
@@ -2430,8 +2470,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 50.0
     }
   }, 
@@ -2440,8 +2480,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 50.0
     }
   }, 
@@ -2450,8 +2490,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 50.0
     }
   }, 
@@ -2460,8 +2500,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 50.0
     }
   }, 
@@ -2470,8 +2510,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 60.0
     }
   }, 
@@ -2480,8 +2520,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 60.0
     }
   }, 
@@ -2490,8 +2530,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 60.0
     }
   }, 
@@ -2500,8 +2540,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 60.0
     }
   }, 
@@ -2510,8 +2550,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 60.0
     }
   }, 
@@ -2520,8 +2560,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 60.0
     }
   }, 
@@ -2530,8 +2570,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 70.0
     }
   }, 
@@ -2540,8 +2580,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 70.0
     }
   }, 
@@ -2550,8 +2590,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 70.0
     }
   }, 
@@ -2560,8 +2600,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 70.0
     }
   }, 
@@ -2570,8 +2610,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 80.0
     }
   }, 
@@ -2580,8 +2620,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 80.0
     }
   }, 
@@ -2590,8 +2630,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 80.0
     }
   }, 
@@ -2600,8 +2640,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 80.0
     }
   }, 
@@ -2610,8 +2650,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 80.0
     }
   }, 
@@ -2620,8 +2660,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 80.0
     }
   }, 
@@ -2630,8 +2670,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 100.0
     }
   }, 
@@ -2640,8 +2680,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 100.0
     }
   }, 
@@ -2650,8 +2690,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 100.0
     }
   }, 
@@ -2660,8 +2700,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 100.0
     }
   }, 
@@ -2670,8 +2710,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 110.0
     }
   }, 
@@ -2680,8 +2720,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 110.0
     }
   }, 
@@ -2690,8 +2730,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 110.0
     }
   }, 
@@ -2700,8 +2740,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 110.0
     }
   }, 
@@ -2710,8 +2750,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 120.0
     }
   }, 
@@ -2720,8 +2760,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 1, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 120.0
     }
   }, 
@@ -2730,8 +2770,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 2, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 15.0
     }
   }, 
@@ -2740,8 +2780,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 4, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 5.0
     }
   }, 
@@ -2750,8 +2790,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 3, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 15.0
     }
   }, 
@@ -2760,8 +2800,8 @@
     "model": "salary_calculator_app.remuneracionporcentual", 
     "fields": {
       "remuneracion": 5, 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "porcentaje": 5.0
     }
   }, 
@@ -2770,8 +2810,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 169.24
     }
   }, 
@@ -2780,8 +2820,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 169.24
     }
   }, 
@@ -2790,8 +2830,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 189.55
     }
   }, 
@@ -2800,8 +2840,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 189.55
     }
   }, 
@@ -2810,8 +2850,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 199.7
     }
   }, 
@@ -2820,8 +2860,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 199.7
     }
   }, 
@@ -2830,8 +2870,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 204.78
     }
   }, 
@@ -2840,8 +2880,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 204.78
     }
   }, 
@@ -2850,8 +2890,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 211.55
     }
   }, 
@@ -2860,8 +2900,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 236.94
     }
   }, 
@@ -2870,8 +2910,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 249.63
     }
   }, 
@@ -2880,8 +2920,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 255.98
     }
   }, 
@@ -2890,8 +2930,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 823.93
     }
   }, 
@@ -2900,8 +2940,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 922.11
     }
   }, 
@@ -2910,8 +2950,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 971.2
     }
   }, 
@@ -2920,8 +2960,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 995.75
     }
   }, 
@@ -2930,8 +2970,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1029.07
     }
   }, 
@@ -2940,8 +2980,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1151.8
     }
   }, 
@@ -2950,8 +2990,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1200.91
     }
   }, 
@@ -2960,8 +3000,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1213.16
     }
   }, 
@@ -2970,8 +3010,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1243.84
     }
   }, 
@@ -2980,8 +3020,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1344.19
     }
   }, 
@@ -2990,8 +3030,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1373.02
     }
   }, 
@@ -3000,8 +3040,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1415.83
     }
   }, 
@@ -3010,8 +3050,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1456.31
     }
   }, 
@@ -3020,8 +3060,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1497.01
     }
   }, 
@@ -3030,8 +3070,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1536.86
     }
   }, 
@@ -3040,8 +3080,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1545.25
     }
   }, 
@@ -3050,8 +3090,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1592.44
     }
   }, 
@@ -3060,8 +3100,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1618.78
     }
   }, 
@@ -3070,8 +3110,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1621.95
     }
   }, 
@@ -3080,8 +3120,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1669.02
     }
   }, 
@@ -3090,8 +3130,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1676.65
     }
   }, 
@@ -3100,8 +3140,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1716.98
     }
   }, 
@@ -3110,8 +3150,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1729.65
     }
   }, 
@@ -3120,8 +3160,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1749.7
     }
   }, 
@@ -3130,8 +3170,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1749.7
     }
   }, 
@@ -3140,8 +3180,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1766.47
     }
   }, 
@@ -3150,8 +3190,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1769.2
     }
   }, 
@@ -3160,8 +3200,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1769.2
     }
   }, 
@@ -3170,8 +3210,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1783.53
     }
   }, 
@@ -3180,8 +3220,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1786.14
     }
   }, 
@@ -3190,8 +3230,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1786.14
     }
   }, 
@@ -3200,8 +3240,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1811.38
     }
   }, 
@@ -3210,8 +3250,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1816.58
     }
   }, 
@@ -3220,8 +3260,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1821.84
     }
   }, 
@@ -3230,8 +3270,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1879.08
     }
   }, 
@@ -3240,8 +3280,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1881.93
     }
   }, 
@@ -3250,8 +3290,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1896.14
     }
   }, 
@@ -3260,8 +3300,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 1913.9
     }
   }, 
@@ -3270,8 +3310,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1921.93
     }
   }, 
@@ -3280,8 +3320,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1926.85
     }
   }, 
@@ -3290,8 +3330,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1959.66
     }
   }, 
@@ -3300,8 +3340,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1959.66
     }
   }, 
@@ -3310,8 +3350,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 1962.56
     }
   }, 
@@ -3320,8 +3360,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1981.5
     }
   }, 
@@ -3330,8 +3370,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 1981.5
     }
   }, 
@@ -3340,8 +3380,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1988.92
     }
   }, 
@@ -3350,8 +3390,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 1994.97
     }
   }, 
@@ -3360,8 +3400,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2000.47
     }
   }, 
@@ -3370,8 +3410,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2000.47
     }
   }, 
@@ -3380,8 +3420,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2024.41
     }
   }, 
@@ -3390,8 +3430,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2030.88
     }
   }, 
@@ -3400,8 +3440,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2030.88
     }
   }, 
@@ -3410,8 +3450,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2064.65
     }
   }, 
@@ -3420,8 +3460,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2064.65
     }
   }, 
@@ -3430,8 +3470,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2067.7
     }
   }, 
@@ -3440,8 +3480,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2087.66
     }
   }, 
@@ -3450,8 +3490,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2087.66
     }
   }, 
@@ -3460,8 +3500,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2092.09
     }
   }, 
@@ -3470,8 +3510,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2094.26
     }
   }, 
@@ -3480,8 +3520,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2107.64
     }
   }, 
@@ -3490,8 +3530,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2107.64
     }
   }, 
@@ -3500,8 +3540,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2117.14
     }
   }, 
@@ -3510,8 +3550,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2117.14
     }
   }, 
@@ -3520,8 +3560,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2123.68
     }
   }, 
@@ -3530,8 +3570,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2140.73
     }
   }, 
@@ -3540,8 +3580,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2140.73
     }
   }, 
@@ -3550,8 +3590,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2161.22
     }
   }, 
@@ -3560,8 +3600,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2161.22
     }
   }, 
@@ -3570,8 +3610,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2196.98
     }
   }, 
@@ -3580,8 +3620,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2198.41
     }
   }, 
@@ -3590,8 +3630,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2219.31
     }
   }, 
@@ -3600,8 +3640,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2220.15
     }
   }, 
@@ -3610,8 +3650,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2227.58
     }
   }, 
@@ -3620,8 +3660,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2229.88
     }
   }, 
@@ -3630,8 +3670,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2230.53
     }
   }, 
@@ -3640,8 +3680,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2234.37
     }
   }, 
@@ -3650,8 +3690,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2237.45
     }
   }, 
@@ -3660,8 +3700,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2264.08
     }
   }, 
@@ -3670,8 +3710,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2274.59
     }
   }, 
@@ -3680,8 +3720,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2274.59
     }
   }, 
@@ -3690,8 +3730,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2294.33
     }
   }, 
@@ -3700,8 +3740,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2306.97
     }
   }, 
@@ -3710,8 +3750,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2306.97
     }
   }, 
@@ -3720,8 +3760,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2309.53
     }
   }, 
@@ -3730,8 +3770,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2313.15
     }
   }, 
@@ -3740,8 +3780,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2329.0
     }
   }, 
@@ -3750,8 +3790,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2343.14
     }
   }, 
@@ -3760,8 +3800,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2346.92
     }
   }, 
@@ -3770,8 +3810,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2354.06
     }
   }, 
@@ -3780,8 +3820,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2396.44
     }
   }, 
@@ -3790,8 +3830,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2396.44
     }
   }, 
@@ -3800,8 +3840,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2406.59
     }
   }, 
@@ -3810,8 +3850,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2411.57
     }
   }, 
@@ -3820,8 +3860,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2413.91
     }
   }, 
@@ -3830,8 +3870,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2430.97
     }
   }, 
@@ -3840,8 +3880,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2435.88
     }
   }, 
@@ -3850,8 +3890,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2445.48
     }
   }, 
@@ -3860,8 +3900,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2446.42
     }
   }, 
@@ -3870,8 +3910,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2457.36
     }
   }, 
@@ -3880,8 +3920,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2457.36
     }
   }, 
@@ -3890,8 +3930,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2460.62
     }
   }, 
@@ -3900,8 +3940,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2462.22
     }
   }, 
@@ -3910,8 +3950,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2468.66
     }
   }, 
@@ -3920,8 +3960,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2485.62
     }
   }, 
@@ -3930,8 +3970,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2486.57
     }
   }, 
@@ -3940,8 +3980,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2497.24
     }
   }, 
@@ -3950,8 +3990,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2497.47
     }
   }, 
@@ -3960,8 +4000,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2498.19
     }
   }, 
@@ -3970,8 +4010,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2531.42
     }
   }, 
@@ -3980,8 +4020,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2535.77
     }
   }, 
@@ -3990,8 +4030,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2549.53
     }
   }, 
@@ -4000,8 +4040,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2572.45
     }
   }, 
@@ -4010,8 +4050,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2583.81
     }
   }, 
@@ -4020,8 +4060,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2583.81
     }
   }, 
@@ -4030,8 +4070,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2586.67
     }
   }, 
@@ -4040,8 +4080,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2592.44
     }
   }, 
@@ -4050,8 +4090,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2594.12
     }
   }, 
@@ -4060,8 +4100,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2608.48
     }
   }, 
@@ -4070,8 +4110,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2618.78
     }
   }, 
@@ -4080,8 +4120,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2619.78
     }
   }, 
@@ -4090,8 +4130,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2631.26
     }
   }, 
@@ -4100,8 +4140,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2632.02
     }
   }, 
@@ -4110,8 +4150,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2658.35
     }
   }, 
@@ -4120,8 +4160,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2660.08
     }
   }, 
@@ -4130,8 +4170,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2671.61
     }
   }, 
@@ -4140,8 +4180,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2685.36
     }
   }, 
@@ -4150,8 +4190,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2686.38
     }
   }, 
@@ -4160,8 +4200,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2698.14
     }
   }, 
@@ -4170,8 +4210,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2698.15
     }
   }, 
@@ -4180,8 +4220,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2698.94
     }
   }, 
@@ -4190,8 +4230,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2722.22
     }
   }, 
@@ -4200,8 +4240,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2722.22
     }
   }, 
@@ -4210,8 +4250,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2722.69
     }
   }, 
@@ -4220,8 +4260,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2725.24
     }
   }, 
@@ -4230,8 +4270,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2738.94
     }
   }, 
@@ -4240,8 +4280,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2739.543
     }
   }, 
@@ -4250,8 +4290,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2739.98
     }
   }, 
@@ -4260,8 +4300,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2741.75
     }
   }, 
@@ -4270,8 +4310,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2748.22
     }
   }, 
@@ -4280,8 +4320,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2755.95
     }
   }, 
@@ -4290,8 +4330,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2791.43
     }
   }, 
@@ -4300,8 +4340,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2791.43
     }
   }, 
@@ -4310,8 +4350,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2794.53
     }
   }, 
@@ -4320,8 +4360,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2818.09
     }
   }, 
@@ -4330,8 +4370,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2841.42
     }
   }, 
@@ -4340,8 +4380,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2855.47
     }
   }, 
@@ -4350,8 +4390,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2856.0
     }
   }, 
@@ -4360,8 +4400,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2868.55
     }
   }, 
@@ -4370,8 +4410,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 2881.14
     }
   }, 
@@ -4380,8 +4420,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2885.67
     }
   }, 
@@ -4390,8 +4430,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 2886.77
     }
   }, 
@@ -4400,8 +4440,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2922.37
     }
   }, 
@@ -4410,8 +4450,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2941.48
     }
   }, 
@@ -4420,8 +4460,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2959.03
     }
   }, 
@@ -4430,8 +4470,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 2960.16
     }
   }, 
@@ -4440,8 +4480,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 2993.99
     }
   }, 
@@ -4450,8 +4490,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3008.45
     }
   }, 
@@ -4460,8 +4500,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3035.49
     }
   }, 
@@ -4470,8 +4510,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3039.92
     }
   }, 
@@ -4480,8 +4520,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3046.32
     }
   }, 
@@ -4490,8 +4530,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3046.32
     }
   }, 
@@ -4500,8 +4540,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3070.76
     }
   }, 
@@ -4510,8 +4550,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3083.63
     }
   }, 
@@ -4520,8 +4560,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3084.93
     }
   }, 
@@ -4530,8 +4570,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3100.69
     }
   }, 
@@ -4540,8 +4580,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3112.66
     }
   }, 
@@ -4550,8 +4590,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3198.72
     }
   }, 
@@ -4560,8 +4600,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3235.27
     }
   }, 
@@ -4570,8 +4610,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3247.47
     }
   }, 
@@ -4580,8 +4620,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3290.75
     }
   }, 
@@ -4590,8 +4630,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3293.47
     }
   }, 
@@ -4600,8 +4640,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3300.25
     }
   }, 
@@ -4610,8 +4650,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3317.52
     }
   }, 
@@ -4620,8 +4660,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3347.96
     }
   }, 
@@ -4630,8 +4670,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3353.27
     }
   }, 
@@ -4640,8 +4680,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3370.08
     }
   }, 
@@ -4650,8 +4690,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3404.71
     }
   }, 
@@ -4660,8 +4700,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3411.88
     }
   }, 
@@ -4670,8 +4710,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3411.88
     }
   }, 
@@ -4680,8 +4720,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3427.0
     }
   }, 
@@ -4690,8 +4730,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3444.34
     }
   }, 
@@ -4700,8 +4740,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3455.76
     }
   }, 
@@ -4710,8 +4750,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3469.48
     }
   }, 
@@ -4720,8 +4760,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3532.91
     }
   }, 
@@ -4730,8 +4770,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3587.11
     }
   }, 
@@ -4740,8 +4780,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3594.66
     }
   }, 
@@ -4750,8 +4790,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3594.66
     }
   }, 
@@ -4760,8 +4800,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3617.5
     }
   }, 
@@ -4770,8 +4810,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 3618.6
     }
   }, 
@@ -4780,8 +4820,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3622.73
     }
   }, 
@@ -4790,8 +4830,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3653.88
     }
   }, 
@@ -4800,8 +4840,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3678.3
     }
   }, 
@@ -4810,8 +4850,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3685.64
     }
   }, 
@@ -4820,8 +4860,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3686.05
     }
   }, 
@@ -4830,8 +4870,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3686.05
     }
   }, 
@@ -4840,8 +4880,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3688.69
     }
   }, 
@@ -4850,8 +4890,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3696.28
     }
   }, 
@@ -4860,8 +4900,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3774.04
     }
   }, 
@@ -4870,8 +4910,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3838.24
     }
   }, 
@@ -4880,8 +4920,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 3854.25
     }
   }, 
@@ -4890,8 +4930,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3883.09
     }
   }, 
@@ -4900,8 +4940,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3886.3
     }
   }, 
@@ -4910,8 +4950,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 3894.3
     }
   }, 
@@ -4920,8 +4960,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3981.81
     }
   }, 
@@ -4930,8 +4970,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 3993.3
     }
   }, 
@@ -4940,8 +4980,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 4043.86
     }
   }, 
@@ -4950,8 +4990,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 4051.6
     }
   }, 
@@ -4960,8 +5000,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 4052.83
     }
   }, 
@@ -4970,8 +5010,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 4059.2
     }
   }, 
@@ -4980,8 +5020,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4061.76
     }
   }, 
@@ -4990,8 +5030,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 4146.67
     }
   }, 
@@ -5000,8 +5040,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4153.76
     }
   }, 
@@ -5010,8 +5050,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 4198.91
     }
   }, 
@@ -5020,8 +5060,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 4268.65
     }
   }, 
@@ -5030,8 +5070,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 4269.95
     }
   }, 
@@ -5040,8 +5080,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 4377.18
     }
   }, 
@@ -5050,8 +5090,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 4378.51
     }
   }, 
@@ -5060,8 +5100,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4442.5
     }
   }, 
@@ -5070,8 +5110,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4511.53
     }
   }, 
@@ -5080,8 +5120,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 4549.17
     }
   }, 
@@ -5090,8 +5130,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4589.17
     }
   }, 
@@ -5100,8 +5140,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 4644.66
     }
   }, 
@@ -5110,8 +5150,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 4792.88
     }
   }, 
@@ -5120,8 +5160,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4830.76
     }
   }, 
@@ -5130,8 +5170,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4844.37
     }
   }, 
@@ -5140,8 +5180,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 4890.12
     }
   }, 
@@ -5150,8 +5190,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 4914.73
     }
   }, 
@@ -5160,8 +5200,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 4935.15
     }
   }, 
@@ -5170,8 +5210,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 4975.6
     }
   }, 
@@ -5180,8 +5220,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5012.84
     }
   }, 
@@ -5190,8 +5230,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5052.91
     }
   }, 
@@ -5200,8 +5240,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 5077.2
     }
   }, 
@@ -5210,8 +5250,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 5079.6
     }
   }, 
@@ -5220,8 +5260,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5139.87
     }
   }, 
@@ -5230,8 +5270,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5242.15
     }
   }, 
@@ -5240,8 +5280,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5323.61
     }
   }, 
@@ -5250,8 +5290,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5375.43
     }
   }, 
@@ -5260,8 +5300,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 5394.5
     }
   }, 
@@ -5270,8 +5310,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5410.45
     }
   }, 
@@ -5280,8 +5320,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5415.22
     }
   }, 
@@ -5290,8 +5330,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5417.5
     }
   }, 
@@ -5300,8 +5340,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 5428.8
     }
   }, 
@@ -5310,8 +5350,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5458.95
     }
   }, 
@@ -5320,8 +5360,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5527.37
     }
   }, 
@@ -5330,8 +5370,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 5541.07
     }
   }, 
@@ -5340,8 +5380,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5552.9
     }
   }, 
@@ -5350,8 +5390,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5686.46
     }
   }, 
@@ -5360,8 +5400,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 5689.15
     }
   }, 
@@ -5370,8 +5410,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5700.3
     }
   }, 
@@ -5380,8 +5420,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5704.07
     }
   }, 
@@ -5390,8 +5430,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5823.48
     }
   }, 
@@ -5400,8 +5440,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5845.22
     }
   }, 
@@ -5410,8 +5450,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5865.98
     }
   }, 
@@ -5420,8 +5460,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 5971.53
     }
   }, 
@@ -5430,8 +5470,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5991.1
     }
   }, 
@@ -5440,8 +5480,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 5993.93
     }
   }, 
@@ -5450,8 +5490,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 6041.84
     }
   }, 
@@ -5460,8 +5500,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 6080.26
     }
   }, 
@@ -5470,8 +5510,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 6092.64
     }
   }, 
@@ -5480,8 +5520,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 6092.64
     }
   }, 
@@ -5490,8 +5530,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 6143.41
     }
   }, 
@@ -5500,8 +5540,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 6146.32
     }
   }, 
@@ -5510,8 +5550,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 6196.43
     }
   }, 
@@ -5520,8 +5560,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 6238.57
     }
   }, 
@@ -5530,8 +5570,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 6365.51
     }
   }, 
@@ -5540,8 +5580,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 6405.98
     }
   }, 
@@ -5550,8 +5590,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 6511.5
     }
   }, 
@@ -5560,8 +5600,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 6524.11
     }
   }, 
@@ -5570,8 +5610,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 6527.35
     }
   }, 
@@ -5580,8 +5620,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 6568.85
     }
   }, 
@@ -5590,8 +5630,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 6568.85
     }
   }, 
@@ -5600,8 +5640,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 6725.08
     }
   }, 
@@ -5610,8 +5650,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 6823.76
     }
   }, 
@@ -5620,8 +5660,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 6823.76
     }
   }, 
@@ -5630,8 +5670,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 6929.41
     }
   }, 
@@ -5640,8 +5680,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 6976.15
     }
   }, 
@@ -5650,8 +5690,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 7189.32
     }
   }, 
@@ -5660,8 +5700,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 7189.32
     }
   }, 
@@ -5670,8 +5710,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 7292.88
     }
   }, 
@@ -5680,8 +5720,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 7344.95
     }
   }, 
@@ -5690,8 +5730,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 7372.09
     }
   }, 
@@ -5700,8 +5740,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 7372.09
     }
   }, 
@@ -5710,8 +5750,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 7585.28
     }
   }, 
@@ -5720,8 +5760,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 7683.57
     }
   }, 
@@ -5730,8 +5770,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 7749.22
     }
   }, 
@@ -5740,8 +5780,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 7878.92
     }
   }, 
@@ -5750,8 +5790,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 8159.13
     }
   }, 
@@ -5760,8 +5800,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 8438.55
     }
   }, 
@@ -5770,8 +5810,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 8568.0
     }
   }, 
@@ -5780,8 +5820,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 9596.16
     }
   }, 
@@ -5790,8 +5830,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-02-29", 
+      "vigencia": 2, 
+       
       "valor": 9710.1
     }
   }, 
@@ -5800,8 +5840,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 10110.24
     }
   }, 
@@ -5810,8 +5850,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 10367.28
     }
   }, 
@@ -5820,8 +5860,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-03-01", 
-      "vigencia_hasta": "2012-05-31", 
+      "vigencia": 3, 
+       
       "valor": 10875.31
     }
   }, 
@@ -5830,8 +5870,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-06-01", 
-      "vigencia_hasta": "2012-08-31", 
+      "vigencia": 4,
+       
       "valor": 11457.92
     }
   }, 
@@ -5840,8 +5880,8 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 6, 
-      "vigencia_desde": "2012-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 5,
+       
       "valor": 11749.22
     }
   }, 
@@ -5850,8 +5890,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 14.33
     }
   }, 
@@ -5860,8 +5899,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1, 
       "valor": 14.33
     }
   }, 
@@ -5870,8 +5908,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 17.92
     }
   }, 
@@ -5880,8 +5917,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 107.5
     }
   }, 
@@ -5890,8 +5926,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 129.0
     }
   }, 
@@ -5900,8 +5935,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 161.25
     }
   }, 
@@ -5910,8 +5944,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 161.25
     }
   }, 
@@ -5920,8 +5953,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 171.92
     }
   }, 
@@ -5930,8 +5962,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 178.49
     }
   }, 
@@ -5940,8 +5971,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 184.53
     }
   }, 
@@ -5950,8 +5980,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 189.26
     }
   }, 
@@ -5960,8 +5989,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 208.71
     }
   }, 
@@ -5970,8 +5998,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 213.63
     }
   }, 
@@ -5980,8 +6007,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -5990,8 +6016,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6000,8 +6025,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6010,8 +6034,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6020,8 +6043,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6030,8 +6052,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6040,8 +6061,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6050,8 +6070,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6060,8 +6079,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 215.0
     }
   }, 
@@ -6070,8 +6088,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 257.88
     }
   }, 
@@ -6080,8 +6097,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 257.88
     }
   }, 
@@ -6090,8 +6106,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 343.84
     }
   }, 
@@ -6100,8 +6115,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 429.84
     }
   }, 
@@ -6110,8 +6124,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6120,8 +6133,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6130,8 +6142,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6140,8 +6151,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6150,8 +6160,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6160,8 +6169,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6170,8 +6178,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6180,8 +6187,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6190,8 +6196,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6200,8 +6205,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6210,8 +6214,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6220,8 +6223,7 @@
     "model": "salary_calculator_app.remuneracionfija", 
     "fields": {
       "remuneracion": 8, 
-      "vigencia_desde": "2011-09-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
       "valor": 430.0
     }
   }, 
@@ -6498,8 +6500,8 @@
       "valor_min": 100.0, 
       "remuneracion": 7, 
       "concepto": "Adopci\u00f3n", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 3600.0, 
       "valor_max": 5200.0
     }
@@ -6511,8 +6513,8 @@
       "valor_min": 0.0, 
       "remuneracion": 7, 
       "concepto": "Ayuda escolar por hijo con discapacidad", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 170.0, 
       "valor_max": 50000.0
     }
@@ -6524,8 +6526,8 @@
       "valor_min": 100.0, 
       "remuneracion": 7, 
       "concepto": "Hijo", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 270.0, 
       "valor_max": 2800.0
     }
@@ -6537,8 +6539,8 @@
       "valor_min": 2800.01, 
       "remuneracion": 7, 
       "concepto": "Hijo", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 204.0, 
       "valor_max": 4000.0
     }
@@ -6550,8 +6552,8 @@
       "valor_min": 4000.01, 
       "remuneracion": 7, 
       "concepto": "Hijo", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 136.0, 
       "valor_max": 5200.0
     }
@@ -6563,8 +6565,8 @@
       "valor_min": 0.0, 
       "remuneracion": 7, 
       "concepto": "Hijo con discapacidad", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 1080.0, 
       "valor_max": 2800.0
     }
@@ -6576,8 +6578,8 @@
       "valor_min": 2800.01, 
       "remuneracion": 7, 
       "concepto": "Hijo con discapacidad", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 810.0, 
       "valor_max": 4000.0
     }
@@ -6589,8 +6591,8 @@
       "valor_min": 4000.01, 
       "remuneracion": 7, 
       "concepto": "Hijo con discapacidad", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 540.0, 
       "valor_max": 0.0
     }
@@ -6602,8 +6604,8 @@
       "valor_min": 100.0, 
       "remuneracion": 7, 
       "concepto": "Matrimonio", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 900.0, 
       "valor_max": 5200.0
     }
@@ -6615,8 +6617,8 @@
       "valor_min": 100.0, 
       "remuneracion": 7, 
       "concepto": "Nacimiento", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 600.0, 
       "valor_max": 5200.0
     }
@@ -6628,8 +6630,8 @@
       "valor_min": 100.0, 
       "remuneracion": 7, 
       "concepto": "Prenatal", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 270.0, 
       "valor_max": 2800.0
     }
@@ -6641,8 +6643,8 @@
       "valor_min": 2800.01, 
       "remuneracion": 7, 
       "concepto": "Prenatal", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 204.0, 
       "valor_max": 4000.0
     }
@@ -6654,8 +6656,8 @@
       "valor_min": 4000.01, 
       "remuneracion": 7, 
       "concepto": "Prenatal", 
-      "vigencia_desde": "2012-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "valor": 136.0, 
       "valor_max": 5200.0
     }
@@ -9175,8 +9177,8 @@
       "deduccion_especial": 62208.0, 
       "por_suegro_yerno_nuera": 5400.0, 
       "por_descendiente": 5400.0, 
-      "vigencia_desde": "2011-01-01", 
-      "vigencia_hasta": "2012-12-31", 
+      "vigencia": 1,
+       
       "por_conyuge": 14400.0, 
       "ganancia_no_imponible": 12960.0
     }
@@ -9186,9 +9188,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 0.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 0.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 0.0, 
       "ganancia_neta_max": 10000.0, 
       "impuesto_porcentual": 9.0
@@ -9199,9 +9201,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 10000.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 10000.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 900.0, 
       "ganancia_neta_max": 20000.0, 
       "impuesto_porcentual": 14.0
@@ -9212,9 +9214,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 20000.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 20000.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 2300.0, 
       "ganancia_neta_max": 30000.0, 
       "impuesto_porcentual": 19.0
@@ -9225,9 +9227,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 30000.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 30000.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 4200.0, 
       "ganancia_neta_max": 60000.0, 
       "impuesto_porcentual": 23.0
@@ -9238,9 +9240,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 60000.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 60000.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 11100.0, 
       "ganancia_neta_max": 90000.0, 
       "impuesto_porcentual": 27.0
@@ -9251,9 +9253,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 90000.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 90000.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 19200.0, 
       "ganancia_neta_max": 120000.0, 
       "impuesto_porcentual": 31.0
@@ -9264,9 +9266,9 @@
     "model": "salary_calculator_app.impuestogananciastabla", 
     "fields": {
       "sobre_exedente_de": 120000.0, 
-      "vigencia_desde": "2011-01-01", 
+      "vigencia": 1,
       "ganancia_neta_min": 120000.0, 
-      "vigencia_hasta": "2012-12-31", 
+       
       "impuesto_fijo": 28500.0, 
       "ganancia_neta_max": 99999999.0, 
       "impuesto_porcentual": 35.0
