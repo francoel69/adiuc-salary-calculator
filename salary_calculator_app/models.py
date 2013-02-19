@@ -36,6 +36,9 @@ class Periodo(models.Model):
     class Meta:
         ordering = ['desde', 'hasta']
 
+    def __unicode__(self):
+        return 'De ' + unicode(self.desde.strftime("%d/%m/%y")) + ' a ' + unicode(self.hasta.strftime("%d/%m/%y"))
+
 class GarantiaSalarialPreUniversitaria(models.Model):
     """ garantía salarial para cargos preuniversitarios """
     

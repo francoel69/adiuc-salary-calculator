@@ -2060,7 +2060,6 @@
     "fields": {
       "retencion": 2, 
       "vigencia": 1,
-       
       "porcentaje": 2.0
     }
   }, 
@@ -2070,7 +2069,6 @@
     "fields": {
       "retencion": 3, 
       "vigencia": 1,
-       
       "porcentaje": 11.0
     }
   }, 
@@ -2080,7 +2078,6 @@
     "fields": {
       "retencion": 4, 
       "vigencia": 1,
-       
       "porcentaje": 4.5
     }
   }, 
@@ -2090,7 +2087,6 @@
     "fields": {
       "retencion": 5, 
       "vigencia": 1,
-       
       "porcentaje": 3.0
     }
   }, 
@@ -2100,7 +2096,6 @@
     "fields": {
       "retencion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 3.0
     }
   }, 
@@ -2110,7 +2105,6 @@
     "fields": {
       "retencion": 6, 
       "vigencia": 1,
-       
       "porcentaje": 1.5
     }
   }, 
@@ -2129,7 +2123,6 @@
     "fields": {
       "retencion": 10, 
       "vigencia": 1,
-       
       "valor": 3.8
     }
   }, 
@@ -2139,7 +2132,6 @@
     "fields": {
       "retencion": 7, 
       "vigencia": 1,
-       
       "valor": 7.0
     }
   }, 
@@ -2149,7 +2141,6 @@
     "fields": {
       "retencion": 9, 
       "vigencia": 1,
-       
       "valor": 7.0
     }
   }, 
@@ -2159,7 +2150,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 7.0
     }
   }, 
@@ -2169,7 +2159,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 13.0
     }
   }, 
@@ -2179,7 +2168,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 25.0
     }
   }, 
@@ -2189,7 +2177,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 34.0
     }
   }, 
@@ -2199,7 +2186,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 40.0
     }
   }, 
@@ -2209,7 +2195,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 47.0
     }
   }, 
@@ -2219,7 +2204,6 @@
     "fields": {
       "retencion": 8, 
       "vigencia": 1,
-       
       "valor": 55.0
     }
   }, 
@@ -2271,7 +2255,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 0.0
     }
   }, 
@@ -2281,7 +2264,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 10.0
     }
   }, 
@@ -2291,7 +2273,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 15.0
     }
   }, 
@@ -2301,7 +2282,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 15.0
     }
   }, 
@@ -2311,7 +2291,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 15.0
     }
   }, 
@@ -2321,7 +2300,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 20.0
     }
   }, 
@@ -2331,7 +2309,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 20.0
     }
   }, 
@@ -2341,7 +2318,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 20.0
     }
   }, 
@@ -2351,7 +2327,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 20.0
     }
   }, 
@@ -2361,7 +2336,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 20.0
     }
   }, 
@@ -2371,7 +2345,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 30.0
     }
   }, 
@@ -2381,7 +2354,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 30.0
     }
   }, 
@@ -2391,7 +2363,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 30.0
     }
   }, 
@@ -2401,7 +2372,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 30.0
     }
   }, 
@@ -2411,7 +2381,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 40.0
     }
   }, 
@@ -2421,7 +2390,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 40.0
     }
   }, 
@@ -2431,7 +2399,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 40.0
     }
   }, 
@@ -2441,7 +2408,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 40.0
     }
   }, 
@@ -2451,7 +2417,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 40.0
     }
   }, 
@@ -2461,7 +2426,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 40.0
     }
   }, 
@@ -2471,7 +2435,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 50.0
     }
   }, 
@@ -2481,7 +2444,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 50.0
     }
   }, 
@@ -2491,7 +2453,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 50.0
     }
   }, 
@@ -2501,7 +2462,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 50.0
     }
   }, 
@@ -2511,7 +2471,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 60.0
     }
   }, 
@@ -2521,7 +2480,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 60.0
     }
   }, 
@@ -2531,7 +2489,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 60.0
     }
   }, 
@@ -2541,7 +2498,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 60.0
     }
   }, 
@@ -2551,7 +2507,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 60.0
     }
   }, 
@@ -2561,7 +2516,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 60.0
     }
   }, 
@@ -2571,7 +2525,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 70.0
     }
   }, 
@@ -2581,7 +2534,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 70.0
     }
   }, 
@@ -2591,7 +2543,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 70.0
     }
   }, 
@@ -2601,7 +2552,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 70.0
     }
   }, 
@@ -2611,7 +2561,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 80.0
     }
   }, 
@@ -2621,7 +2570,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 80.0
     }
   }, 
@@ -2631,7 +2579,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 80.0
     }
   }, 
@@ -2641,7 +2588,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 80.0
     }
   }, 
@@ -2651,7 +2597,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 80.0
     }
   }, 
@@ -2661,7 +2606,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 80.0
     }
   }, 
@@ -2671,7 +2615,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 100.0
     }
   }, 
@@ -2681,7 +2624,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 100.0
     }
   }, 
@@ -2691,7 +2633,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 100.0
     }
   }, 
@@ -2701,7 +2642,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 100.0
     }
   }, 
@@ -2711,7 +2651,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 110.0
     }
   }, 
@@ -2721,7 +2660,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 110.0
     }
   }, 
@@ -2731,7 +2669,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 110.0
     }
   }, 
@@ -2741,7 +2678,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 110.0
     }
   }, 
@@ -2751,7 +2687,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 120.0
     }
   }, 
@@ -2761,7 +2696,6 @@
     "fields": {
       "remuneracion": 1, 
       "vigencia": 1,
-       
       "porcentaje": 120.0
     }
   }, 
@@ -2771,7 +2705,6 @@
     "fields": {
       "remuneracion": 2, 
       "vigencia": 1,
-       
       "porcentaje": 15.0
     }
   }, 
@@ -2781,7 +2714,6 @@
     "fields": {
       "remuneracion": 4, 
       "vigencia": 1,
-       
       "porcentaje": 5.0
     }
   }, 
@@ -2791,7 +2723,6 @@
     "fields": {
       "remuneracion": 3, 
       "vigencia": 1,
-       
       "porcentaje": 15.0
     }
   }, 
@@ -2801,7 +2732,6 @@
     "fields": {
       "remuneracion": 5, 
       "vigencia": 1,
-       
       "porcentaje": 5.0
     }
   }, 
@@ -2811,7 +2741,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 169.24
     }
   }, 
@@ -2821,7 +2750,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 169.24
     }
   }, 
@@ -2831,7 +2759,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 189.55
     }
   }, 
@@ -2841,7 +2768,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 189.55
     }
   }, 
@@ -2851,7 +2777,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 199.7
     }
   }, 
@@ -2861,7 +2786,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 199.7
     }
   }, 
@@ -2871,7 +2795,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 204.78
     }
   }, 
@@ -2881,7 +2804,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 204.78
     }
   }, 
@@ -2891,7 +2813,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 211.55
     }
   }, 
@@ -2901,7 +2822,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 236.94
     }
   }, 
@@ -2911,7 +2831,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 249.63
     }
   }, 
@@ -2921,7 +2840,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 255.98
     }
   }, 
@@ -2931,7 +2849,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 823.93
     }
   }, 
@@ -2941,7 +2858,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 922.11
     }
   }, 
@@ -2951,7 +2867,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 971.2
     }
   }, 
@@ -2961,7 +2876,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 995.75
     }
   }, 
@@ -2971,7 +2885,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1029.07
     }
   }, 
@@ -2981,7 +2894,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1151.8
     }
   }, 
@@ -2991,7 +2903,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1200.91
     }
   }, 
@@ -3001,7 +2912,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1213.16
     }
   }, 
@@ -3011,7 +2921,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1243.84
     }
   }, 
@@ -3021,7 +2930,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1344.19
     }
   }, 
@@ -3031,7 +2939,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1373.02
     }
   }, 
@@ -3041,7 +2948,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1415.83
     }
   }, 
@@ -3051,7 +2957,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1456.31
     }
   }, 
@@ -3061,7 +2966,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1497.01
     }
   }, 
@@ -3071,7 +2975,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1536.86
     }
   }, 
@@ -3081,7 +2984,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1545.25
     }
   }, 
@@ -3091,7 +2993,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1592.44
     }
   }, 
@@ -3101,7 +3002,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1618.78
     }
   }, 
@@ -3111,7 +3011,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1621.95
     }
   }, 
@@ -3121,7 +3020,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1669.02
     }
   }, 
@@ -3131,7 +3029,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1676.65
     }
   }, 
@@ -3141,7 +3038,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1716.98
     }
   }, 
@@ -3151,7 +3047,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1729.65
     }
   }, 
@@ -3161,7 +3056,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1749.7
     }
   }, 
@@ -3171,7 +3065,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1749.7
     }
   }, 
@@ -3181,7 +3074,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1766.47
     }
   }, 
@@ -3191,7 +3083,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1769.2
     }
   }, 
@@ -3201,7 +3092,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1769.2
     }
   }, 
@@ -3211,7 +3101,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1783.53
     }
   }, 
@@ -3221,7 +3110,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1786.14
     }
   }, 
@@ -3231,7 +3119,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1786.14
     }
   }, 
@@ -3241,7 +3128,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1811.38
     }
   }, 
@@ -3251,7 +3137,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1816.58
     }
   }, 
@@ -3261,7 +3146,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1821.84
     }
   }, 
@@ -3271,7 +3155,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1879.08
     }
   }, 
@@ -3281,7 +3164,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1881.93
     }
   }, 
@@ -3291,7 +3173,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1896.14
     }
   }, 
@@ -3301,7 +3182,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 1913.9
     }
   }, 
@@ -3311,7 +3191,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1921.93
     }
   }, 
@@ -3321,7 +3200,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1926.85
     }
   }, 
@@ -3331,7 +3209,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1959.66
     }
   }, 
@@ -3341,7 +3218,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1959.66
     }
   }, 
@@ -3351,7 +3227,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 1962.56
     }
   }, 
@@ -3361,7 +3236,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1981.5
     }
   }, 
@@ -3371,7 +3245,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 1981.5
     }
   }, 
@@ -3381,7 +3254,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1988.92
     }
   }, 
@@ -3391,7 +3263,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 1994.97
     }
   }, 
@@ -3401,7 +3272,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2000.47
     }
   }, 
@@ -3411,7 +3281,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2000.47
     }
   }, 
@@ -3421,7 +3290,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2024.41
     }
   }, 
@@ -3431,7 +3299,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2030.88
     }
   }, 
@@ -3441,7 +3308,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2030.88
     }
   }, 
@@ -3451,7 +3317,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2064.65
     }
   }, 
@@ -3461,7 +3326,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2064.65
     }
   }, 
@@ -3471,7 +3335,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2067.7
     }
   }, 
@@ -3481,7 +3344,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2087.66
     }
   }, 
@@ -3491,7 +3353,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2087.66
     }
   }, 
@@ -3501,7 +3362,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2092.09
     }
   }, 
@@ -3511,7 +3371,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2094.26
     }
   }, 
@@ -3521,7 +3380,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2107.64
     }
   }, 
@@ -3531,7 +3389,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2107.64
     }
   }, 
@@ -3541,7 +3398,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2117.14
     }
   }, 
@@ -3551,7 +3407,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2117.14
     }
   }, 
@@ -3561,7 +3416,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2123.68
     }
   }, 
@@ -3571,7 +3425,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2140.73
     }
   }, 
@@ -3581,7 +3434,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2140.73
     }
   }, 
@@ -3591,7 +3443,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2161.22
     }
   }, 
@@ -3601,7 +3452,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2161.22
     }
   }, 
@@ -3611,7 +3461,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2196.98
     }
   }, 
@@ -3621,7 +3470,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2198.41
     }
   }, 
@@ -3631,7 +3479,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2219.31
     }
   }, 
@@ -3641,7 +3488,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2220.15
     }
   }, 
@@ -3651,7 +3497,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2227.58
     }
   }, 
@@ -3661,7 +3506,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2229.88
     }
   }, 
@@ -3671,7 +3515,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2230.53
     }
   }, 
@@ -3681,7 +3524,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2234.37
     }
   }, 
@@ -3691,7 +3533,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2237.45
     }
   }, 
@@ -3701,7 +3542,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2264.08
     }
   }, 
@@ -3711,7 +3551,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2274.59
     }
   }, 
@@ -3721,7 +3560,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2274.59
     }
   }, 
@@ -3731,7 +3569,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2294.33
     }
   }, 
@@ -3741,7 +3578,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2306.97
     }
   }, 
@@ -3751,7 +3587,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2306.97
     }
   }, 
@@ -3761,7 +3596,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2309.53
     }
   }, 
@@ -3771,7 +3605,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2313.15
     }
   }, 
@@ -3781,7 +3614,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2329.0
     }
   }, 
@@ -3791,7 +3623,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2343.14
     }
   }, 
@@ -3801,7 +3632,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2346.92
     }
   }, 
@@ -3811,7 +3641,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2354.06
     }
   }, 
@@ -3821,7 +3650,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2396.44
     }
   }, 
@@ -3831,7 +3659,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2396.44
     }
   }, 
@@ -3841,7 +3668,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2406.59
     }
   }, 
@@ -3851,7 +3677,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2411.57
     }
   }, 
@@ -3861,7 +3686,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2413.91
     }
   }, 
@@ -3871,7 +3695,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2430.97
     }
   }, 
@@ -3881,7 +3704,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2435.88
     }
   }, 
@@ -3891,7 +3713,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2445.48
     }
   }, 
@@ -3901,7 +3722,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2446.42
     }
   }, 
@@ -3911,7 +3731,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2457.36
     }
   }, 
@@ -3921,7 +3740,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2457.36
     }
   }, 
@@ -3931,7 +3749,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2460.62
     }
   }, 
@@ -3941,7 +3758,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2462.22
     }
   }, 
@@ -3951,7 +3767,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2468.66
     }
   }, 
@@ -3961,7 +3776,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2485.62
     }
   }, 
@@ -3971,7 +3785,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2486.57
     }
   }, 
@@ -3981,7 +3794,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2497.24
     }
   }, 
@@ -3991,7 +3803,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2497.47
     }
   }, 
@@ -4001,7 +3812,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2498.19
     }
   }, 
@@ -4011,7 +3821,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2531.42
     }
   }, 
@@ -4021,7 +3830,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2535.77
     }
   }, 
@@ -4031,7 +3839,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2549.53
     }
   }, 
@@ -4041,7 +3848,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2572.45
     }
   }, 
@@ -4051,7 +3857,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2583.81
     }
   }, 
@@ -4061,7 +3866,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2583.81
     }
   }, 
@@ -4071,7 +3875,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2586.67
     }
   }, 
@@ -4081,7 +3884,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2592.44
     }
   }, 
@@ -4091,7 +3893,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2594.12
     }
   }, 
@@ -4101,7 +3902,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2608.48
     }
   }, 
@@ -4111,7 +3911,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2618.78
     }
   }, 
@@ -4121,7 +3920,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2619.78
     }
   }, 
@@ -4131,7 +3929,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2631.26
     }
   }, 
@@ -4141,7 +3938,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2632.02
     }
   }, 
@@ -4151,7 +3947,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2658.35
     }
   }, 
@@ -4161,7 +3956,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2660.08
     }
   }, 
@@ -4171,7 +3965,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2671.61
     }
   }, 
@@ -4181,7 +3974,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2685.36
     }
   }, 
@@ -4191,7 +3983,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2686.38
     }
   }, 
@@ -4201,7 +3992,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2698.14
     }
   }, 
@@ -4211,7 +4001,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2698.15
     }
   }, 
@@ -4221,7 +4010,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2698.94
     }
   }, 
@@ -4231,7 +4019,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2722.22
     }
   }, 
@@ -4241,7 +4028,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2722.22
     }
   }, 
@@ -4251,7 +4037,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2722.69
     }
   }, 
@@ -4261,7 +4046,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2725.24
     }
   }, 
@@ -4271,7 +4055,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2738.94
     }
   }, 
@@ -4281,7 +4064,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2739.543
     }
   }, 
@@ -4291,7 +4073,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2739.98
     }
   }, 
@@ -4301,7 +4082,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2741.75
     }
   }, 
@@ -4311,7 +4091,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2748.22
     }
   }, 
@@ -4321,7 +4100,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2755.95
     }
   }, 
@@ -4331,7 +4109,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2791.43
     }
   }, 
@@ -4341,7 +4118,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2791.43
     }
   }, 
@@ -4351,7 +4127,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2794.53
     }
   }, 
@@ -4361,7 +4136,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2818.09
     }
   }, 
@@ -4371,7 +4145,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2841.42
     }
   }, 
@@ -4381,7 +4154,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2855.47
     }
   }, 
@@ -4391,7 +4163,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2856.0
     }
   }, 
@@ -4401,7 +4172,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2868.55
     }
   }, 
@@ -4411,7 +4181,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 2881.14
     }
   }, 
@@ -4421,7 +4190,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2885.67
     }
   }, 
@@ -4431,7 +4199,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 2886.77
     }
   }, 
@@ -4441,7 +4208,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2922.37
     }
   }, 
@@ -4451,7 +4217,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2941.48
     }
   }, 
@@ -4461,7 +4226,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2959.03
     }
   }, 
@@ -4471,7 +4235,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 2960.16
     }
   }, 
@@ -4481,7 +4244,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 2993.99
     }
   }, 
@@ -4491,7 +4253,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3008.45
     }
   }, 
@@ -4501,7 +4262,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3035.49
     }
   }, 
@@ -4511,7 +4271,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3039.92
     }
   }, 
@@ -4521,7 +4280,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3046.32
     }
   }, 
@@ -4531,7 +4289,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3046.32
     }
   }, 
@@ -4541,7 +4298,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3070.76
     }
   }, 
@@ -4551,7 +4307,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3083.63
     }
   }, 
@@ -4561,7 +4316,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3084.93
     }
   }, 
@@ -4571,7 +4325,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3100.69
     }
   }, 
@@ -4581,7 +4334,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3112.66
     }
   }, 
@@ -4591,7 +4343,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3198.72
     }
   }, 
@@ -4601,7 +4352,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3235.27
     }
   }, 
@@ -4611,7 +4361,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3247.47
     }
   }, 
@@ -4621,7 +4370,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3290.75
     }
   }, 
@@ -4631,7 +4379,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3293.47
     }
   }, 
@@ -4641,7 +4388,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3300.25
     }
   }, 
@@ -4651,7 +4397,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3317.52
     }
   }, 
@@ -4661,7 +4406,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3347.96
     }
   }, 
@@ -4671,7 +4415,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3353.27
     }
   }, 
@@ -4681,7 +4424,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3370.08
     }
   }, 
@@ -4691,7 +4433,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3404.71
     }
   }, 
@@ -4701,7 +4442,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3411.88
     }
   }, 
@@ -4711,7 +4451,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3411.88
     }
   }, 
@@ -4721,7 +4460,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3427.0
     }
   }, 
@@ -4731,7 +4469,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3444.34
     }
   }, 
@@ -4741,7 +4478,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3455.76
     }
   }, 
@@ -4751,7 +4487,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3469.48
     }
   }, 
@@ -4761,7 +4496,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3532.91
     }
   }, 
@@ -4771,7 +4505,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3587.11
     }
   }, 
@@ -4781,7 +4514,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3594.66
     }
   }, 
@@ -4791,7 +4523,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3594.66
     }
   }, 
@@ -4801,7 +4532,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3617.5
     }
   }, 
@@ -4811,7 +4541,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 3618.6
     }
   }, 
@@ -4821,7 +4550,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3622.73
     }
   }, 
@@ -4831,7 +4559,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3653.88
     }
   }, 
@@ -4841,7 +4568,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3678.3
     }
   }, 
@@ -4851,7 +4577,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3685.64
     }
   }, 
@@ -4861,7 +4586,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3686.05
     }
   }, 
@@ -4871,7 +4595,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3686.05
     }
   }, 
@@ -4881,7 +4604,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3688.69
     }
   }, 
@@ -4891,7 +4613,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3696.28
     }
   }, 
@@ -4901,7 +4622,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3774.04
     }
   }, 
@@ -4911,7 +4631,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3838.24
     }
   }, 
@@ -4921,7 +4640,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 3854.25
     }
   }, 
@@ -4931,7 +4649,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3883.09
     }
   }, 
@@ -4941,7 +4658,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3886.3
     }
   }, 
@@ -4951,7 +4667,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 3894.3
     }
   }, 
@@ -4961,7 +4676,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3981.81
     }
   }, 
@@ -4971,7 +4685,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 3993.3
     }
   }, 
@@ -4981,7 +4694,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 4043.86
     }
   }, 
@@ -4991,7 +4703,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 4051.6
     }
   }, 
@@ -5001,7 +4712,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 4052.83
     }
   }, 
@@ -5011,7 +4721,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 4059.2
     }
   }, 
@@ -5021,7 +4730,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4061.76
     }
   }, 
@@ -5031,7 +4739,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 4146.67
     }
   }, 
@@ -5041,7 +4748,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4153.76
     }
   }, 
@@ -5051,7 +4757,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 4198.91
     }
   }, 
@@ -5061,7 +4766,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 4268.65
     }
   }, 
@@ -5071,7 +4775,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 4269.95
     }
   }, 
@@ -5081,7 +4784,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 4377.18
     }
   }, 
@@ -5091,7 +4793,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 4378.51
     }
   }, 
@@ -5101,7 +4802,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4442.5
     }
   }, 
@@ -5111,7 +4811,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4511.53
     }
   }, 
@@ -5121,7 +4820,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 4549.17
     }
   }, 
@@ -5131,7 +4829,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4589.17
     }
   }, 
@@ -5141,7 +4838,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 4644.66
     }
   }, 
@@ -5151,7 +4847,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 4792.88
     }
   }, 
@@ -5161,7 +4856,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4830.76
     }
   }, 
@@ -5171,7 +4865,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4844.37
     }
   }, 
@@ -5181,7 +4874,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 4890.12
     }
   }, 
@@ -5191,7 +4883,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 4914.73
     }
   }, 
@@ -5201,7 +4892,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 4935.15
     }
   }, 
@@ -5211,7 +4901,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 4975.6
     }
   }, 
@@ -5221,7 +4910,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5012.84
     }
   }, 
@@ -5231,7 +4919,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5052.91
     }
   }, 
@@ -5241,7 +4928,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 5077.2
     }
   }, 
@@ -5251,7 +4937,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 5079.6
     }
   }, 
@@ -5261,7 +4946,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5139.87
     }
   }, 
@@ -5271,7 +4955,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5242.15
     }
   }, 
@@ -5281,7 +4964,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5323.61
     }
   }, 
@@ -5291,7 +4973,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5375.43
     }
   }, 
@@ -5301,7 +4982,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 5394.5
     }
   }, 
@@ -5311,7 +4991,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5410.45
     }
   }, 
@@ -5321,7 +5000,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5415.22
     }
   }, 
@@ -5331,7 +5009,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5417.5
     }
   }, 
@@ -5341,7 +5018,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 5428.8
     }
   }, 
@@ -5351,7 +5027,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5458.95
     }
   }, 
@@ -5361,7 +5036,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5527.37
     }
   }, 
@@ -5371,7 +5045,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 5541.07
     }
   }, 
@@ -5381,7 +5054,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5552.9
     }
   }, 
@@ -5391,7 +5063,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5686.46
     }
   }, 
@@ -5401,7 +5072,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 5689.15
     }
   }, 
@@ -5411,7 +5081,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5700.3
     }
   }, 
@@ -5421,7 +5090,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5704.07
     }
   }, 
@@ -5431,7 +5099,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5823.48
     }
   }, 
@@ -5441,7 +5108,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5845.22
     }
   }, 
@@ -5451,7 +5117,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5865.98
     }
   }, 
@@ -5461,7 +5126,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 5971.53
     }
   }, 
@@ -5471,7 +5135,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5991.1
     }
   }, 
@@ -5481,7 +5144,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 5993.93
     }
   }, 
@@ -5491,7 +5153,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 6041.84
     }
   }, 
@@ -5501,7 +5162,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 6080.26
     }
   }, 
@@ -5511,7 +5171,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 6092.64
     }
   }, 
@@ -5521,7 +5180,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 6092.64
     }
   }, 
@@ -5531,7 +5189,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 6143.41
     }
   }, 
@@ -5541,7 +5198,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 6146.32
     }
   }, 
@@ -5551,7 +5207,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 6196.43
     }
   }, 
@@ -5561,7 +5216,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 6238.57
     }
   }, 
@@ -5571,7 +5225,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 6365.51
     }
   }, 
@@ -5581,7 +5234,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 6405.98
     }
   }, 
@@ -5591,7 +5243,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 6511.5
     }
   }, 
@@ -5601,7 +5252,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 6524.11
     }
   }, 
@@ -5611,7 +5261,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 6527.35
     }
   }, 
@@ -5621,7 +5270,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 6568.85
     }
   }, 
@@ -5631,7 +5279,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 6568.85
     }
   }, 
@@ -5641,7 +5288,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 6725.08
     }
   }, 
@@ -5651,7 +5297,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 6823.76
     }
   }, 
@@ -5661,7 +5306,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 6823.76
     }
   }, 
@@ -5671,7 +5315,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 6929.41
     }
   }, 
@@ -5681,7 +5324,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 6976.15
     }
   }, 
@@ -5691,7 +5333,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 7189.32
     }
   }, 
@@ -5701,7 +5342,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 7189.32
     }
   }, 
@@ -5711,7 +5351,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 7292.88
     }
   }, 
@@ -5721,7 +5360,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 7344.95
     }
   }, 
@@ -5731,7 +5369,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 7372.09
     }
   }, 
@@ -5741,7 +5378,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 7372.09
     }
   }, 
@@ -5751,7 +5387,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 7585.28
     }
   }, 
@@ -5761,7 +5396,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 7683.57
     }
   }, 
@@ -5771,7 +5405,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 7749.22
     }
   }, 
@@ -5781,7 +5414,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 7878.92
     }
   }, 
@@ -5791,7 +5423,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 8159.13
     }
   }, 
@@ -5801,7 +5432,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 8438.55
     }
   }, 
@@ -5811,7 +5441,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 8568.0
     }
   }, 
@@ -5821,7 +5450,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 9596.16
     }
   }, 
@@ -5831,7 +5459,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 2, 
-       
       "valor": 9710.1
     }
   }, 
@@ -5841,7 +5468,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 10110.24
     }
   }, 
@@ -5851,7 +5477,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 10367.28
     }
   }, 
@@ -5861,7 +5486,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 3, 
-       
       "valor": 10875.31
     }
   }, 
@@ -5871,7 +5495,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 4,
-       
       "valor": 11457.92
     }
   }, 
@@ -5881,7 +5504,6 @@
     "fields": {
       "remuneracion": 6, 
       "vigencia": 5,
-       
       "valor": 11749.22
     }
   }, 
@@ -6501,7 +6123,6 @@
       "remuneracion": 7, 
       "concepto": "Adopci\u00f3n", 
       "vigencia": 1,
-       
       "valor": 3600.0, 
       "valor_max": 5200.0
     }
@@ -6514,7 +6135,6 @@
       "remuneracion": 7, 
       "concepto": "Ayuda escolar por hijo con discapacidad", 
       "vigencia": 1,
-       
       "valor": 170.0, 
       "valor_max": 50000.0
     }
@@ -6527,7 +6147,6 @@
       "remuneracion": 7, 
       "concepto": "Hijo", 
       "vigencia": 1,
-       
       "valor": 270.0, 
       "valor_max": 2800.0
     }
@@ -6540,7 +6159,6 @@
       "remuneracion": 7, 
       "concepto": "Hijo", 
       "vigencia": 1,
-       
       "valor": 204.0, 
       "valor_max": 4000.0
     }
@@ -6553,7 +6171,6 @@
       "remuneracion": 7, 
       "concepto": "Hijo", 
       "vigencia": 1,
-       
       "valor": 136.0, 
       "valor_max": 5200.0
     }
@@ -6566,7 +6183,6 @@
       "remuneracion": 7, 
       "concepto": "Hijo con discapacidad", 
       "vigencia": 1,
-       
       "valor": 1080.0, 
       "valor_max": 2800.0
     }
@@ -6579,7 +6195,6 @@
       "remuneracion": 7, 
       "concepto": "Hijo con discapacidad", 
       "vigencia": 1,
-       
       "valor": 810.0, 
       "valor_max": 4000.0
     }
@@ -6592,7 +6207,6 @@
       "remuneracion": 7, 
       "concepto": "Hijo con discapacidad", 
       "vigencia": 1,
-       
       "valor": 540.0, 
       "valor_max": 0.0
     }
@@ -6605,7 +6219,6 @@
       "remuneracion": 7, 
       "concepto": "Matrimonio", 
       "vigencia": 1,
-       
       "valor": 900.0, 
       "valor_max": 5200.0
     }
@@ -6618,7 +6231,6 @@
       "remuneracion": 7, 
       "concepto": "Nacimiento", 
       "vigencia": 1,
-       
       "valor": 600.0, 
       "valor_max": 5200.0
     }
@@ -6631,7 +6243,6 @@
       "remuneracion": 7, 
       "concepto": "Prenatal", 
       "vigencia": 1,
-       
       "valor": 270.0, 
       "valor_max": 2800.0
     }
@@ -6644,7 +6255,6 @@
       "remuneracion": 7, 
       "concepto": "Prenatal", 
       "vigencia": 1,
-       
       "valor": 204.0, 
       "valor_max": 4000.0
     }
@@ -6657,7 +6267,6 @@
       "remuneracion": 7, 
       "concepto": "Prenatal", 
       "vigencia": 1,
-       
       "valor": 136.0, 
       "valor_max": 5200.0
     }
@@ -9178,7 +8787,6 @@
       "por_suegro_yerno_nuera": 5400.0, 
       "por_descendiente": 5400.0, 
       "vigencia": 1,
-       
       "por_conyuge": 14400.0, 
       "ganancia_no_imponible": 12960.0
     }
@@ -9190,7 +8798,6 @@
       "sobre_exedente_de": 0.0, 
       "vigencia": 1,
       "ganancia_neta_min": 0.0, 
-       
       "impuesto_fijo": 0.0, 
       "ganancia_neta_max": 10000.0, 
       "impuesto_porcentual": 9.0
@@ -9203,7 +8810,6 @@
       "sobre_exedente_de": 10000.0, 
       "vigencia": 1,
       "ganancia_neta_min": 10000.0, 
-       
       "impuesto_fijo": 900.0, 
       "ganancia_neta_max": 20000.0, 
       "impuesto_porcentual": 14.0
@@ -9216,7 +8822,6 @@
       "sobre_exedente_de": 20000.0, 
       "vigencia": 1,
       "ganancia_neta_min": 20000.0, 
-       
       "impuesto_fijo": 2300.0, 
       "ganancia_neta_max": 30000.0, 
       "impuesto_porcentual": 19.0
@@ -9229,7 +8834,6 @@
       "sobre_exedente_de": 30000.0, 
       "vigencia": 1,
       "ganancia_neta_min": 30000.0, 
-       
       "impuesto_fijo": 4200.0, 
       "ganancia_neta_max": 60000.0, 
       "impuesto_porcentual": 23.0
@@ -9242,7 +8846,6 @@
       "sobre_exedente_de": 60000.0, 
       "vigencia": 1,
       "ganancia_neta_min": 60000.0, 
-       
       "impuesto_fijo": 11100.0, 
       "ganancia_neta_max": 90000.0, 
       "impuesto_porcentual": 27.0
@@ -9255,7 +8858,6 @@
       "sobre_exedente_de": 90000.0, 
       "vigencia": 1,
       "ganancia_neta_min": 90000.0, 
-       
       "impuesto_fijo": 19200.0, 
       "ganancia_neta_max": 120000.0, 
       "impuesto_porcentual": 31.0
@@ -9268,7 +8870,6 @@
       "sobre_exedente_de": 120000.0, 
       "vigencia": 1,
       "ganancia_neta_min": 120000.0, 
-       
       "impuesto_fijo": 28500.0, 
       "ganancia_neta_max": 99999999.0, 
       "impuesto_porcentual": 35.0

@@ -29,7 +29,7 @@ admin.site.register(SalarioBasico)
 admin.site.register(DenominacionCargo)
 admin.site.register(CargoUniversitario)
 admin.site.register(CargoPreUniversitario)
-
+#admin.site.register(Cargo)
 admin.site.register(Periodo)
 
 admin.site.register(GarantiaSalarialUniversitaria)

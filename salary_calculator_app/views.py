@@ -30,6 +30,8 @@ from django.forms.formsets import formset_factory
 from forms import *
 from models import *
 
+import datetime
+
 # Debugger
 import pdb
 
@@ -149,7 +151,7 @@ def calculate(request):
             context['total_ret'] = total_ret
             context['total_bruto'] = total_bruto
             context['total_neto'] = total_neto
-            context['fecha'] = commonform.cleaned_data['fecha']
+            context['fecha'] = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
 
             context['lista_res'] = list()
             if context_univ.has_key('lista_res'):
@@ -253,7 +255,7 @@ def processAFamiliaresFormSet(context, afamiliaresformset, afamiliaresformespeci
 
         # De todas las anteriores tomo la de fecha vigente.
         if afamiliares:
-            afamiliar = afamiliares.order_by('vigencia.hasta')[afamiliares.count()-1]
+            afamiliar = afamiliares.order_by('vigencia__hasta')[afamiliares.count()-1]
             afamiliares_list.append(afamiliar)
             total += afamiliar.valor
 
@@ -288,7 +290,7 @@ def processDetailsForm(context, detailsform):
         if not fs_objs.exists():
             result["error_msg"] = "No hay información sobre Fondo solidario para personas mayores de 55 años."
         else:
-            fs_obj = fs_objs.order_by('vigencia.hasta')[fs_objs.count()-1]
+            fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
             importe = fs_obj.valor * fs_mayores
             result['fs_mayores'] = ('retencion_fija_persona',fs_obj,importe)
 
@@ -313,7 +315,7 @@ def processDetailsForm(context, detailsform):
         if not fs_objs.exists():
             result["error_msg"] = "No hay información sobre Fondo solidario"
         else:
-            fs_obj = fs_objs.order_by('vigencia.hasta')[fs_objs.count()-1]
+            fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
             importe = fs_obj.valor
             result['fs_menores'] = ('retencion_fija_persona',fs_obj,importe)
 
@@ -326,7 +328,7 @@ def processDetailsForm(context, detailsform):
         if not sis_objs.exists():
             result["error_msg"] = "No existe informacion sobre Seguro Integral de Sepelio."
         else:
-            sis_obj = sis_objs.order_by('vigencia.hasta')[sis_objs.count()-1]
+            sis_obj = sis_objs.order_by('vigencia__hasta')[sis_objs.count()-1]
             result['sis'] = ('retencion_fija_persona',sis_obj,sis_obj.valor)
 
     if sf:    
@@ -338,7 +340,7 @@ def processDetailsForm(context, detailsform):
         if not sf_objs.exists():
             result["error_msg"] = "No existe informacion sobre Subsidio por Fallecimiento."
         else:
-            sf_obj = sf_objs.order_by('vigencia.hasta')[sf_objs.count()-1]
+            sf_obj = sf_objs.order_by('vigencia__hasta')[sf_objs.count()-1]
             result['sf'] = ('retencion_fija_persona',sf_obj,sf_obj.valor)
 
     return result
@@ -355,7 +357,7 @@ def calculateDASPU(fecha,total_bruto):
         vigencia__hasta__gte=fecha
         )
     if rets_porc_daspu.exists():
-        r = rets_porc_daspu.order_by('vigencia.hasta')[rets_porc_daspu.count()-1]
+        r = rets_porc_daspu.order_by('vigencia__hasta')[rets_porc_daspu.count()-1]
 
         daspu_objs = RetencionDaspu.objects.filter(
             retencion=r,
@@ -376,7 +378,7 @@ def calculateDASPU(fecha,total_bruto):
             if not basicos.exists():
                 context['error_msg']='No se encuentra información la salarial requerida para el cálculo.'
             else:
-                basico = basicos.order_by('vigencia.hasta')[basicos.count()-1]
+                basico = basicos.order_by('vigencia__hasta')[basicos.count()-1]
                 basico = basico.valor
                 daspu_importe += total_bruto * p / 100.0
                 tope_min = basico * p_min / 100.0
@@ -492,7 +494,7 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
             vigencia__hasta__gte=fecha
         )
         if deducciones_objs.exists():
-            deducciones_obj = deducciones_objs.order_by('vigencia.hasta')[deducciones_objs.count()-1]
+            deducciones_obj = deducciones_objs.order_by('vigencia__hasta')[deducciones_objs.count()-1]
             deducciones_especiales += deducciones_obj.ganancia_no_imponible
             if estado_civil == 2 and conyuge == 1:
                 deducciones_especiales += deducciones_obj.por_conyuge
@@ -510,7 +512,7 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
             vigencia__hasta__gte=fecha
         )
         if ganancias_tablas.exists():
-            ganancias_tabla = ganancias_tablas.order_by('vigencia.hasta')[ganancias_tablas.count()-1]
+            ganancias_tabla = ganancias_tablas.order_by('vigencia__hasta')[ganancias_tablas.count()-1]
             importe_ganancias = ganancias_tabla.impuesto_fijo + (ganancia_neta - ganancias_tabla.sobre_exedente_de) * (ganancias_tabla.impuesto_porcentual / 100)
 
         ganancias_retencion_objs = Retencion.objects.filter(codigo='42/0')
@@ -610,7 +612,8 @@ def processUnivFormSet(commonform, univformset):
     """Procesa un formset con formularios de cargos universitarios. Retorna un context"""
 
     antiguedad = commonform.cleaned_data['antiguedad']
-    fecha = commonform.cleaned_data['fecha']
+    #fecha = commonform.cleaned_data['fecha']
+    fecha = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
     has_doctorado = commonform.cleaned_data['doctorado']
     has_master = commonform.cleaned_data['master']
     #afiliacion adiuc:
@@ -646,7 +649,7 @@ def processUnivFormSet(commonform, univformset):
         para los datos ingresados. Por favor intente con otros datos.'
         return context
     else:
-        antiguedad = antiguedades.order_by('vigencia.hasta')[antiguedades.count()-1]
+        antiguedad = antiguedades.order_by('vigencia__hasta')[antiguedades.count()-1]
         for ant in antiguedades:
             rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo = ant.remuneracion.codigo)
 
@@ -666,7 +669,7 @@ def processUnivFormSet(commonform, univformset):
             para los datos ingresados. Por favor intente con otros datos.'
             return context
         else:
-            basico = basicos.order_by('vigencia.hasta')[basicos.count()-1]
+            basico = basicos.order_by('vigencia__hasta')[basicos.count()-1]
             for bas in basicos:
                 rem_fijas = rem_fijas.exclude(remuneracion__codigo = bas.remuneracion.codigo)
         antiguedad_importe = basico.valor * antiguedad.porcentaje / 100.0
@@ -728,7 +731,7 @@ def processUnivFormSet(commonform, univformset):
 
         if garantias_salariales.exists():
 
-            garantia_obj = garantias_salariales.order_by('vigencia.hasta')[garantias_salariales.count()-1]
+            garantia_obj = garantias_salariales.order_by('vigencia__hasta')[garantias_salariales.count()-1]
             valor_minimo = garantia_obj.valor_minimo
 
             if salario_neto < valor_minimo:
@@ -799,7 +802,8 @@ def processPreUnivFormSet(commonform, preunivformset):
     Retorna un context."""
 
     antiguedad = commonform.cleaned_data['antiguedad']
-    fecha = commonform.cleaned_data['fecha']
+    #fecha = commonform.cleaned_data['fecha']
+    fecha = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
     has_doctorado = commonform.cleaned_data['doctorado']
     has_master = commonform.cleaned_data['master']
     es_afiliado = commonform.cleaned_data['afiliado']
@@ -834,7 +838,7 @@ def processPreUnivFormSet(commonform, preunivformset):
         context['error_msg'] = u'No existe información de Antigüedad para los datos ingresados. Por favor introduzca otros datos.'
         return context
     else:
-        antiguedad = antiguedades.order_by('vigencia.hasta')[antiguedades.count()-1]
+        antiguedad = antiguedades.order_by('vigencia__hasta')[antiguedades.count()-1]
         for ant in antiguedades:
             rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo = ant.remuneracion.codigo)
 
@@ -857,7 +861,7 @@ def processPreUnivFormSet(commonform, preunivformset):
             context['error_msg'] = u'No existe información de Salarios Básicos para los datos ingresados. Por favor introduzca otros datos.'
             return context
         else:
-            basico = basicos.order_by('vigencia.hasta')[basicos.count()-1]
+            basico = basicos.order_by('vigencia__hasta')[basicos.count()-1]
             for bas in basicos:
                 rem_fijas = rem_fijas.exclude(remuneracion__codigo = bas.remuneracion.codigo)
 
@@ -939,7 +943,7 @@ def processPreUnivFormSet(commonform, preunivformset):
 
         if garantias_salariales.exists():
 
-            garantia_obj = garantia_salarial_objs.order_by('vigencia.hasta')[garantia_salarial_objs.count()-1]
+            garantia_obj = garantia_salarial_objs.order_by('vigencia__hasta')[garantia_salarial_objs.count()-1]
             valor_minimo = garantia_obj.valor_minimo
 
             if salario_neto < valor_minimo:

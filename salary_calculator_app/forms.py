@@ -104,10 +104,19 @@ class CommonForm(forms.Form):
     """Formulario para el cálculo de salario docente. Contiene todos los valores
     que dependen de la persona y no de cada cargo por separado."""
 
-    fecha = forms.DateField(
-        label=u'Periodo a calcular',
+    mes = forms.ChoiceField(
+        label=u'Mes',
         #initial=str(datetime.date.today().month) + "/" + str(datetime.date.today().year),
-        widget = forms.DateInput(),
+        choices=[(i, unicode(i)) for i in range(1,13)],
+        widget = forms.Select(),
+        help_text=u'Seleccione una fecha para hacer el cálculo del salario.'
+    )
+
+    anio = forms.ChoiceField(
+        label=u'Año',
+        choices=[(i, unicode(i)) for i in range(2012,datetime.datetime.now().year+1)],
+        #initial=str(datetime.date.today().month) + "/" + str(datetime.date.today().year),
+        widget = forms.Select(),
         help_text=u'Seleccione una fecha para hacer el cálculo del salario.'
     )
 

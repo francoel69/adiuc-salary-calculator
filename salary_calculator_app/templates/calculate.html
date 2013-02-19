@@ -55,8 +55,11 @@
                     <legend>General</legend>
                     <table class="common_form">
                         <tr>
-                            <td> {{ commonform.fecha.label_tag }}: </td>
-                            <td> {{ commonform.fecha }} </td>
+                            <td>Per&iacute;odo a calcular:</td>
+                            <td> {{ commonform.mes.label_tag }}: </td>
+                            <td> {{ commonform.mes }} </td>
+                            <td> {{ commonform.anio.label_tag }}: </td>
+                            <td> {{ commonform.anio }} </td>
                         </tr>
 			            {% if commonform.fecha.errors %}
                         <tr class="error">
@@ -381,7 +384,7 @@
 
 
             <!-- SUBMIT BUTTON -->
-            <input id="calculate" type="submit" onclick="corregirFecha();" value="Calcular" style="display:none"/>
+            <input id="calculate" type="submit" value="Calcular" style="display:none"/>
             <!-- FIN SUBMIT BUTTON -->
 
 
