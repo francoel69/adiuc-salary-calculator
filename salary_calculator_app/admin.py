@@ -25,7 +25,8 @@
 from salary_calculator_app.models import *
 from django.contrib import admin
 
-admin.site.register(SalarioBasico)
+admin.site.register(SalarioBasicoUniv)
+admin.site.register(SalarioBasicoPreUniv)
 admin.site.register(DenominacionCargo)
 admin.site.register(CargoUniversitario)
 admin.site.register(CargoPreUniversitario)
@@ -38,7 +39,6 @@ admin.site.register(GarantiaSalarialPreUniversitaria)
 admin.site.register(AntiguedadUniversitaria)
 admin.site.register(AntiguedadPreUniversitaria)
 
-
 admin.site.register(Retencion)
 admin.site.register(Remuneracion)
 admin.site.register(RetencionPorcentual)
@@ -46,6 +46,7 @@ admin.site.register(RetencionFija)
 admin.site.register(RemuneracionPorcentual)
 admin.site.register(RemuneracionFija)
 admin.site.register(RemuneracionFijaCargo)
+admin.site.register(RemuneracionNomenclador)
 
 admin.site.register(AsignacionFamiliar)
 admin.site.register(FondoSolidario)

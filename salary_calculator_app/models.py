@@ -136,7 +136,7 @@ class CargoUniversitario(Cargo):
         ordering = ['pampa']
 
     def __unicode__(self):
-        return super(CargoUniversitario, self).__unicode__() + " - " + self.dedicacion
+        return super(CargoUniversitario, self).__unicode__() + " " + self.dedicacion
 
 
 class CargoPreUniversitario(Cargo):
@@ -304,7 +304,10 @@ class RemuneracionPorcentual(models.Model):
         help_text=u'El porcentaje del aumento. Ingresar un valor positivo.')
     vigencia = models.ForeignKey('Periodo',
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
-
+    sobre_referencia= models.BooleanField(u'Sobre salario de referencia?',
+        help_text=u'La remuneración se calcula sobre el salario de referencia (caso aumentos de paritaria p.ej 30/8)?')
+    nomenclador= models.BooleanField(u'Usa nomenclador?',
+        help_text=u'A la remuneración hay que agregarle el porcentaje de nomenclador?')
     class Meta:
         ordering = ['remuneracion', 'porcentaje']
 
@@ -327,6 +330,18 @@ class RemuneracionFija(models.Model):
 
     def __unicode__(self):
         return u"$" + unicode(self.valor) + " - " + unicode(self.remuneracion)
+
+class RemuneracionFijaCargo(RemuneracionFija):
+    """ Una remuneración fija inherente a un cargo en particular."""
+
+    cargo = models.ForeignKey('Cargo',
+        help_text=u'Remuneración fija inherente a un cargo en particular.')
+
+class RemuneracionNomenclador(RemuneracionPorcentual):
+    """ Una remuneración porcentual nomenclador inherente a un cargo en particular."""
+
+    cargo = models.ForeignKey('Cargo',
+        help_text=u'Remuneración porcentual inherente a un cargo en particular.')
 
 #class ConceptoAsigFamiliar(models.Model):
 #    concepto = models.CharField(u'Concepto de asignación', max_length='50', help_text=u'Concepto de asignación familiar.')
@@ -351,13 +366,13 @@ class RemuneracionFija(models.Model):
 #    def __unicode__(self):
 #       return unicode(self.valor_min) + u" - " + unicode(self.valor_max)
 
-class RemuneracionFijaCargo(RemuneracionFija):
-    """Es una remuneracion fija que se relaciona con un cargo en particular"""
+#class RemuneracionFijaCargo(RemuneracionFija):
+    #"""Es una remuneracion fija que se relaciona con un cargo en particular"""
     
-    cargo = models.ForeignKey('Cargo')
+    #cargo = models.ForeignKey('Cargo')
 
-    def __unicode__(self):
-        return super(RemuneracionFijaCargo, self).__unicode__() + " -> " + unicode(self.cargo)
+    #def __unicode__(self):
+        #return super(RemuneracionFijaCargo, self).__unicode__() + " -> " + unicode(self.cargo)
 
 
 class AsignacionFamiliar(models.Model):
@@ -395,12 +410,15 @@ class AsignacionFamiliar(models.Model):
         return unicode(self.concepto) + u" - [ " + unicode(self.valor_min) +u" / " + unicode(self.valor_max) + u" ]"
 
 
-class SalarioBasico(RemuneracionFija):
+class SalarioBasicoUniv(RemuneracionFija):
     """Representavalor_min = models.FloatField(u'Valor mínimo:',help_text=u'Valor mínimo de categoría.')
     valor_max = models.FloatField(u'Valor máximo:', help_text=u'Valor máximo de categoría.') un valor de un salario basico relacionado a un cargo."""
 
-    cargo = models.ForeignKey('Cargo',
+    cargo = models.ForeignKey('CargoUniversitario',
         help_text=u'El cargo docente sobre el que se aplica este salario.')
+
+    salario_referencia = models.FloatField(u'Salario Básico de referencia', validators=[validate_isgezero],
+             help_text=u'Salario de referencia sobre el cual se calculan los porcentajes de aumento de paritaria.')
 
     class Meta:
         ordering = ['cargo', 'valor']
@@ -408,6 +426,17 @@ class SalarioBasico(RemuneracionFija):
     def __unicode__(self):
         return unicode(self.cargo) + u" - $" + unicode(self.valor) + u" - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
+
+class SalarioBasicoPreUniv(RemuneracionFija):
+    
+    cargo = models.ForeignKey('CargoPreUniversitario',
+        help_text=u'El cargo docente sobre el que se aplica este salario.')
+
+    class Meta:
+        ordering = ['cargo', 'valor']
+
+    def __unicode__(self):
+        return unicode(self.cargo) + u" - $" + unicode(self.valor) + u" - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
 class AntiguedadUniversitaria(RemuneracionPorcentual):
     """Una entrada de la tabla de escala de antiguedad para los docentes Universitarios"""
