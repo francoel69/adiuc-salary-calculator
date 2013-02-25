@@ -178,15 +178,21 @@
 
                     <tr class="bold">
                         <td></td>
-                        <td> Adicionales: </td>
-                        <td class="adicionales"> {{ res.acum_rem|floatformat:-2 }} </td>
+                        <td> Remunerativo: </td>
+                        <td class="adicionales"> {{ res.remunerativo|floatformat:-2 }} </td>
+                        <td></td>
+                    </tr>
+                    <tr class="bold">
+                        <td></td>
+                        <td> No Remunerativo: </td>
+                        <td class="adicionales"> {{ res.no_remunerativo|floatformat:-2 }} </td>
                         <td></td>
                     </tr>
                     <tr class="bold">
                         <td></td>
                         <td> Descuentos: </td>
                         <td></td>
-                        <td class="descuentos"> {{ res.acum_ret|floatformat:-2 }} </td>
+                        <td class="descuentos"> {{ res.descuentos|floatformat:-2 }} </td>
                     </tr>
                     <tr class="bold">
                         <td></td>

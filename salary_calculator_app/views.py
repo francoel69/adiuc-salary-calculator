@@ -157,8 +157,10 @@ def calculate(request):
             context['lista_res'] = list()
             if context_univ.has_key('lista_res'):
                 context['lista_res'].extend(context_univ['lista_res'])
+                nro_forms_univ = len(context_univ['lista_res'])
             if context_preuniv.has_key('lista_res'):
                 context['lista_res'].extend(context_preuniv['lista_res'])
+                nro_forms_preuniv = len(context_preuniv['lista_res'])
 
             # Calculo de las remuneraciones y retenciones que son por persona.
             # Esto modifica el contexto.
@@ -174,7 +176,9 @@ def calculate(request):
                 afamiliaresformespecial,
                 detailsform,
                 gananciasform,
-                conf
+                conf,
+                nro_forms_univ,
+                nro_forms_preuniv
                 )
 
             # Renderizo el template con el contexto.
@@ -218,135 +222,139 @@ def calculate(request):
 # Form processing
 ##############################################
 
-#def processAFamiliaresFormSet(context, afamiliaresformset, afamiliaresformespecial, conf):
-    #""" Procesa un formet con formularios de asignaciones familiares.
-        #Retorna una tupla con dos elementos:
-            #* El primero, una lista con todas las asignaciones.
-            #* El segundo, la suma total correspondiente a la primer lista."""
+def processAFamiliaresFormSet(context, afamiliaresformset, afamiliaresformespecial, conf):
+    """ Procesa un formet con formularios de asignaciones familiares.
+        Retorna una tupla con dos elementos:
+            * El primero, una lista con todas las asignaciones.
+            * El segundo, la suma total correspondiente a la primer lista."""
 
-    #fecha = context['fecha']
-    #total_bruto = context['total_bruto']
+    fecha = context['fecha']
+    total_bruto = context['total_bruto']
 
-    #afamiliares_list = list()
-    #total = 0.0
+    afamiliares_list = list()
+    total = 0.0
 
-    #if conf.asig_fam_solo_opc_hijo:
-        #cant_hijos = afamiliaresformespecial.cleaned_data['cant_hijos']
-        #for i in range(cant_hijos):
-            #aform = AFamiliaresForm({'asig_familiar' : u'Hijo'})
-            ## Para que django convierta los datos del form a python data.
-            #aform.is_valid()
-            #afamiliaresformset.forms.append(aform)
+    if conf.asig_fam_solo_opc_hijo:
+        cant_hijos = afamiliaresformespecial.cleaned_data['cant_hijos']
+        for i in range(cant_hijos):
+            aform = AFamiliaresForm({'asig_familiar' : u'Hijo'})
+            # Para que django convierta los datos del form a python data.
+            aform.is_valid()
+            afamiliaresformset.forms.append(aform)
 
-    #for afamiliaresform in afamiliaresformset:
-        ## No analizamos los forms que fueron borrados por el usuario.
-        #if afamiliaresform in afamiliaresformset.deleted_forms:
-            #continue
+    for afamiliaresform in afamiliaresformset:
+        # No analizamos los forms que fueron borrados por el usuario.
+        if afamiliaresform in afamiliaresformset.deleted_forms:
+            continue
 
-        #afamiliar_concepto = afamiliaresform.cleaned_data['asig_familiar']
+        afamiliar_concepto = afamiliaresform.cleaned_data['asig_familiar']
 
-        ## Tomo las asignaciones familiares del mismo concepto, cateogria y fecha adecuada.
-        #afamiliares = AsignacionFamiliar.objects.filter(
-            #concepto = afamiliar_concepto,
-            #valor_min__lte = total_bruto,
-            #valor_max__gte = total_bruto,
-            #vigencia__desde__lte=fecha,
-            #vigencia__hasta__gte=fecha
-        #)
+        # Tomo las asignaciones familiares del mismo concepto, cateogria y fecha adecuada.
+        afamiliares = AsignacionFamiliar.objects.filter(
+            concepto = afamiliar_concepto,
+            valor_min__lte = total_bruto,
+            valor_max__gte = total_bruto,
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
+        )
 
-        ## De todas las anteriores tomo la de fecha vigente.
-        #if afamiliares:
-            #afamiliar = afamiliares.order_by('vigencia__hasta')[afamiliares.count()-1]
-            #afamiliares_list.append(afamiliar)
-            #total += afamiliar.valor
+        # De todas las anteriores tomo la de fecha vigente.
+        if afamiliares:
+            afamiliar = afamiliares.order_by('vigencia__hasta')[afamiliares.count()-1]
+            afamiliares_list.append(afamiliar)
+            total += afamiliar.valor
 
-    #return (afamiliares_list,total)
+    return (afamiliares_list,total)
 
 
-#def processDetailsForm(context, detailsform):
+def processDetailsForm(context, detailsform, ret_fija_persona, acum_ret):
 
-    #fecha = context['fecha']
-    #total_rem = context['total_rem']
-    #total_ret = context['total_ret']
-    #total_bruto = context['total_bruto']
-    #total_neto = context['total_neto']
+    fecha = context['fecha']
     
-    #sis = detailsform.cleaned_data['sis']
-    #sf = detailsform.cleaned_data['subsidio_fallecimiento']
-    #fs_mayores = detailsform.cleaned_data['fondo_solidario_mayores']
-    #fs_menores = detailsform.cleaned_data['fondo_solidario_menores']
+    sis = detailsform.cleaned_data['sis']
+    sf = detailsform.cleaned_data['subsidio_fallecimiento']
+    fs_mayores = detailsform.cleaned_data['fondo_solidario_mayores']
+    fs_menores = detailsform.cleaned_data['fondo_solidario_menores']
     
     #result = {}
-  
-    ##en principio estos datos son retenciones por persona
-    ##los datos se guardan indicando esa categoria para luego ser procesados en..  (ej: l656+ ) 
 
-    #if fs_mayores > 0.0:
-        #fs_objs= FondoSolidario.objects.filter(
-            #retencion__codigo=fs_code,
-            #vigencia__desde__lte=fecha,
-            #vigencia__hasta__gte=fecha,
-            #concepto='Fondo solidario para una persona (mayor a 55 años)'
-            #)
-        #if not fs_objs.exists():
-            #result["error_msg"] = "No hay información sobre Fondo solidario para personas mayores de 55 años."
-        #else:
-            #fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
-            #importe = fs_obj.valor * fs_mayores
+    #en principio estos datos son retenciones por persona
+    #los datos se guardan indicando esa categoria para luego ser procesados en..  (ej: l656+ ) 
+
+    if fs_mayores > 0.0:
+        fs_objs= FondoSolidario.objects.filter(
+            retencion__codigo=fs_code,
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha,
+            concepto='Fondo solidario para una persona (mayor a 55 años)'
+            )
+        if not fs_objs.exists():
+            result["error_msg"] = "No hay información sobre Fondo solidario para personas mayores de 55 años."
+        else:
+            fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
+            importe = fs_obj.valor * fs_mayores
             #result['fs_mayores'] = ('retencion_fija_persona',fs_obj,importe)
+            acum_ret += importe
+            ret_fija_persona.append((fs_obj, importe))
 
-    #if fs_menores>0.0:
-        #if fs_menores == 1:
-            #query='Fondo solidario para una persona (menor a 55 años)'
-        #elif fs_menores == 2:
-            #query='Fondo solidario para dos personas (menor a 55 años)'
-        #elif fs_menores == 3:
-            #query='Fondo solidario para tres personas (menor a 55 años)'
-        #elif fs_menores ==4:
-            #query='Fondo solidario para cuatro personas (menor a 55 años)'
-        #else:
-            #query='Fondo solidario para cinco personas o más (menor a 55 años)'
+    if fs_menores>0.0:
+        if fs_menores == 1:
+            query='Fondo solidario para una persona (menor a 55 años)'
+        elif fs_menores == 2:
+            query='Fondo solidario para dos personas (menor a 55 años)'
+        elif fs_menores == 3:
+            query='Fondo solidario para tres personas (menor a 55 años)'
+        elif fs_menores ==4:
+            query='Fondo solidario para cuatro personas (menor a 55 años)'
+        else:
+            query='Fondo solidario para cinco personas o más (menor a 55 años)'
             
-        #fs_objs= FondoSolidario.objects.filter(
-            #retencion__codigo=fs_code,
-                #vigencia__desde__lte=fecha,
-                #vigencia__hasta__gte=fecha,
-                #concepto=query
-            #)
-        #if not fs_objs.exists():
-            #result["error_msg"] = "No hay información sobre Fondo solidario"
-        #else:
-            #fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
-            #importe = fs_obj.valor
+        fs_objs= FondoSolidario.objects.filter(
+            retencion__codigo=fs_code,
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha,
+                concepto=query
+            )
+        if not fs_objs.exists():
+            result["error_msg"] = "No hay información sobre Fondo solidario"
+        else:
+            fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
+            importe = fs_obj.valor
             #result['fs_menores'] = ('retencion_fija_persona',fs_obj,importe)
+            acum_ret += importe
+            ret_fija_persona.append((fs_obj, importe))
 
-    #if sis:    
-        #sis_objs= RetencionFija.objects.filter(
-                #retencion__codigo=sis_code,
-                #vigencia__desde__lte=fecha,
-                #vigencia__hasta__gte=fecha
-            #)
-        #if not sis_objs.exists():
-            #result["error_msg"] = "No existe informacion sobre Seguro Integral de Sepelio."
-        #else:
-            #sis_obj = sis_objs.order_by('vigencia__hasta')[sis_objs.count()-1]
+    if sis:    
+        sis_objs= RetencionFija.objects.filter(
+                retencion__codigo=sis_code,
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha
+            )
+        if not sis_objs.exists():
+            result["error_msg"] = "No existe informacion sobre Seguro Integral de Sepelio."
+        else:
+            sis_obj = sis_objs.order_by('vigencia__hasta')[sis_objs.count()-1]
             #result['sis'] = ('retencion_fija_persona',sis_obj,sis_obj.valor)
+            acum_ret += sis_obj.valor
+            ret_fija_persona.append((sis_obj, sis_obj.valor))
 
-    #if sf:    
-        #sf_objs= RetencionFija.objects.filter(
-                #retencion__codigo=subsidio_fallecimiento_code,
-                #vigencia__desde__lte=fecha,
-                #vigencia__hasta__gte=fecha
-            #)
-        #if not sf_objs.exists():
-            #result["error_msg"] = "No existe informacion sobre Subsidio por Fallecimiento."
-        #else:
-            #sf_obj = sf_objs.order_by('vigencia__hasta')[sf_objs.count()-1]
+    if sf:    
+        sf_objs= RetencionFija.objects.filter(
+                retencion__codigo=subsidio_fallecimiento_code,
+                vigencia__desde__lte=fecha,
+                vigencia__hasta__gte=fecha
+            )
+        if not sf_objs.exists():
+            result["error_msg"] = "No existe informacion sobre Subsidio por Fallecimiento."
+        else:
+            sf_obj = sf_objs.order_by('vigencia__hasta')[sf_objs.count()-1]
             #result['sf'] = ('retencion_fija_persona',sf_obj,sf_obj.valor)
+            acum_ret += sf_obj.valor
+            ret_fija_persona.append((sf_obj, sf_obj.valor))
 
-    #return result
+    return ret_fija_persona, acum_ret
 
-def calculateDASPU(fecha,total_bruto):
+def calculateDASPU(fecha,remunerativo):
     
     daspu_context={}
     daspu_importe = 0.0
@@ -367,8 +375,8 @@ def calculateDASPU(fecha,total_bruto):
             context["error_msg"] = "No existe informacion sobre afiliaciones para DASPU.\n"
         else:
             daspu_obj = daspu_objs[daspu_objs.count()-1]
-            p = daspu_obj.retencion.porcentaje
-            p_min = daspu_obj.porcentaje_minimo
+            p = daspu_obj.retencion.porcentaje # 3%
+            p_min = daspu_obj.porcentaje_minimo # 8%
 
             # Corroborar si no cubre el minimo de del cargo ayudante D.S.E. sin antiguedad.
             basicos = SalarioBasicoUniv.objects.filter(
@@ -377,11 +385,11 @@ def calculateDASPU(fecha,total_bruto):
                 vigencia__hasta__gte=fecha
                 )
             if not basicos.exists():
-                context['error_msg']='No se encuentra información la salarial requerida para el cálculo.'
+                context['error_msg']='No se encuentra la información salarial requerida para el cálculo.'
             else:
                 basico = basicos.order_by('vigencia__hasta')[basicos.count()-1]
                 basico = basico.valor
-                daspu_importe += total_bruto * p / 100.0
+                daspu_importe += remunerativo * p / 100.0
                 tope_min = basico * p_min / 100.0
             
                 daspu_context['daspu_importe'] = daspu_importe                
@@ -397,33 +405,39 @@ def calculateDASPU(fecha,total_bruto):
     return daspu_context
 
 def calculateRemRetPorPersona(context, es_afiliado, afiliacion_daspu, calcular_ganancias,
-afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
+afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf,
+nro_forms_univ, nro_forms_preuniv):
 
     fecha = context['fecha']
     total_rem = context['total_rem']
     total_no_rem = context['total_no_rem']
     total_ret = context['total_ret']
     total_neto = context['total_neto']
+    ret_fp, ret_pp, rem_fp, rem_pp = dict(), dict(), dict(), dict()
+    
+    if nro_forms_univ > 0:
+        # Retenciones / Remuneraciones que son por persona para cargos Universitarios.
+        pers_univ = get_retenciones_remuneraciones('U', 'P', fecha)
+        ret_fp = pers_univ['ret_fijas']
+        ret_pp = pers_univ['ret_porcentuales']
+        rem_fp = pers_univ['rem_fijas']
+        rem_pp = pers_univ['rem_porcentuales']
 
-    # Retenciones / Remuneraciones que son por persona para cargos Universitarios.
-    ret_rem_persona = get_retenciones_remuneraciones('U', 'P', fecha)
-    ret_fijas_persona_univ = ret_rem_persona['ret_fijas']
-    ret_porc_persona_univ = ret_rem_persona['ret_porcentuales']
-    rem_fijas_persona_univ = ret_rem_persona['rem_fijas']
-    rem_porc_persona_univ = ret_rem_persona['rem_porcentuales']
+    if nro_forms_preuniv > 0:
+        # Retenciones / Remuneraciones que son por persona para cargos Preuniversitarios.
+        pers_preuniv = get_retenciones_remuneraciones('P', 'P', fecha)
+        ret_fp = ret_fp | pers_preuniv['ret_fijas']
+        ret_pp = ret_pp | pers_preuniv['ret_porcentuales']
+        rem_fp = rem_fp | pers_preuniv['rem_fijas']
+        rem_pp = rem_pp | pers_preuniv['rem_porcentuales']
 
-    # Retenciones / Remuneraciones que son por persona para cargos Preuniversitarios.
-    ret_rem_persona = get_retenciones_remuneraciones('P', 'P', fecha)
-    ret_fijas_persona_preuniv = ret_rem_persona['ret_fijas']
-    ret_porc_persona_preuniv = ret_rem_persona['ret_porcentuales']
-    rem_fijas_persona_preuniv = ret_rem_persona['rem_fijas']
-    rem_porc_persona_preuniv = ret_rem_persona['rem_porcentuales']
 
-    # Quito los duplicados, si hay, entre univ y preuniv para las ret/rem por persona
-    ret_fp = ret_fijas_persona_univ | ret_fijas_persona_preuniv
-    ret_pp  = ret_porc_persona_univ | ret_porc_persona_preuniv
-    rem_fp = rem_fijas_persona_univ | rem_fijas_persona_preuniv
-    rem_pp  = rem_porc_persona_univ | rem_porc_persona_preuniv
+    # Retenciones / Remuneraciones que son por persona para todos los cargos.
+    pers_all = get_retenciones_remuneraciones('T', 'P', fecha)
+    ret_fp = ret_fp | pers_all['ret_fijas']
+    ret_pp = ret_pp | pers_all['ret_porcentuales']
+    rem_fp = rem_fp | pers_all['rem_fijas']
+    rem_pp = rem_pp | pers_all['rem_porcentuales']
 
     # Calculo las retenciones/remuneraciones que son por persona.
     acum_ret = 0.0
@@ -439,9 +453,13 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
     #afamiliares_list, total_afamiliares = processAFamiliaresFormSet(context, afamiliaresformset, afamiliaresformespecial, conf)
 
     #acum_rem += total_afamiliares
-    
+
+    # Saco las DAS de ret_fp y proceso el formulario de daspu.
+    ret_fp = ret_fp.exclude(retencion__codigo__startswith='DAS')
+    ret_fijas_persona, acum_ret = processDetailsForm(context, detailsform, ret_fijas_persona, acum_ret)
+
     for ret in ret_pp:
-        importe = (total_bruto * ret.porcentaje / 100.0)
+        importe = (total_rem * ret.porcentaje / 100.0)
         acum_ret += importe
         ret_porc_persona.append( (ret, importe) )
 
@@ -450,7 +468,7 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
         ret_fijas_persona.append( (ret, ret.valor) )
 
     for rem in rem_pp:
-        importe = (total_bruto * ret.porcentaje / 100.0)
+        importe = (total_rem * ret.porcentaje / 100.0)
         acum_rem += importe
         rem_porc_persona.append( (rem, importe) )
 
@@ -462,65 +480,65 @@ afamiliaresformset, afamiliaresformespecial, detailsform, gananciasform, conf):
 
 
     #### Calculo del impuesto a las ganancias
-    #if calcular_ganancias:
+    if calcular_ganancias:
 
-        #importe_ganancias = -1
-        #remuneracion_bruta = total_bruto*13 # El total bruto anual + el aguinaldo
+        importe_ganancias = -1
+        remuneracion_bruta = total_bruto*13 # El total bruto anual + el aguinaldo
 
-        ### Deducciones generales.
-        ## Busco la jubilacion, obra social, ley 19.032 y cuota sindical (adiuc)
-        #deducciones_generales = 0.0
-        #cant_cargos = len(context['lista_res'])
-        #for ret, importe in ret_porc_persona:
-            #if ret.retencion.codigo == u'64/0':
-                #deducciones_generales += importe
-        #for form_res in context['lista_res']:
-            #for ret, importe in form_res['retenciones']:
-                #if ret.retencion.codigo == u'22/0' or ret.retencion.codigo == u'21/0' or ret.retencion.codigo == u'20/9':
-                    #deducciones_generales += importe
-        #deducciones_generales *= 12 # el total anual.
+        ## Deducciones generales.
+        # Busco la jubilacion, obra social, ley 19.032 y cuota sindical (adiuc)
+        deducciones_generales = 0.0
+        cant_cargos = len(context['lista_res'])
+        for ret, importe in ret_porc_persona:
+            if ret.retencion.codigo == u'64/0':
+                deducciones_generales += importe
+        for form_res in context['lista_res']:
+            for ret, importe in form_res['retenciones']:
+                if ret.retencion.codigo == u'22/0' or ret.retencion.codigo == u'21/0' or ret.retencion.codigo == u'20/9':
+                    deducciones_generales += importe
+        deducciones_generales *= 12 # el total anual.
 
-        ### Deducciones especiales o tecnicas.
+        ## Deducciones especiales o tecnicas.
 
-        #deducciones_especiales = 0.0
-        #estado_civil = gananciasform.cleaned_data['estado_civil']
-        #conyuge = gananciasform.cleaned_data['conyuge']
-        #nro_hijos_menores_24 = float(gananciasform.cleaned_data['nro_hijos_menores_24'])
-        #nro_descendientes = float(gananciasform.cleaned_data['nro_descendientes'])
-        #nro_ascendientes = float(gananciasform.cleaned_data['nro_ascendientes'])
-        #nro_suegros_yernos_nueras = float(gananciasform.cleaned_data['nro_suegros_yernos_nueras'])
+        deducciones_especiales = 0.0
+        estado_civil = gananciasform.cleaned_data['estado_civil']
+        conyuge = gananciasform.cleaned_data['conyuge']
+        nro_hijos_menores_24 = float(gananciasform.cleaned_data['nro_hijos_menores_24'])
+        nro_descendientes = float(gananciasform.cleaned_data['nro_descendientes'])
+        nro_ascendientes = float(gananciasform.cleaned_data['nro_ascendientes'])
+        nro_suegros_yernos_nueras = float(gananciasform.cleaned_data['nro_suegros_yernos_nueras'])
         
-        #deducciones_objs = ImpuestoGananciasDeducciones.objects.filter(
-            #vigencia__desde__lte=fecha,
-            #vigencia__hasta__gte=fecha
-        #)
-        #if deducciones_objs.exists():
-            #deducciones_obj = deducciones_objs.order_by('vigencia__hasta')[deducciones_objs.count()-1]
-            #deducciones_especiales += deducciones_obj.ganancia_no_imponible
-            #if estado_civil == 2 and conyuge == 1:
-                #deducciones_especiales += deducciones_obj.por_conyuge
-            #deducciones_especiales += deducciones_obj.por_hijo_menor_24_anios * nro_hijos_menores_24
-            #deducciones_especiales += deducciones_obj.por_descendiente * nro_descendientes
-            #deducciones_especiales += deducciones_obj.por_ascendiente * nro_ascendientes
-            #deducciones_especiales += deducciones_obj.por_suegro_yerno_nuera * nro_suegros_yernos_nueras
-            #deducciones_especiales += deducciones_obj.deduccion_especial
+        deducciones_objs = ImpuestoGananciasDeducciones.objects.filter(
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
+        )
+        if deducciones_objs.exists():
+            deducciones_obj = deducciones_objs.order_by('vigencia__hasta')[deducciones_objs.count()-1]
+            deducciones_especiales += deducciones_obj.ganancia_no_imponible
+            if estado_civil == 2 and conyuge == 1:
+                deducciones_especiales += deducciones_obj.por_conyuge
+            deducciones_especiales += deducciones_obj.por_hijo_menor_24_anios * nro_hijos_menores_24
+            deducciones_especiales += deducciones_obj.por_descendiente * nro_descendientes
+            deducciones_especiales += deducciones_obj.por_ascendiente * nro_ascendientes
+            deducciones_especiales += deducciones_obj.por_suegro_yerno_nuera * nro_suegros_yernos_nueras
+            deducciones_especiales += deducciones_obj.deduccion_especial
 
-        #ganancia_neta = remuneracion_bruta - deducciones_generales - deducciones_especiales
-        #ganancias_tablas = ImpuestoGananciasTabla.objects.filter(
-            #ganancia_neta_min__lte = ganancia_neta,
-            #ganancia_neta_max__gte = ganancia_neta,
-            #vigencia__desde__lte=fecha,
-            #vigencia__hasta__gte=fecha
-        #)
-        #if ganancias_tablas.exists():
-            #ganancias_tabla = ganancias_tablas.order_by('vigencia__hasta')[ganancias_tablas.count()-1]
-            #importe_ganancias = ganancias_tabla.impuesto_fijo + (ganancia_neta - ganancias_tabla.sobre_exedente_de) * (ganancias_tabla.impuesto_porcentual / 100)
+        ganancia_neta = remuneracion_bruta - deducciones_generales - deducciones_especiales
+        ganancias_tablas = ImpuestoGananciasTabla.objects.filter(
+            ganancia_neta_min__lte = ganancia_neta,
+            ganancia_neta_max__gte = ganancia_neta,
+            vigencia__desde__lte=fecha,
+            vigencia__hasta__gte=fecha
+        )
+        if ganancias_tablas.exists():
+            ganancias_tabla = ganancias_tablas.order_by('vigencia__hasta')[ganancias_tablas.count()-1]
+            importe_ganancias = ganancias_tabla.impuesto_fijo + (ganancia_neta - ganancias_tabla.sobre_exedente_de) * (ganancias_tabla.impuesto_porcentual / 100)
 
-        #ganancias_retencion_objs = Retencion.objects.filter(codigo='42/0')
-        #if importe_ganancias >= 0 and ganancias_retencion_objs.exists():
-            #new_ret_fija = RetencionFija(retencion=ganancias_retencion_objs[0], valor=importe_ganancias / 12, vigencia__desde=fecha, vigencia__hasta=fecha)
-            #ret_fijas_persona.append( (new_ret_fija, new_ret_fija.valor) )
-            #acum_ret += importe_ganancias / 12
+        ganancias_retencion_objs = Retencion.objects.filter(codigo='42/0')
+        if importe_ganancias >= 0 and ganancias_retencion_objs.exists():
+            new_ret_fija = RetencionFija(retencion=ganancias_retencion_objs[0], valor=importe_ganancias / 12, vigencia__desde=fecha, vigencia__hasta=fecha)
+            ret_fijas_persona.append( (new_ret_fija, new_ret_fija.valor) )
+            acum_ret += importe_ganancias / 12
 
 
 
@@ -754,29 +772,18 @@ def processUnivFormSet(commonform, univformset):
                     rem_list.append( (rem, importe) )
                 rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo = rem.remuneracion.codigo)
         antiguedad_importe = bonificable * antiguedad.porcentaje / 100.0
-        salario_bruto = bonificable + antiguedad_importe
+        #salario_bruto = bonificable + antiguedad_importe
+        remunerativo += antiguedad_importe
 
         ###### El Neto se calcula del bruto restando las retenciones y sumando las remuneraciones.
 
         # Adicional titulo doctorado (cod 51), Adicional titulo maestria (cod 52)
         rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, 'U')
 
-        #daspu se calcula aparte
-        ret_porcentuales = ret_porcentuales.exclude(retencion__codigo = daspu_code)
-        
         if not es_afiliado:
             ret_porcentuales = ret_porcentuales.exclude(retencion__codigo = afiliacion_code)
 
         ## Retenciones / Remuneraciones NO especiales:
-        for ret in ret_porcentuales:
-            importe = remunerativo * ret.porcentaje / 100.
-            descuentos += importe
-            ret_list.append( (ret, importe) )
-
-        for ret in ret_fijas:
-            descuentos += ret.valor
-            ret_list.append( (ret, ret.valor) )
-
         for rem in rem_porcentuales:
             importe = bonificable * rem.porcentaje / 100.
             remunerativo += importe if rem.remuneracion.remunerativo else 0.0
@@ -788,13 +795,22 @@ def processUnivFormSet(commonform, univformset):
             no_remunerativo += rem.valor if not rem.remuneracion.remunerativo else 0.0
             rem_list.append( (rem, rem.valor) )
 
-        # Calculo afiliacion daspu
-        daspu_context = calculateDASPU(fecha,salario_bruto)
-        if daspu_context.has_key('error_msg'):
-            context['error_msg'] = "\n"+daspu_context['error_msg']
+        for ret in ret_porcentuales:
+            importe = remunerativo * ret.porcentaje / 100.
+            descuentos += importe
+            ret_list.append( (ret, importe) )
 
-        daspu_importe = daspu_context['daspu_importe']
-        descuentos += daspu_importe
+        for ret in ret_fijas:
+            descuentos += ret.valor
+            ret_list.append( (ret, ret.valor) )
+
+        # Calculo afiliacion daspu
+        #daspu_context = calculateDASPU(fecha,remunerativo)
+        #if daspu_context.has_key('error_msg'):
+            #context['error_msg'] = "\n"+daspu_context['error_msg']
+
+        #daspu_importe = daspu_context['daspu_importe']
+        #descuentos += daspu_importe
 
         ###### Salario Neto.
         salario_neto = remunerativo + no_remunerativo - descuentos
@@ -849,7 +865,7 @@ def processUnivFormSet(commonform, univformset):
             'antiguedad': antiguedad,
             'antiguedad_importe': antiguedad_importe,
         }
-        form_res.update(daspu_context)
+        #form_res.update(daspu_context)
         lista_res.append(form_res)
 
         # Calculo los acumulados de los salarios para todos los cargos univs.

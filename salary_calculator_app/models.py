@@ -268,7 +268,7 @@ class RetencionDaspu(models.Model):
         help_text='Porcentaje que al aplicarse al salario bruto indicara el tope mínimo para esta retención.')
         
     cargo_referencia = models.OneToOneField(u'CargoUniversitario',
-        help_text='Se tomará como monto mínimo el porcentaje anterior sobre el salario bruto sin antiguedad de este caro.')
+        help_text='Se tomará como monto mínimo el porcentaje anterior sobre el salario bruto sin antiguedad de este cargo.')
 
     def __unicode__(self):
         return u"Retención DASPU: [" + unicode(self.retencion) + u" - " + unicode(self.porcentaje_minimo) + "%"
@@ -396,7 +396,7 @@ class AsignacionFamiliar(models.Model):
         help_text=u'Valor máximo de categoría.')
 
     vigencia = models.ForeignKey('Periodo',
-        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
+        help_text=u'Período de tiempo en el cual esta asignación se encuentra vigente.')
 
     def clean(self):
         from django.core.exceptions import ValidationError
