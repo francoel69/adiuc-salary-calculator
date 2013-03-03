@@ -25,6 +25,12 @@
 from salary_calculator_app.models import *
 from django.contrib import admin
 
+class GarantiaSalarialUniversitariaAdmin(admin.ModelAdmin):
+    filter_horizontal = ('cargo',)
+
+class GarantiaSalarialPreUniversitariaAdmin(admin.ModelAdmin):
+    filter_horizontal = ('cargo',)
+
 admin.site.register(SalarioBasicoUniv)
 admin.site.register(SalarioBasicoPreUniv)
 admin.site.register(DenominacionCargo)
@@ -33,8 +39,8 @@ admin.site.register(CargoPreUniversitario)
 #admin.site.register(Cargo)
 admin.site.register(Periodo)
 
-admin.site.register(GarantiaSalarialUniversitaria)
-admin.site.register(GarantiaSalarialPreUniversitaria)
+admin.site.register(GarantiaSalarialUniversitaria, GarantiaSalarialUniversitariaAdmin)
+admin.site.register(GarantiaSalarialPreUniversitaria, GarantiaSalarialPreUniversitariaAdmin)
 
 admin.site.register(AntiguedadUniversitaria)
 admin.site.register(AntiguedadPreUniversitaria)

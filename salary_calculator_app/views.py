@@ -147,12 +147,13 @@ def calculate(request):
             total_ret = add_values_from_contexts(context_univ, context_preuniv, 'total_ret')
             total_neto = add_values_from_contexts(context_univ, context_preuniv, 'total_neto')
 
+            fecha = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
             # Hago el merge de los dos contexts.
             context['total_rem'] = total_rem
             context['total_no_rem'] = total_no_rem
             context['total_ret'] = total_ret
             context['total_neto'] = total_neto
-            context['fecha'] = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
+            context['fecha'] = fecha
 
             context['lista_res'] = list()
             if context_univ.has_key('lista_res'):
@@ -180,7 +181,8 @@ def calculate(request):
                 nro_forms_univ,
                 nro_forms_preuniv
                 )
-
+            #### Usando el neto, chequeo si hacen falta aplicar garantias salariales.
+            #context = calculateGarantiasSalariales(context, context_univ['codigos_cargo'], context_preuniv['lista_res'], fecha)
             # Renderizo el template con el contexto.
             return render_to_response('salary_calculated.html', context)
 
@@ -222,6 +224,18 @@ def calculate(request):
 # Form processing
 ##############################################
 
+#def calculateGarantiasSalariales(context, codigos_univ, context_preuniv, fecha):
+    #""" Si hay que aplicar garantías salariales se modifica el contexto,
+        #sino queda todo igual."""
+
+    #gar_univ = GarantiaSalarialUniversitaria.objects.filter(vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
+    ##gar_preuniv = GarantiaSalarialPreUniversitaria.objects.filter(vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
+    #if len(codigos_univ) == 1:
+        #codigo = codigos_univ[0]
+        #for gu in gar_univ:
+            #if codigo in map(lambda x: x['pampa'], gu.cargo.values()):
+                # Aplicar la garantía.
+                
 def processAFamiliaresFormSet(context, afamiliaresformset, afamiliaresformespecial, conf):
     """ Procesa un formet con formularios de asignaciones familiares.
         Retorna una tupla con dos elementos:
@@ -413,15 +427,21 @@ nro_forms_univ, nro_forms_preuniv):
     total_no_rem = context['total_no_rem']
     total_ret = context['total_ret']
     total_neto = context['total_neto']
-    ret_fp, ret_pp, rem_fp, rem_pp = dict(), dict(), dict(), dict()
-    
+
+    # Retenciones / Remuneraciones que son por persona para todos los cargos.
+    pers_all = get_retenciones_remuneraciones('T', 'P', fecha)
+    ret_fp = pers_all['ret_fijas']
+    ret_pp = pers_all['ret_porcentuales']
+    rem_fp = pers_all['rem_fijas']
+    rem_pp = pers_all['rem_porcentuales']
+
     if nro_forms_univ > 0:
         # Retenciones / Remuneraciones que son por persona para cargos Universitarios.
         pers_univ = get_retenciones_remuneraciones('U', 'P', fecha)
-        ret_fp = pers_univ['ret_fijas']
-        ret_pp = pers_univ['ret_porcentuales']
-        rem_fp = pers_univ['rem_fijas']
-        rem_pp = pers_univ['rem_porcentuales']
+        ret_fp = ret_fp | pers_univ['ret_fijas']
+        ret_pp = ret_pp | pers_univ['ret_porcentuales']
+        rem_fp = rem_fp | pers_univ['rem_fijas']
+        rem_pp = rem_pp | pers_univ['rem_porcentuales']
 
     if nro_forms_preuniv > 0:
         # Retenciones / Remuneraciones que son por persona para cargos Preuniversitarios.
@@ -430,14 +450,6 @@ nro_forms_univ, nro_forms_preuniv):
         ret_pp = ret_pp | pers_preuniv['ret_porcentuales']
         rem_fp = rem_fp | pers_preuniv['rem_fijas']
         rem_pp = rem_pp | pers_preuniv['rem_porcentuales']
-
-
-    # Retenciones / Remuneraciones que son por persona para todos los cargos.
-    pers_all = get_retenciones_remuneraciones('T', 'P', fecha)
-    ret_fp = ret_fp | pers_all['ret_fijas']
-    ret_pp = ret_pp | pers_all['ret_porcentuales']
-    rem_fp = rem_fp | pers_all['rem_fijas']
-    rem_pp = rem_pp | pers_all['rem_porcentuales']
 
     # Calculo las retenciones/remuneraciones que son por persona.
     acum_ret = 0.0
@@ -639,6 +651,7 @@ def processUnivFormSet(commonform, univformset):
 
     #Guardo en esta lista un diccionario para cada formulario procesado
     lista_res = list()
+    #codigos_cargo = list()
 
     total_rem = 0.0
     total_no_rem = 0.0
@@ -700,10 +713,9 @@ def processUnivFormSet(commonform, univformset):
             return context
         else:
             basico = basicos.order_by('vigencia__hasta')[basicos.count()-1]
-            for bas in basicos:
-                bonificable += basico.valor # Sumo el basico al bonificable.
-                remunerativo += basico.valor
-                rem_fijas = rem_fijas.exclude(remuneracion__codigo = bas.remuneracion.codigo)
+            bonificable += basico.valor # Sumo el basico al bonificable.
+            remunerativo += basico.valor
+            rem_fijas = rem_fijas.exclude(remuneracion__codigo = basico.remuneracion.codigo)
 
         # Obtengo las remunaraciones fijas inherentes al cargo que sean bonificables.
         rems_fijas_cargo = RemuneracionFijaCargo.objects.filter(
@@ -728,7 +740,8 @@ def processUnivFormSet(commonform, univformset):
                                 vigencia__hasta__gte=fecha,
                                 remuneracion__bonificable=True,
                                 remuneracionfijacargo=None,
-                                salariobasicouniv=None
+                                salariobasicouniv=None,
+                                salariobasicopreuniv=None
                            )
         if rems_fijas_otras.exists():
             # Sumo el bonificable, el remunerativo y el no remunerativo segun corresponda.
@@ -739,7 +752,7 @@ def processUnivFormSet(commonform, univformset):
 
                 rem_fijas = rem_fijas.exclude(remuneracion__codigo = rem.remuneracion.codigo)
                 rem_list.append( (rem, rem.valor) )
-        nomenclador = False
+
         # Obtengo los nomencladores.
         rems_nomenclador = RemuneracionNomenclador.objects.filter(
                                 vigencia__desde__lte=fecha,
@@ -747,6 +760,7 @@ def processUnivFormSet(commonform, univformset):
                                 remuneracion__bonificable=True,
                                 cargo = cargo_obj
                             )
+        adic_nom = 0.0
         if rems_nomenclador.exists():
             adic_nom = rems_nomenclador[0].porcentaje
         rem_porcentuales = rem_porcentuales.exclude(remuneracionnomenclador__isnull=False)
@@ -772,10 +786,7 @@ def processUnivFormSet(commonform, univformset):
                     rem_list.append( (rem, importe) )
                 rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo = rem.remuneracion.codigo)
         antiguedad_importe = bonificable * antiguedad.porcentaje / 100.0
-        #salario_bruto = bonificable + antiguedad_importe
         remunerativo += antiguedad_importe
-
-        ###### El Neto se calcula del bruto restando las retenciones y sumando las remuneraciones.
 
         # Adicional titulo doctorado (cod 51), Adicional titulo maestria (cod 52)
         rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, 'U')
@@ -815,43 +826,6 @@ def processUnivFormSet(commonform, univformset):
         ###### Salario Neto.
         salario_neto = remunerativo + no_remunerativo - descuentos
 
-        ## Garantia salarial.
-        garantias_salariales = GarantiaSalarialUniversitaria.objects.filter(cargo=cargo_obj, vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
-
-        if garantias_salariales.exists():
-
-            garantia_obj = garantias_salariales.order_by('vigencia__hasta')[garantias_salariales.count()-1]
-            valor_minimo = garantia_obj.valor_minimo
-
-            if salario_neto < valor_minimo:
-  
-                if garantia_obj.antiguedad_min <= antiguedad.anios and antiguedad.anios < garantia_obj.antiguedad_max:
-
-                    if has_doctorado:
-                        valor = garantia_obj.valor_doctorado
-                    elif has_master:
-                        valor = garantia_obj.valor_master
-                    else:
-                        valor = garantia_obj.valor_st
-
-                    #NO SABEMOS SI: el neto + garantia no puede superar la cota de garantia.
-                    #total = min(valor_minimo, salario_neto+valor)
-                    #NOtar que sigo usando la variable 'total' Por si es necesario usar la linea anterior
-                    #borramos la de abajo y listo.
-                    
-                    total = valor
-                    garantia = total - salario_neto
-
-                    rem_obj = RemuneracionFija(
-                        codigo=garantia_code,
-                        nombre= garantia_name + ' (' + unicode(garantia_obj) + ')',
-                        aplicacion='U', valor=garantia
-                    )
-                    rem_list.append( (rem_obj, garantia) )
-                    remunerativo += garantia
-                    salario_neto += garantia
-
-
         # Aqui iran los resultados del calculo para este cargo en particular.
         form_res = {
             'cargo': cargo_obj,
@@ -867,6 +841,7 @@ def processUnivFormSet(commonform, univformset):
         }
         #form_res.update(daspu_context)
         lista_res.append(form_res)
+        #codigos_cargo.append(cargo_obj.pampa)
 
         # Calculo los acumulados de los salarios para todos los cargos univs.
         # y tambien los acumulados de las remuneraciones y retenciones.
@@ -880,6 +855,7 @@ def processUnivFormSet(commonform, univformset):
     context['total_ret'] = total_ret
     context['total_neto'] = total_neto
     context['lista_res'] = lista_res
+    #context['codigos_cargo'] = codigos_cargo
 
 
     return context
@@ -904,8 +880,8 @@ def processPreUnivFormSet(commonform, preunivformset):
 
     # Itero sobre todos los cargos.
     total_rem = 0.0
+    total_no_rem = 0.0
     total_ret = 0.0
-    total_bruto = 0.0
     total_neto = 0.0
 
     # Obtengo las Retenciones / Remuneraciones que son para cargos preuniversitarios.
@@ -942,7 +918,20 @@ def processPreUnivFormSet(commonform, preunivformset):
 
 
         ###### Salario Bruto.
-        basicos = SalarioBasico.objects.filter(cargo=cargo_obj, vigencia__desde__lte=fecha, vigencia__hasta__gte=fecha)
+        # Registro el bonificable, el remunerativo, el no remunerativo y los descuentos.
+        bonificable = 0.0
+        remunerativo = 0.0
+        no_remunerativo = 0.0
+        descuentos = 0.0
+        ret_list = list()  # Tuplas de la forma (obj retencion, importe).
+        rem_list = list()  # Tuplas (obj remuneracion, importe).
+
+        # El basico fijado en septiembre del año anterior.
+        basicos = SalarioBasicoPreUniv.objects.filter(
+                    cargo=cargo_obj,
+                    vigencia__desde__lte=fecha,
+                    vigencia__hasta__gte=fecha
+                  )
         basico = None
         antiguedad_importe = 0.0
         salario_bruto = 0.0
@@ -954,101 +943,127 @@ def processPreUnivFormSet(commonform, preunivformset):
             for bas in basicos:
                 rem_fijas = rem_fijas.exclude(remuneracion__codigo = bas.remuneracion.codigo)
 
+        # Sumo el basico al bonificable.
+        bonificable += basico.valor * horas if cargo_obj.pago_por_hora else basico.valor
+        remunerativo += basico.valor * horas if cargo_obj.pago_por_hora else basico.valor
+        
+        # Obtengo las remunaraciones fijas inherentes al cargo que sean bonificables.
+        rems_fijas_cargo = RemuneracionFijaCargo.objects.filter(
+                            cargo = cargo_obj,
+                            vigencia__desde__lte=fecha,
+                            vigencia__hasta__gte=fecha,
+                            remuneracion__bonificable=True
+                          )
+        if rems_fijas_cargo.exists():
+            for rem in rems_fijas_cargo:
+                # Sumo el bonificable, el remunerativo y el no remunerativo segun corresponda.
+                bonificable += rem.valor
+                remunerativo += rem.valor if rem.remuneracion.remunerativo else 0.0
+                no_remunerativo += rem.valor if not rem.remuneracion.remunerativo else 0.0
 
-        if cargo_obj.pago_por_hora:
-            antiguedad_importe = basico.valor * horas * antiguedad.porcentaje / 100.0
-            salario_bruto = basico.valor * horas + antiguedad_importe
-        else:
-            antiguedad_importe = basico.valor * antiguedad.porcentaje / 100.0
-            salario_bruto = basico.valor + antiguedad_importe
+                rem_fijas = rem_fijas.exclude(remuneracion__codigo = rem.remuneracion.codigo)
+                rem_list.append( (rem, rem.valor) )
 
+        # Obtengo las otras remuneraciones fijas bonificables.
+        rems_fijas_otras = RemuneracionFija.objects.filter(
+                                vigencia__desde__lte=fecha,
+                                vigencia__hasta__gte=fecha,
+                                remuneracion__bonificable=True,
+                                remuneracionfijacargo=None,
+                                salariobasicouniv=None,
+                                salariobasicopreuniv=None
+                           )
+        if rems_fijas_otras.exists():
+            # Sumo el bonificable, el remunerativo y el no remunerativo segun corresponda.
+            for rem in rems_fijas_otras:
+                bonificable += rem.valor
+                remunerativo += rem.valor if rem.remuneracion.remunerativo else 0.0
+                no_remunerativo += rem.valor if not rem.remuneracion.remunerativo else 0.0
 
-        ###### El Neto se calcula del bruto restando las retenciones y sumando las remuneraciones.
+                rem_fijas = rem_fijas.exclude(remuneracion__codigo = rem.remuneracion.codigo)
+                rem_list.append( (rem, rem.valor) )
 
-        ret_list = list()   # Aqui iran tuplas de la forma (obj retencion, importe) para mostrar esta info en el template
-        rem_list = list()  # De forma similar, va a tener tuplas (obj remuneracion, importe)
-
-        acum_ret = 0.   # El acumulado de todo lo que hay que descontarle al bruto.
-        acum_rem = 0. # El acumulado de todo lo que hay que sumarle.
-
-
-        ## Remuneraciones Especiales:        
+        # Obtengo los nomencladores.
+        rems_nomenclador = RemuneracionNomenclador.objects.filter(
+                                vigencia__desde__lte=fecha,
+                                vigencia__hasta__gte=fecha,
+                                remuneracion__bonificable=True,
+                                cargo = cargo_obj
+                            )
+        adic_nom = 0.0
+        if rems_nomenclador.exists():
+            adic_nom = rems_nomenclador[0].porcentaje
+        rem_porcentuales = rem_porcentuales.exclude(remuneracionnomenclador__isnull=False)
+        # Obtengo las remuneraciones porcentuales bonificables.
+        rems_porc_bonif = RemuneracionPorcentual.objects.filter(
+                            vigencia__desde__lte=fecha,
+                            vigencia__hasta__gte=fecha,
+                            remuneracion__bonificable=True,
+                            remuneracionnomenclador=None
+                          )
+        if rems_porc_bonif.exists():
+            for rem in rems_porc_bonif:
+                porcentaje = rem.porcentaje + adic_nom if rem.nomenclador else rem.porcentaje
+                importe = basico.valor * horas * porcentaje / 100.0 if cargo_obj.pago_por_hora else basico.valor * porcentaje/100.0
+                bonificable += importe
+                remunerativo += importe if rem.remuneracion.remunerativo else 0.0
+                no_remunerativo += importe if not rem.remuneracion.remunerativo else 0.0
+                if importe > 0.0:
+                    rem_list.append( (rem, importe) )
+                rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo = rem.remuneracion.codigo)
+        antiguedad_importe = bonificable * antiguedad.porcentaje / 100.0
+        remunerativo += antiguedad_importe        
 
         # Adicional titulo doctorado nivel medio (cod 53), Adicional titulo maestria nivel medio (cod 55)
         rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, 'P')
 
         # FONID.
-        rem_fijas_cargo = RemuneracionFijaCargo.objects.filter(
-            cargo=cargo_obj,
-            vigencia__desde__lte=fecha,
-            vigencia__hasta__gte=fecha
-        )
-        if rem_fijas_cargo.exists():
-            for rem in rem_fijas_cargo:
-                if cargo_obj.pago_por_hora:
-                    acum_rem += min(rem.valor * horas, 430.0)
-                    rem_list.append( (rem, min(rem.valor * horas, 430.0)) )
-                else:
-                    acum_rem += min(rem.valor, 430.0)
-                    rem_list.append( (rem, min(rem.valor, 430.0)) )
-                rem_fijas = rem_fijas.exclude(remuneracion=rem.remuneracion)
-        else:
-            for rem in RemuneracionFijaCargo.objects.all():
-                rem_fijas = rem_fijas.exclude(remuneracion=rem.remuneracion)
+        #rem_fijas_cargo = RemuneracionFijaCargo.objects.filter(
+            #cargo=cargo_obj,
+            #vigencia__desde__lte=fecha,
+            #vigencia__hasta__gte=fecha
+        #)
+        #if rem_fijas_cargo.exists():
+            #for rem in rem_fijas_cargo:
+                #if cargo_obj.pago_por_hora:
+                    #acum_rem += min(rem.valor * horas, 430.0)
+                    #rem_list.append( (rem, min(rem.valor * horas, 430.0)) )
+                #else:
+                    #acum_rem += min(rem.valor, 430.0)
+                    #rem_list.append( (rem, min(rem.valor, 430.0)) )
+                #rem_fijas = rem_fijas.exclude(remuneracion=rem.remuneracion)
+        #else:
+            #for rem in RemuneracionFijaCargo.objects.all():
+                #rem_fijas = rem_fijas.exclude(remuneracion=rem.remuneracion)
 
 
         ## Retenciones NO especiales:
         if not es_afiliado:
             ret_porcentuales = ret_porcentuales.exclude(retencion__codigo = afiliacion_code)
 
-        for ret in ret_porcentuales:
-                importe = salario_bruto * ret.porcentaje / 100.
-                acum_ret = acum_ret + importe
-                ret_list.append( (ret, importe) )
-
-        for ret in ret_fijas:
-                acum_ret = acum_ret + ret.valor
-                ret_list.append( (ret, ret.valor) )
-
         for rem in rem_porcentuales:
-                importe = salario_bruto * rem.porcentaje / 100.
-                acum_rem = acum_rem + importe
-                rem_list.append( (rem, importe) )
+            importe = bonificable * rem.porcentaje / 100.
+            remunerativo += importe if rem.remuneracion.remunerativo else 0.0
+            no_remunerativo += importe if not rem.remuneracion.remunerativo else 0.0
+            rem_list.append( (rem, importe) )
 
         for rem in rem_fijas:
-                acum_rem = acum_rem + rem.valor
-                rem_list.append( (rem, rem.valor) )
+            remunerativo += rem.valor if rem.remuneracion.remunerativo else 0.0
+            no_remunerativo += rem.valor if not rem.remuneracion.remunerativo else 0.0
+            rem_list.append( (rem, rem.valor) )
+
+        for ret in ret_porcentuales:
+            importe = remunerativo * ret.porcentaje / 100.
+            descuentos += importe
+            ret_list.append( (ret, importe) )
+
+        for ret in ret_fijas:
+            descuentos += ret.valor
+            ret_list.append( (ret, ret.valor) )
             
 
         ###### Salario Neto.
-        salario_neto = salario_bruto - acum_ret + acum_rem
-
-        ## Garantia salarial.
-        garantias_salariales = GarantiaSalarialPreUniversitaria.objects.filter(
-            cargo=cargo_obj,
-            vigencia__desde__lte=fecha,
-            vigencia__hasta__gte=fecha
-        )
-
-        if garantias_salariales.exists():
-
-            garantia_obj = garantia_salarial_objs.order_by('vigencia__hasta')[garantia_salarial_objs.count()-1]
-            valor_minimo = garantia_obj.valor_minimo
-
-            if salario_neto < valor_minimo:
-
-                garantia = valor_minimo - salario_neto
-
-                rem_obj = RemuneracionFija(
-                    codigo=garantia_code,
-                    nombre= garantia_name + ' (' + unicode(garantia_obj) + ')',
-                    aplicacion='U',
-                    valor=garantia
-                )
-                rem_list.append( (rem_obj, garantia) )
-                acum_rem += garantia
-                salario_neto += garantia
-
+        salario_neto = remunerativo + no_remunerativo - descuentos
 
         # Aqui iran los resultados del calculo para este cargo en particular.
         form_res = {
@@ -1057,28 +1072,27 @@ def processPreUnivFormSet(commonform, preunivformset):
             'basico': basico.valor,
             'retenciones': ret_list,
             'remuneraciones': rem_list,
-            'acum_ret': acum_ret,
-            'acum_rem': acum_rem,
-            'salario_bruto': salario_bruto,
+            'descuentos': descuentos,
+            'remunerativo': remunerativo,
+            'no_remunerativo': no_remunerativo,
             'salario_neto': salario_neto,
             'antiguedad': antiguedad,
             'antiguedad_importe': antiguedad_importe
         }
         lista_res.append(form_res)
 
-        print form_res
+        #print form_res
 
         # Calculo los acumulados de los salarios para todos los cargos.
         # y tambien los acumulados de las remuneraciones y retenciones.
-        total_rem += acum_rem
-        total_ret += acum_ret
-        total_bruto += salario_bruto
+        total_rem += remunerativo
+        total_no_rem += no_remunerativo
+        total_ret += descuentos
         total_neto += salario_neto
 
-
     context['total_rem'] = total_rem
+    context['total_no_rem'] = total_no_rem
     context['total_ret'] = total_ret
-    context['total_bruto'] = total_bruto
     context['total_neto'] = total_neto
     context['lista_res'] = lista_res
 

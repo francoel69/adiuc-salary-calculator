@@ -57,6 +57,10 @@ class AFamiliaresForm(forms.Form):
         choices=[(i, unicode(i)) for i in get_concepts_asigf()],
         help_text= u'Seleccione el tipo de asignación.'
     )
+    igf = forms.IntegerField(
+        label=u'Ingreso del Grupo Familiar',
+        help_text= u'Ingreso del Grupo Familiar.'
+    )
 
 
 class AFamiliaresFormEspecial(forms.Form):

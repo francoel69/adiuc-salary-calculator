@@ -42,11 +42,11 @@ class Periodo(models.Model):
 class GarantiaSalarialPreUniversitaria(models.Model):
     """ garantía salarial para cargos preuniversitarios """
     
-    cargo = models.ForeignKey('CargoPreUniversitario',
-        help_text=u'El cargo docente sobre el que se aplica esta garantía.')
+    cargo = models.ManyToManyField('CargoPreUniversitario',
+        help_text=u'Los cargos docentes sobre los que se aplica esta garantía.')
     
-    valor = models.FloatField(u'Monto minimo', validators=[validate_isgezero],
-        help_text=u'Monto mínimo, igualado éste no se aplica la garantía.')
+    garantia = models.FloatField(u'Garantía', validators=[validate_isgezero],
+        help_text=u'Garantía salarial para el cargo.')
 
     vigencia = models.ForeignKey('Periodo',
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
@@ -55,33 +55,17 @@ class GarantiaSalarialPreUniversitaria(models.Model):
 class GarantiaSalarialUniversitaria(models.Model):
     """Representa el valor minimo que un Cargo puede cobrar."""
 
-    cargo = models.ForeignKey('CargoUniversitario',
-        help_text=u'El cargo docente sobre el que se aplica esta garantía.')
+    cargo = models.ManyToManyField('CargoUniversitario',
+        help_text=u'Los cargos docentes sobre los que se aplica esta garantía.')
 
-    valor_minimo = models.FloatField(u'Monto minimo', validators=[validate_isgezero],
-        help_text=u'Monto mínimo, igualado éste no se aplica la garantía.')
-
-    valor_st = models.FloatField(u'Monto de la garantía', validators=[validate_isgezero],
-        help_text=u'El monto de esta garantía sin título adicional.')
-    valor_doctorado = models.FloatField(u'Monto de la garantía', validators=[validate_isgezero],
-        help_text=u'El monto de esta garantía con título de doctorado.')
-    valor_master = models.FloatField(u'Monto de la garantía', validators=[validate_isgezero],
-        help_text=u'El monto de esta garantía con título de master.')
-    
-    antiguedad_min = models.IntegerField(u'Antiguedad mínima',
-        help_text=u'A partir de esta antiguedad corresponde el monto asociado a la garantía.' )
-    
-    antiguedad_max = models.IntegerField(u'Antiguedad máxima',
-        help_text=u'Hasta esta antiguedad (inclusive) corresponde el monto asociado a la garantía.' )
+    garantia = models.FloatField(u'Garantía', validators=[validate_isgezero],
+        help_text=u'Garantía salarial para el cargo.')
     
     vigencia = models.ForeignKey('Periodo',
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
-    class Meta:
-        ordering = ['cargo', 'valor_minimo']
-
     def __unicode__(self):
-        return unicode(self.cargo) + " $" + unicode(self.valor) + " [" + unicode(self.vigencia.desde) + " / " + unicode(self.vigencia.hasta) + "]"
+        return unicode(self.cargo.values()[0]['dedicacion']) + " $" + unicode(self.garantia) + " [" + unicode(self.vigencia.desde) + " / " + unicode(self.vigencia.hasta) + "]"
 
 
 class Cargo(models.Model):
@@ -144,7 +128,7 @@ class CargoPreUniversitario(Cargo):
 
     TIPOHORAS_OPCS = (
         ('C', u'Cátedra'),
-        ('R', u'Relog')
+        ('R', u'Reloj')
     )
     horas = models.FloatField(u'Cantidad de Horas Cátedra', validators=[validate_isgezero],
         help_text=u'La cantidad de horas para el cargo como figuran en la planilla de la UNC. Ej: Al cargo "Vice Director de 1°" le corresponden 25 horas.')
@@ -154,12 +138,12 @@ class CargoPreUniversitario(Cargo):
         help_text=u'Poner "Sí" si este cargo se paga por cantidad de horas. Poner "No" en caso contrario.')
 
     class Meta:
-        ordering = ['lu']
+        ordering = ['pampa']
 
     def __unicode__(self):
         if self.pago_por_hora or self.horas <= 0.:
-            return super(CargoPreUniversitario, self).__unicode__()
-        return super(CargoPreUniversitario, self).__unicode__() + " - " + unicode(self.horas) + "hs"
+            return str(self.pampa) + " - " + super(CargoPreUniversitario, self).__unicode__()
+        return str(self.pampa) + " - " + super(CargoPreUniversitario, self).__unicode__() + " - " + unicode(self.horas) + "hs"
 
 
 class Retencion(models.Model):

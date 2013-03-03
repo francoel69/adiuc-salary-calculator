@@ -196,12 +196,16 @@
                                             Quitar
                                         </a>
                                     </p>
-                                    <div style="display:none">
-                                        {{ afamiliaresform.DELETE }}
-                                    </div>
                                 </td>
                             </tr>
+                            <tr>
+                                <td> {{ afamiliaresform.igf.label_tag}} </td>
+                                <td> {{ afamiliaresform.igf }} </td>
+                            </tr>
                         </table>
+                        <div style="display:none">
+                            {{ afamiliaresform.DELETE }}
+                        </div>
                     </div>
                     {% endfor %}
                     <!--<p class="centeralign">-->
