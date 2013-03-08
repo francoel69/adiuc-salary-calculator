@@ -251,8 +251,8 @@ class RetencionDaspu(models.Model):
     porcentaje_minimo = models.FloatField(u'Porcentaje tope mínimo',
         help_text='Porcentaje que al aplicarse al salario bruto indicara el tope mínimo para esta retención.')
         
-    cargo_referencia = models.OneToOneField(u'CargoUniversitario',
-        help_text='Se tomará como monto mínimo el porcentaje anterior sobre el salario bruto sin antiguedad de este cargo.')
+    #cargo_referencia = models.OneToOneField(u'CargoUniversitario',
+        #help_text='Se tomará como monto mínimo el porcentaje anterior sobre el salario bruto sin antiguedad de este cargo.')
 
     def __unicode__(self):
         return u"Retención DASPU: [" + unicode(self.retencion) + u" - " + unicode(self.porcentaje_minimo) + "%"
@@ -327,73 +327,6 @@ class RemuneracionNomenclador(RemuneracionPorcentual):
     cargo = models.ForeignKey('Cargo',
         help_text=u'Remuneración porcentual inherente a un cargo en particular.')
 
-#class ConceptoAsigFamiliar(models.Model):
-#    concepto = models.CharField(u'Concepto de asignación', max_length='50', help_text=u'Concepto de asignación familiar.')
-#
-#    class Meta:
-#        ordering = ['concepto']
-#
-#    def __unicode__(self):
-#        return unicode(self.concepto)
-        
-#class CategoriaAsigFamiliar(models.Model):
-#    valor_min = models.FloatField(u'Valor mínimo:',help_text=u'Valor mínimo de categoría.')
-#    valor_max = models.FloatField(u'Valor máximo:', help_text=u'Valor máximo de categoría.')
-#
-#    def clean(self):
-#        from django.core.exceptions import ValidationError
-#        if self.valor_min > valor_max:
-#            raise ValidationError('El valor mínimo debe ser menor al valor máximo.')
-#    class Meta:
-#        ordering = ['valor_min','valor_max']
-
-#    def __unicode__(self):
-#       return unicode(self.valor_min) + u" - " + unicode(self.valor_max)
-
-#class RemuneracionFijaCargo(RemuneracionFija):
-    #"""Es una remuneracion fija que se relaciona con un cargo en particular"""
-    
-    #cargo = models.ForeignKey('Cargo')
-
-    #def __unicode__(self):
-        #return super(RemuneracionFijaCargo, self).__unicode__() + " -> " + unicode(self.cargo)
-
-
-class AsignacionFamiliar(models.Model):
-    """Representa uan asignación familiar."""
-# Antes heredaba de remuneracionFIja, pero es necesario poder dejar en blank algunos valores.
-#    concepto = models.ForeignKey('ConceptoAsigFamiliar',help_text=u'Concepto de la asignación.')
-#    categoria = models.OneToOneField('CategoriaAsigFamiliar',help_text=u'Categoría de la asignación.')
-
-    remuneracion = models.ForeignKey('Remuneracion',
-        help_text = u'La remuneración asociada a esta asignación.')
-
-    concepto = models.CharField(u'Concepto de asignación', max_length='80', help_text=u'Concepto de la asignación.')
-
-    valor = models.FloatField(u'Valor del Aumento', validators=[validate_isgezero],
-        help_text=u'El valor fijo que se sumará al salario básico.')
-
-    valor_min = models.FloatField(u'Valor mínimo:',
-        help_text=u'Valor mínimo de categoría.')
-
-    valor_max = models.FloatField(u'Valor máximo:',
-        help_text=u'Valor máximo de categoría.')
-
-    vigencia = models.ForeignKey('Periodo',
-        help_text=u'Período de tiempo en el cual esta asignación se encuentra vigente.')
-
-    def clean(self):
-        from django.core.exceptions import ValidationError
-        if self.valor_min > self.valor_max:
-            raise ValidationError('El valor mínimo debe ser menor al valor máximo.')
-    
-    class Meta:
-        ordering = ['concepto']
-
-    def __unicode__(self):
-        return unicode(self.concepto) + u" - [ " + unicode(self.valor_min) +u" / " + unicode(self.valor_max) + u" ]"
-
-
 class SalarioBasicoUniv(RemuneracionFija):
     """Representavalor_min = models.FloatField(u'Valor mínimo:',help_text=u'Valor mínimo de categoría.')
     valor_max = models.FloatField(u'Valor máximo:', help_text=u'Valor máximo de categoría.') un valor de un salario basico relacionado a un cargo."""
@@ -434,7 +367,6 @@ class AntiguedadUniversitaria(RemuneracionPorcentual):
     def __unicode__(self):
         return unicode(self.anio) + u" años - " + unicode(self.porcentaje) + u"% - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
-
 class AntiguedadPreUniversitaria(RemuneracionPorcentual):
     """Una entrada de la tabla de escala de antiguedad para los docentes Preuniversitarios"""
 
@@ -452,15 +384,17 @@ class ImpuestoGananciasDeducciones(models.Model):
     """Este modelo guarda los montos de las deducciones personales para el estimativo del ingreso anual."""
 
     ganancia_no_imponible = models.FloatField(u'Ganancia no imponible', help_text=u'El monto de la ganancia no imponible.')
+    desc_cuarta_cat = models.FloatField(u'Descuento cuarta categoría',
+        help_text=u'Descuento que se aplica a trabajadores en relación de dependencia, por ejemplo UNC')
     por_conyuge = models.FloatField(u'Por cónyuge', help_text=u'El monto que se descuenta por cónyuge.')
-    por_hijo_menor_24_anios = models.FloatField(u'Por cada hijo menor a 24 años',
-        help_text=u'El monto que se descuenta por cada hijo/a y/o hijastro/a menor de 24 años o incapacitado para el trabajo.')
+    por_hijo = models.FloatField(u'Por cada hijo menor a 24 años',
+        help_text=u'El monto que se descuenta por cada hijo/a')
     por_descendiente = models.FloatField(u'Por cada descendiente', 
-        help_text=u'El monto que se descuenta por cada descendiente en línea recta (nieto/a, bisnieto/a) menor de 24 años o incapacitado para el trabajo.')
+        help_text=u'El monto que se descuenta por cada descendiente en línea recta (nieto/a, bisnieto/a)')
     por_ascendiente = models.FloatField(u'Por cada ascendiente',
         help_text=u'El monto que se descuenta por cada ascendiente (padre/madre, abuelo/a, bisabuelo/a, padrastro/madrastra)')
     por_suegro_yerno_nuera = models.FloatField(u'Por suegro, yerno o nuera',
-        help_text=u'Por suegro/a y por cada yerno o nuera menor de 24 años o incapacitado para el trabajo.')
+        help_text=u'Por suegro/a y por cada yerno o nuera')
     deduccion_especial = models.FloatField(u'Deducción Especial',
         help_text=u'Deducción Especial')
 
@@ -478,39 +412,22 @@ class ImpuestoGananciasDeducciones(models.Model):
         ordering = ['vigencia']
 
     def __unicode__(self):
-        return unicode(self.vigencia.desde) + " : " + unicode(self.vigencia.hasta)
+        return unicode(self.vigencia.desde.year)
 
 
 class ImpuestoGananciasTabla(models.Model):
 
     ganancia_neta_min = models.FloatField(u'Ganancia neta mínima', help_text=u'El valor mínimo de la ganancia neta sujeta a impuesto.')
     ganancia_neta_max = models.FloatField(u'Ganancia neta máxima', help_text=u'El valor máximo de la ganancia neta sujeta a impuesto.')
-    impuesto_fijo = models.FloatField(u'Impuesto fijo', help_text=u'El valor del impuesto a las ganancias para los que tienen gancia neta sujeta a impuesto\
-    entre los valores mínimos y máximos especificados.')
     impuesto_porcentual = models.FloatField(u'Impuesto porcentual', help_text=u'El valor en porcentaje del impuesto a las ganancias que se aplica al exedente.')
-    sobre_exedente_de = models.FloatField(u'Sobre exedente de', help_text=u'Especifica el exedente sobre el cual se le tiene que aplicar el impuesto porcentual.')
-
+    
     vigencia = models.ForeignKey('Periodo',
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
     class Meta:
-        ordering = ['vigencia']
+        ordering = ['ganancia_neta_min', 'ganancia_neta_max']
 
     def __unicode__(self):
-        return unicode(self.vigencia.desde) + " : " + unicode(self.vigencia.hasta)
+        return unicode(self.vigencia.desde.year) + " : De " + unicode(int(self.ganancia_neta_min)) + " a " + unicode(int(self.ganancia_neta_max))
 
-
-class Configuracion(models.Model):
-    """Una tabla para que el usuario pueda configurar la app desde el admin site."""
-
-    asig_fam_solo_opc_hijo = models.BooleanField(u'Asignaciones Familiares: Considerar sólamente la opción de "Hijos".',
-        help_text=u'Si tilda el checkbox entonces las asignaciones familiares se calcularán teniendo en cuenta sólo la cantidad de Hijos.')
-
-    def __unicode__(self):
-        result = u'Asignaciones Familiares: Considerar sólamente la opción de "Hijos": '
-        if self.asig_fam_solo_opc_hijo:
-            result += u'Si'
-        else:
-            result += u'No'
-        return result
 
