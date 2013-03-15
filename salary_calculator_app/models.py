@@ -420,7 +420,7 @@ class ImpuestoGananciasTabla(models.Model):
     ganancia_neta_min = models.FloatField(u'Ganancia neta mínima', help_text=u'El valor mínimo de la ganancia neta sujeta a impuesto.')
     ganancia_neta_max = models.FloatField(u'Ganancia neta máxima', help_text=u'El valor máximo de la ganancia neta sujeta a impuesto.')
     impuesto_porcentual = models.FloatField(u'Impuesto porcentual', help_text=u'El valor en porcentaje del impuesto a las ganancias que se aplica al exedente.')
-    
+    suma_anterior = models.FloatField(u'Suma anterior', help_text=u'El porcentaje anterior por el excedente más este valor darán el impuesto a las ganancias.')
     vigencia = models.ForeignKey('Periodo',
         help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 

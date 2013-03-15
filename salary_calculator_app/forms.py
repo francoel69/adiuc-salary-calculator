@@ -81,10 +81,6 @@ class DetailsForm(forms.Form):
 class ImpuestoGananciasForm(forms.Form):
     """Formulario para que el usuario ingrese datos referidos al calculo del impuesto a las ganancias"""
 
-    estado_civil = forms.ChoiceField(
-        label=u'Estado Civil',
-        choices=[(1, u'Soltero/a'), (2, u'Casado/a'), (3, u'Divorciado/a'), (4, u'Viudo/a')]
-    )
     conyuge = forms.ChoiceField(
         label=u'¿Tiene a su cónyuge a cargo?',
         choices=[(2, 'No'), (1, u'Sí')]
@@ -105,6 +101,10 @@ class ImpuestoGananciasForm(forms.Form):
         label=u'N° de suegros/as, yernos/nueras a cargo',
         choices=[(i, i) for i in range(6)]
     )
+    otros_descuentos = forms.IntegerField(label=u'Otros gastos deducibles (Form. 572)',
+                        min_value=0, max_value=50000, initial=0, required=False,
+                        widget=forms.TextInput(attrs={'maxlength':'5', 'style':'width: 50px;'}),
+                        help_text=u'Otros gastos deducibles especificados en el formulario 572')
 
 
 class CommonForm(forms.Form):
@@ -116,6 +116,7 @@ class CommonForm(forms.Form):
         #initial=str(datetime.date.today().month) + "/" + str(datetime.date.today().year),
         choices=[(i, unicode(i)) for i in range(1,13)],
         widget = forms.Select(),
+        required = False,
         help_text=u'Seleccione una fecha para hacer el cálculo del salario.'
     )
 
@@ -137,13 +138,17 @@ class CommonForm(forms.Form):
         help_text=u'Ingrese su antigüedad docente'
     )
 
+    caja_compl = forms.FloatField(
+        label=u'Caja complementaria de Jub.',
+        min_value=0.0, max_value=10., initial=4.5, required=False,
+        widget=forms.TextInput(attrs={'maxlength':'3', 'style':'width: 40px;'}),
+        help_text=u'Porcentaje de caja complementaria de Jubilación'
+    )
     master = forms.BooleanField(label=u'Añadir Título de Maestría', required=False)
     doctorado = forms.BooleanField(label=u'Añadir Título de Doctorado', required=False)
 
     afiliado = forms.BooleanField(label=u'Afiliado a ADIUC', required=False)
     daspu = forms.BooleanField(label=u'Considerar servicios DASPU', required=False)
-    ganancias = forms.BooleanField(label=u'Considerar Impuesto a las Ganancias', required=False)
-
 
 class CargoUnivForm(forms.Form):
     """Formulario de calculo de salario docente para docentes universitarios."""
