@@ -90,7 +90,7 @@
                             <td> {{ ret.retencion.nombre }} </td>
                         {% endif %}
                         <td>  </td>
-                        <td class="descuentos"> {% if importe > 0 %}-{% endif %}{{ importe|floatformat:-2 }} </td>
+                        <td class="descuentos"> {{ importe|floatformat:-2 }} </td>
                         </tr>
                     {% endfor %}
                     
@@ -99,7 +99,7 @@
                         <td> {{ ret.retencion.codigo }} </td>
                         <td> {{ ret.retencion.nombre }} ({{ ret.porcentaje }}%) </td>
                         <td></td>
-                        <td class="descuentos"> {% if importe > 0 %}-{% endif %}{{ importe|floatformat:-2 }} </td>
+                        <td class="descuentos"> {{ importe|floatformat:-2 }} </td>
                         </tr>
                     {% endfor %}
                     
@@ -126,25 +126,25 @@
                         <th> Importe (-) </th>
                     </tr>
                     <tr>
-                        <td> 10 </td>
-                        <td> Sueldo B&aacute;sico </td>
-                        <td> {% if res.cargo.pago_por_hora %} {{ res.basico_horas|floatformat:-2 }} {% else %} {{ res.basico|floatformat:-2 }} {% endif %} </td>
+                        <td> 01/0 </td>
+                        <td> Sueldo B&aacute;sico</td>
+                        <td class="adicionales"> {% if res.cargo.pago_por_hora %} {{ res.basico_horas|floatformat:-2 }} {% else %} {{ res.basico|floatformat:-2 }} {% endif %} </td>
                         <td></td>
                     </tr>
 
                     <tr>
                         <td>{{ res.antiguedad.remuneracion.codigo }}</td>
                         <td> {{ res.antiguedad.remuneracion.nombre }} ({{res.antiguedad.anio}} años - {{ res.antiguedad.porcentaje }}%)</td>
-                        <td>{{ res.antiguedad_importe|floatformat:-2 }} </td>
+                        <td class="adicionales">{{ res.antiguedad_importe|floatformat:-2 }} </td>
                         <td></td>
                     </tr>
 
-                    <tr class="bold">
+                    <!--<tr class="bold">
                         <td></td>
                         <td>Salario Bruto:</td>
                         <td>{{ res.salario_bruto|floatformat:-2 }} </td>
                         <td></td>
-                    </tr>
+                    </tr>-->
 
                     {% for obj, importe in res.remuneraciones %}
 						<tr>
@@ -160,7 +160,7 @@
                         <td> {{ obj.retencion.codigo }} </td>
                         <td> {{ obj.retencion.nombre }} {% if obj.porcentaje %}(-{{ obj.porcentaje }}%){% endif %} </td>
                         <td></td>
-                        <td class="descuentos">{% if importe > 0 %}-{% endif %}{{ importe|floatformat:-2 }}</td>
+                        <td class="descuentos">{{ importe|floatformat:-2 }}</td>
                     </tr>
                     {% endfor %}
                     
@@ -172,21 +172,27 @@
                             {% if res.daspu_extra %} + {{ res.daspu_extra|floatformat:-2 }} extra por m&iacute;nimo {% endif %})
                         </td>
                         <td>  </td>
-                        <td class="descuentos"> {% if res.daspu_importe > 0 %}-{% endif %}{{ res.daspu_importe|floatformat:-2 }} </td>
+                        <td class="descuentos"> {{ res.daspu_importe|floatformat:-2 }} </td>
                     </tr>
                     {% endif %}
 
                     <tr class="bold">
                         <td></td>
-                        <td> Adicionales: </td>
-                        <td class="adicionales"> {{ res.acum_rem|floatformat:-2 }} </td>
+                        <td> Remunerativo: </td>
+                        <td class="adicionales"> {{ res.remunerativo|floatformat:-2 }} </td>
+                        <td></td>
+                    </tr>
+                    <tr class="bold">
+                        <td></td>
+                        <td> No Remunerativo: </td>
+                        <td class="adicionales"> {{ res.no_remunerativo|floatformat:-2 }} </td>
                         <td></td>
                     </tr>
                     <tr class="bold">
                         <td></td>
                         <td> Descuentos: </td>
                         <td></td>
-                        <td class="descuentos"> {% if res.acum_ret > 0 %}-{% endif %}{{ res.acum_ret|floatformat:-2 }} </td>
+                        <td class="descuentos"> {{ res.descuentos|floatformat:-2 }} </td>
                     </tr>
                     <tr class="bold">
                         <td></td>
@@ -202,16 +208,16 @@
             <div class="totales bold">
                 <table id="table_totales">
                     <tr>
-                        <td> Total Bruto: </td>
-                        <td > {{ total_bruto|floatformat:-2 }} </td>
+                        <td> Total Remunerativo: </td>
+                        <td > <font color="#00bb00"> {{ total_rem|floatformat:-2 }} </td>
                     </tr>
                     <tr>
-                        <td> Total Adicionales: </td>
-                        <td> <font color="#00bb00"> {{ total_rem|floatformat:-2 }} </td>
+                        <td> Total No Remunrativo: </td>
+                        <td> <font color="#00bb00"> {{ total_no_rem|floatformat:-2 }} </td>
                     </tr>
                     <tr>
                         <td> Total Descuentos: </td>
-                        <td> <font color="#660000"> {% if total_ret > 0 %}-{% endif %}{{ total_ret|floatformat:-2 }} </fonts></td>
+                        <td> <font color="#660000"> {{ total_ret|floatformat:-2 }} </fonts></td>
                     </tr>
                     <tr>
                         <td> Total Neto: </td>
@@ -220,9 +226,6 @@
                 </table>
             </div>
 
-            <div class="referencias">
-                <sup>(1)</sup> C&aacute;lculo estimativo.
-            </div>
 
             <br><br>        
 	{% endif %} <!-- error_msg -->

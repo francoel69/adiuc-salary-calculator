@@ -4,4 +4,5 @@
 local_settings.py
 *~
 .directory
-salary-calculator.sql
+salary-calculator.sqlsalary-calculator.sql
+initial_data.json

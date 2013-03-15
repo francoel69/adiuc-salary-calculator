@@ -38,3 +38,11 @@ class SimpleTest(TestCase):
         Tests that 1 + 1 always equals 2.
         """
         self.assertEqual(1 + 1, 2)
+
+#class MyTest(TestCase):
+    #def test_forms(self):
+        #response = self.client.get("/calculate/")
+        #self.assertEqual(response.status_code, 200)
+
+
+    
