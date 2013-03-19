@@ -60,7 +60,7 @@ def fill_cargo():
 
     for item in data:
         if not Cargo.objects.filter(pampa=item['fields']['pampa']).exists():
-            Cargo(pk=item['pk'], pampa=item['fields']['pampa'], pampa=item['fields']['lu']).save()
+            Cargo(pk=item['pk'], pampa=item['fields']['pampa'], lu=item['fields']['lu']).save()
 
 
 if __name__=="__main__":
