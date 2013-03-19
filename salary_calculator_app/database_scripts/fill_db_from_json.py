@@ -29,8 +29,19 @@ DENOMINACION_FILE = BASE_FILE +"initial_data_denominacion.json"
 CARGO_FILE = BASE_FILE + "initial_data_cargo.json"
 CARGOUNIV_FILE = BASE_FILE + "initial_data_cargouniv.json"
 CARGOPREUNIV_FILE = BASE_FILE +"initial_data_cargopreuniv.json"
-ANTIGUEDADUNIV_FILE = BASE_FILE + "initial_data_antiguedaduniv.json"
-ANTIGUEDADPREUNIV_FILE = BASE_FILE +"initial_data_antiguedadpreuniv.json"
+RETENCION_FILE = BASE_FILE + "initial_data_retencion.json"
+REMUNERACION_FILE = BASE_FILE + "initial_data_remuneracion.json"
+RETENCIONPORCENTUAL_FILE = BASE_FILE + "initial_data_retencion_porcentual.json"
+REMUNERACIONPORCENTUAL_FILE = BASE_FILE + "initial_data_remuneracion_porcentual.json"
+RETENCIONFIJA_FILE = BASE_FILE + "initial_data_retencion_fija.json"
+REMUNERACIONFIJA_FILE = BASE_FILE + "initial_data_remuneracion_fija.json"
+FONDOSOLIDARIO_FILE = BASE_FILE + "initial_data_fondo_solidario.json"
+REMUNERACIONFIJACARGO_FILE = BASE_FILE + "initial_data_remuneracion_fija_cargo.json"
+REMUNERACIONNOMENCLADOR_FILE = BASE_FILE + "initial_data_remuneracion_nomenclador.json"
+BASICOUNIV_FILE = BASE_FILE + "initial_data_basico_univ.json"
+BASICOPREUNIV_FILE = BASE_FILE + "initial_data_basico_preuniv.json"
+ANTIGUEDADUNIV_FILE = BASE_FILE + "initial_data_antiguedad_univ.json"
+ANTIGUEDADPREUNIV_FILE = BASE_FILE +"initial_data_antiguedad_preuniv.json"
 
 def fill_periodo():
     json_data = open(PERIODO_FILE, 'r')
@@ -40,7 +51,7 @@ def fill_periodo():
 
     for item in data:
         if not Periodo.objects.filter(pk=item['pk']).exists():
-            Periodo(pk=item['pk'], desde=item['fields']['desde'], hasta=item['fields']['hasta']).save()
+            Periodo(pk=item['pk'], **item['fields']).save()
 
 def fill_denominacion():
     json_data = open(DENOMINACION_FILE, 'r')
@@ -50,7 +61,7 @@ def fill_denominacion():
 
     for item in data:
         if not DenominacionCargo.objects.filter(pk=item['pk']).exists():
-            DenominacionCargo(pk=item['pk'], nombre=item['fields']['nombre']).save()
+            DenominacionCargo(pk=item['pk'], **item['fields']).save()
 
 def fill_cargo():
     json_data = open(CARGO_FILE, 'r')
@@ -86,10 +97,184 @@ def fill_cargo_preuniv():
     for item in data:
         if not CargoPreUniversitario.objects.filter(pk=item['pk']).exists():
             cargo = Cargo.objects.get(pk=item['pk'])
-            CargoPreUniversitario(pk=item['pk'], horas=item['fields']['horas'],
-                tipo_horas=item['fields']['tipo_horas'], pago_por_hora=item['fields']['pago_por_hora'],
+            CargoPreUniversitario(pk=item['pk'], **item['fields'],
                 lu=cargo.lu, pampa=cargo.pampa, denominacion=cargo.denominacion).save()
 
+def fill_retencion():
+    json_data = open(RETENCION_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not Retencion.objects.filter(pk=item['pk']).exists():
+            Retencion(pk=item['pk'], **item['fields']).save()
+
+def fill_remuneracion():
+    json_data = open(REMUNERACION_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not Remuneracion.objects.filter(pk=item['pk']).exists():
+            Remuneracion(pk=item['pk'], **item['fields']).save()
+
+def fill_retencion_porcentual():
+    json_data = open(RETENCIONPORCENTUAL_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not RetencionPorcentual.objects.filter(pk=item['pk']).exists():
+            retencion = Retencion.objects.get(pk=item['fields']['retencion'])
+            vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
+            RetencionPorcentual(pk=item['pk'], retencion=retencion,
+                                porcentaje=item['fields']['porcentaje'],
+                                vigencia=vigencia).save()
+
+def fill_remuneracion_porcentual():
+    json_data = open(REMUNERACIONPORCENTUAL_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not RemuneracionPorcentual.objects.filter(pk=item['pk']).exists():
+            remuneracion = Remuneracion.objects.get(pk=item['fields']['remuneracion'])
+            vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
+            RemuneracionPorcentual(pk=item['pk'], remuneracion=remuneracion,
+                                porcentaje=item['fields']['porcentaje'],
+                                vigencia=vigencia, sobre_referencia=item['fields']['sobre_referencia'],
+                                nomenclador=item['fields']['nomenclador']).save()
+
+def fill_retencion_fija():
+    json_data = open(RETENCIONFIJA_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not RetencionFija.objects.filter(pk=item['pk']).exists():
+            retencion = Retencion.objects.get(pk=item['fields']['retencion'])
+            vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
+            RetencionFija(pk=item['pk'], retencion=retencion,
+                                valor=item['fields']['valor'],
+                                vigencia=vigencia).save()
+
+def fill_remuneracion_fija():
+    json_data = open(REMUNERACIONFIJA_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not RemuneracionFija.objects.filter(pk=item['pk']).exists():
+            remuneracion = Remuneracion.objects.get(pk=item['fields']['remuneracion'])
+            vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
+            RemuneracionFija(pk=item['pk'], remuneracion=remuneracion,
+                                valor=item['fields']['valor'],
+                                vigencia=vigencia).save()
+
+def fill_fondo_solidario():
+    json_data = open(FONDOSOLIDARIO_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not FondoSolidario.objects.filter(pk=item['pk']).exists():
+            ret = RetencionFija.objects.get(pk=item['pk'])
+            FondoSolidario(pk=item['pk'], concepto=item['fields']['concepto'],
+                           retencion=ret.retencion, valor=ret.valor, vigencia=ret.vigencia).save()
+
+def fill_remuneracion_fija_cargo():
+    json_data = open(REMUNERACIONFIJACARGO_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not RemuneracionFijaCargo.objects.filter(pk=item['pk']).exists():
+            rem = RemuneracionFija.objects.get(pk=item['pk'])
+            cargo = Cargo.objects.get(pk=item['fields']['cargo'])
+            RemuneracionFijaCargo(pk=item['pk'], remuneracion=rem.remuneracion,
+                    valor=rem.valor, vigencia=rem.vigencia, cargo=cargo).save()
+
+
+def fill_remuneracion_nomenclador():
+    json_data = open(REMUNERACIONNOMENCLADOR_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not RemuneracionNomenclador.objects.filter(pk=item['pk']).exists():
+            rem = RemuneracionPorcentual.objects.get(pk=item['pk'])
+            cargo = Cargo.objects.get(pk=item['fields']['cargo'])
+            RemuneracionNomenclador(pk=item['pk'], remuneracion=rem.remuneracion,
+                   porcentaje=rem.porcentaje, vigencia=rem.vigencia,
+                   sobre_referencia=item['fields']['sobre_referencia'],
+                   nomenclador=item['fields']['nomenclador'], cargo=cargo).save()
+
+def fill_basico_univ():
+    json_data = open(BASICOUNIV_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not SalarioBasicoUniv.objects.filter(pk=item['pk']).exists():
+            rem = RemuneracionFija.objects.get(pk=item['pk'])
+            cargo = CargoUniversitario.objects.get(pk=item['fields']['cargo'])
+            SalarioBasicoUniv(pk=item['pk'], remuneracion=rem.remuneracion,
+                   valor=rem.valor, vigencia=rem.vigencia,
+                   salario_referencia=item['fields']['salario_referencia'],
+                   cargo=cargo).save()
+
+def fill_basico_preuniv():
+    json_data = open(BASICOPREUNIV_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not SalarioBasicoPreUniv.objects.filter(pk=item['pk']).exists():
+            rem = RemuneracionFija.objects.get(pk=item['pk'])
+            cargo = CargoPreUniversitario.objects.get(pk=item['fields']['cargo'])
+            SalarioBasicoPreUniv(pk=item['pk'], remuneracion=rem.remuneracion,
+                   valor=rem.valor, vigencia=rem.vigencia,
+                   salario_referencia=item['fields']['salario_referencia'],
+                   cargo=cargo).save()
+
+def fill_antiguedad_univ():
+    json_data = open(ANTIGUEDADUNIV_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not AntiguedadUniversitaria.objects.filter(pk=item['pk']).exists():
+            rem = RemuneracionPorcentual.objects.get(pk=item['pk'])
+            AntiguedadUniversitaria(pk=item['pk'], remuneracion=rem.remuneracion,
+                   porcentaje=rem.porcentaje, vigencia=rem.vigencia,
+                   sobre_referencia=item['fields']['sobre_referencia'],
+                   nomenclador=item['fields']['nomenclador']).save()
+
+def fill_antiguedad_preuniv():
+    json_data = open(ANTIGUEDADPREUNIV_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not AntiguedadPreUniversitaria.objects.filter(pk=item['pk']).exists():
+            rem = RemuneracionPorcentual.objects.get(pk=item['pk'])
+            AntiguedadPreUniversitaria(pk=item['pk'], remuneracion=rem.remuneracion,
+                   porcentaje=rem.porcentaje, vigencia=rem.vigencia,
+                   sobre_referencia=item['fields']['sobre_referencia'],
+                   nomenclador=item['fields']['nomenclador']).save()
 
 if __name__=="__main__":
     fill_periodo()
@@ -97,3 +282,16 @@ if __name__=="__main__":
     fill_cargo()
     fill_cargo_univ()
     fill_cargo_preuniv()
+    fill_retencion()
+    fill_remuneracion()
+    fill_retencion_porcentual()
+    fill_remuneracion_porcentual()
+    fill_retencion_fija()
+    fill_remuneracion_fija()
+    fill_fondo_solidario()
+    fill_remuneracion_fija_cargo()
+    fill_remuneracion_nomenclador()
+    fill_basico_univ()
+    fill_basico_preuniv()
+    fill_antiguedad_univ()
+    fill_antiguedad_preuniv()
