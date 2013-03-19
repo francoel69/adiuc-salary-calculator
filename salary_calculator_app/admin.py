@@ -175,6 +175,6 @@ admin.site.register(RemuneracionNomenclador)
 admin.site.register(FondoSolidario)
 admin.site.register(RetencionDaspu)
 
-admin.site.register(ImpuestoGananciasDeducciones)
-admin.site.register(ImpuestoGananciasTabla)
+#admin.site.register(ImpuestoGananciasDeducciones)
+#admin.site.register(ImpuestoGananciasTabla)
 

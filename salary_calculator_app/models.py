@@ -380,54 +380,54 @@ class AntiguedadPreUniversitaria(RemuneracionPorcentual):
         return unicode(self.anio) + u" años - " + unicode(self.porcentaje) + u"% - [" + unicode(self.vigencia.desde) + u" / " + unicode(self.vigencia.hasta) + u"]"
 
 
-class ImpuestoGananciasDeducciones(models.Model):
-    """Este modelo guarda los montos de las deducciones personales para el estimativo del ingreso anual."""
+#class ImpuestoGananciasDeducciones(models.Model):
+    #"""Este modelo guarda los montos de las deducciones personales para el estimativo del ingreso anual."""
 
-    ganancia_no_imponible = models.FloatField(u'Ganancia no imponible', help_text=u'El monto de la ganancia no imponible.')
-    desc_cuarta_cat = models.FloatField(u'Descuento cuarta categoría',
-        help_text=u'Descuento que se aplica a trabajadores en relación de dependencia, por ejemplo UNC')
-    por_conyuge = models.FloatField(u'Por cónyuge', help_text=u'El monto que se descuenta por cónyuge.')
-    por_hijo = models.FloatField(u'Por cada hijo menor a 24 años',
-        help_text=u'El monto que se descuenta por cada hijo/a')
-    por_descendiente = models.FloatField(u'Por cada descendiente', 
-        help_text=u'El monto que se descuenta por cada descendiente en línea recta (nieto/a, bisnieto/a)')
-    por_ascendiente = models.FloatField(u'Por cada ascendiente',
-        help_text=u'El monto que se descuenta por cada ascendiente (padre/madre, abuelo/a, bisabuelo/a, padrastro/madrastra)')
-    por_suegro_yerno_nuera = models.FloatField(u'Por suegro, yerno o nuera',
-        help_text=u'Por suegro/a y por cada yerno o nuera')
-    deduccion_especial = models.FloatField(u'Deducción Especial',
-        help_text=u'Deducción Especial')
+    #ganancia_no_imponible = models.FloatField(u'Ganancia no imponible', help_text=u'El monto de la ganancia no imponible.')
+    #desc_cuarta_cat = models.FloatField(u'Descuento cuarta categoría',
+        #help_text=u'Descuento que se aplica a trabajadores en relación de dependencia, por ejemplo UNC')
+    #por_conyuge = models.FloatField(u'Por cónyuge', help_text=u'El monto que se descuenta por cónyuge.')
+    #por_hijo = models.FloatField(u'Por cada hijo menor a 24 años',
+        #help_text=u'El monto que se descuenta por cada hijo/a')
+    #por_descendiente = models.FloatField(u'Por cada descendiente', 
+        #help_text=u'El monto que se descuenta por cada descendiente en línea recta (nieto/a, bisnieto/a)')
+    #por_ascendiente = models.FloatField(u'Por cada ascendiente',
+        #help_text=u'El monto que se descuenta por cada ascendiente (padre/madre, abuelo/a, bisabuelo/a, padrastro/madrastra)')
+    #por_suegro_yerno_nuera = models.FloatField(u'Por suegro, yerno o nuera',
+        #help_text=u'Por suegro/a y por cada yerno o nuera')
+    #deduccion_especial = models.FloatField(u'Deducción Especial',
+        #help_text=u'Deducción Especial')
 
-    #max_por_intereses_creditos_hipotecarios = models.FloatField(u'Máx. a pagar por crédito hipotecarios',
-        #help_text=u'Intereses pagados por créditos hipotecarios contraídos a partir del 01/01/2001 para la compra o construcción de su casa-habitación.')
-    #max_por_seguro_de_vida = models.FloatField(u'Máx. a pagar por seguro de vida',
-        #help_text=u'El monto que se descuenta por montos pagados en conceptos de seguro de vida.')
-    #max_por_donaciones = models.FloatField(u'Máx. % a pagar por donaciones realizadas',
-        #help_text=u'El % de la ganancia neta anual que se descuenta por donaciones realizadas a: org. nacionales, provinciales y municipales, instituciones sin fines de lucro con certificado emitido por AFIP.')
+    ##max_por_intereses_creditos_hipotecarios = models.FloatField(u'Máx. a pagar por crédito hipotecarios',
+        ##help_text=u'Intereses pagados por créditos hipotecarios contraídos a partir del 01/01/2001 para la compra o construcción de su casa-habitación.')
+    ##max_por_seguro_de_vida = models.FloatField(u'Máx. a pagar por seguro de vida',
+        ##help_text=u'El monto que se descuenta por montos pagados en conceptos de seguro de vida.')
+    ##max_por_donaciones = models.FloatField(u'Máx. % a pagar por donaciones realizadas',
+        ##help_text=u'El % de la ganancia neta anual que se descuenta por donaciones realizadas a: org. nacionales, provinciales y municipales, instituciones sin fines de lucro con certificado emitido por AFIP.')
 
-    vigencia = models.ForeignKey('Periodo',
-        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
+    #vigencia = models.ForeignKey('Periodo',
+        #help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
-    class Meta:
-        ordering = ['vigencia']
+    #class Meta:
+        #ordering = ['vigencia']
 
-    def __unicode__(self):
-        return unicode(self.vigencia.desde.year)
+    #def __unicode__(self):
+        #return unicode(self.vigencia.desde.year)
 
 
-class ImpuestoGananciasTabla(models.Model):
+#class ImpuestoGananciasTabla(models.Model):
 
-    ganancia_neta_min = models.FloatField(u'Ganancia neta mínima', help_text=u'El valor mínimo de la ganancia neta sujeta a impuesto.')
-    ganancia_neta_max = models.FloatField(u'Ganancia neta máxima', help_text=u'El valor máximo de la ganancia neta sujeta a impuesto.')
-    impuesto_porcentual = models.FloatField(u'Impuesto porcentual', help_text=u'El valor en porcentaje del impuesto a las ganancias que se aplica al exedente.')
-    suma_anterior = models.FloatField(u'Suma anterior', help_text=u'El porcentaje anterior por el excedente más este valor darán el impuesto a las ganancias.')
-    vigencia = models.ForeignKey('Periodo',
-        help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
+    #ganancia_neta_min = models.FloatField(u'Ganancia neta mínima', help_text=u'El valor mínimo de la ganancia neta sujeta a impuesto.')
+    #ganancia_neta_max = models.FloatField(u'Ganancia neta máxima', help_text=u'El valor máximo de la ganancia neta sujeta a impuesto.')
+    #impuesto_porcentual = models.FloatField(u'Impuesto porcentual', help_text=u'El valor en porcentaje del impuesto a las ganancias que se aplica al exedente.')
+    #suma_anterior = models.FloatField(u'Suma anterior', help_text=u'El porcentaje anterior por el excedente más este valor darán el impuesto a las ganancias.')
+    #vigencia = models.ForeignKey('Periodo',
+        #help_text=u'Período de tiempo en el cual esta garantía se encuentra vigente.')
 
-    class Meta:
-        ordering = ['ganancia_neta_min', 'ganancia_neta_max']
+    #class Meta:
+        #ordering = ['ganancia_neta_min', 'ganancia_neta_max']
 
-    def __unicode__(self):
-        return unicode(self.vigencia.desde.year) + " : De " + unicode(int(self.ganancia_neta_min)) + " a " + unicode(int(self.ganancia_neta_max))
+    #def __unicode__(self):
+        #return unicode(self.vigencia.desde.year) + " : De " + unicode(int(self.ganancia_neta_min)) + " a " + unicode(int(self.ganancia_neta_max))
 
 

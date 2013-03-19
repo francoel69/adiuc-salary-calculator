@@ -28,7 +28,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # True if you want use sqlite3 for local development purposes
-DEVEL = True
+DEVEL = True 
 
 ADMINS = (
     ('Admin', 'admin@adiuc.org.ar'),
