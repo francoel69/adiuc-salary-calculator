@@ -23,15 +23,47 @@ setup_environ(settings)
 
 from salary_calculator_app.models import *
 
-PERIODO_FILE = "../fixtures/initial_data_periodo.json"
+BASE_FILE = "../fixtures/"
+PERIODO_FILE = BASE_FILE + "initial_data_periodo.json"
+DENOMINACION_FILE = BASE_FILE +"initial_data_denominacion.json"
+CARGO_FILE = BASE_FILE + "initial_data_cargo.json"
+CARGOUNIV_FILE = BASE_FILE + "initial_data_cargouniv.json"
+CARGOPREUNIV_FILE = BASE_FILE +"initial_data_cargopreuniv.json"
+ANTIGUEDADUNIV_FILE = BASE_FILE + "initial_data_antiguedaduniv.json"
+ANTIGUEDADPREUNIV_FILE = BASE_FILE +"initial_data_antiguedadpreuniv.json"
 
-if __name__=="__main__":
+def fill_periodo():
     json_data = open(PERIODO_FILE, 'r')
-    p = Periodo.objects.filter
-    print p
+
     data = json.load(json_data)
     json_data.close()
 
     for item in data:
         if not Periodo.objects.filter(desde=item['fields']['desde'], hasta=item['fields']['hasta']).exists():
-            Periodo(desde=item['desde'], hasta=item['hasta']).save()
+            Periodo(pk=item['pk'], desde=item['fields']['desde'], hasta=item['fields']['hasta']).save()
+
+def fill_denominacion():
+    json_data = open(DENOMINACION_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not DenominacionCargo.objects.filter(nombre=item['fields']['nombre']).exists():
+            DenominacionCargo(pk=item['pk'], nombre=item['fields']['nombre']).save()
+
+def fill_cargo():
+    json_data = open(CARGO_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not Cargo.objects.filter(pampa=item['fields']['pampa']).exists():
+            Cargo(pk=item['pk'], pampa=item['fields']['pampa'], pampa=item['fields']['lu']).save()
+
+
+if __name__=="__main__":
+    fill_periodo()
+    fill_denominacion()
+    fill_cargo()
