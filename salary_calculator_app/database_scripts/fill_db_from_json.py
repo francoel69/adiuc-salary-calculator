@@ -153,7 +153,7 @@ def fill_remuneracion_porcentual():
         if not RemuneracionPorcentual.objects.filter(pk=item['pk']).exists():
             remuneracion = Remuneracion.objects.get(pk=item['fields']['remuneracion'])
             vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
-            print "vigencia : " + item['fields']['vigencia']
+            print "vigencia : " + str(item['fields']['vigencia'])
             pprint(vigencia)
             RemuneracionPorcentual(pk=item['pk'], remuneracion=remuneracion,
                                 porcentaje=item['fields']['porcentaje'],
