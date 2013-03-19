@@ -78,4 +78,4 @@ if __name__=="__main__":
     fill_periodo()
     fill_denominacion()
     fill_cargo()
-    fill_cargo_univ()
+    #fill_cargo_univ()
