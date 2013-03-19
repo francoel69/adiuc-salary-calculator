@@ -60,7 +60,7 @@ def fill_cargo():
 
     for item in data:
         if not Cargo.objects.filter(pk=item['pk']).exists():
-            denominacion = DenominacionCargo.objects.get(nombre=item['fields']['denominacion'])
+            denominacion = DenominacionCargo.objects.get(pk=item['fields']['denominacion'])
             Cargo(pk=item['pk'], denominacion=denominacion,
                   pampa=item['fields']['pampa'], lu=item['fields']['lu']).save()
 
