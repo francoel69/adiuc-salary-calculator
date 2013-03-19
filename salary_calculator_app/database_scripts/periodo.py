@@ -31,26 +31,26 @@ def addPeriodo(desde, hasta):
         Periodo(desde=desde, hasta=hasta).save()
 
 addPeriodo(
-    desde=date(2011, 09, 01),
-    hasta=date(2012, 02, 29)
+    desde=date(2011, 9, 01),
+    hasta=date(2012, 2, 29)
 )
 
 addPeriodo(
-    desde=date(2012, 03, 01),
-    hasta=date(2012, 05, 31)
+    desde=date(2012, 3, 01),
+    hasta=date(2012, 5, 31)
 )
 
 addPeriodo(
-    desde=date(2012, 06, 01),
-    hasta=date(2012, 08, 31)
+    desde=date(2012, 6, 01),
+    hasta=date(2012, 8, 31)
 )
 
 addPeriodo(
-    desde=date(2012, 09, 01),
+    desde=date(2012, 9, 01),
     hasta=date(2020, 12, 31)
 )
 
 addPeriodo(
-    desde=date(2011, 09, 01),
+    desde=date(2011, 9, 01),
     hasta=date(2020, 12, 31)
 )
