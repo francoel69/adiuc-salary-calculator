@@ -64,19 +64,21 @@ def fill_cargo():
             Cargo(pk=item['pk'], denominacion=denominacion,
                   pampa=item['fields']['pampa'], lu=item['fields']['lu']).save()
 
-#def fill_cargo_univ():
-    #json_data = open(CARGOUNIV_FILE, 'r')
+def fill_cargo_univ():
+    json_data = open(CARGOUNIV_FILE, 'r')
 
-    #data = json.load(json_data)
-    #json_data.close()
+    data = json.load(json_data)
+    json_data.close()
 
-    #for item in data:
-        #if not CargoUniversitario.objects.filter(pk=item['pk']).exists():
-            #CargoUniversitario(pk=item['pk'], dedicacion=item['fields']['dedicacion']).save()
+    for item in data:
+        if not CargoUniversitario.objects.filter(pk=item['pk']).exists():
+            cargo = Cargo.objects.get(pk=item['pk'])
+            CargoUniversitario(pk=item['pk'], dedicacion=item['fields']['dedicacion'],
+                lu=cargo.lu, pampa=cargo.pampa, denominacion=cargo.denominacion).save()
 
 
 if __name__=="__main__":
     fill_periodo()
     fill_denominacion()
     fill_cargo()
-    #fill_cargo_univ()
+    fill_cargo_univ()
