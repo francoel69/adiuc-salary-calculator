@@ -24,7 +24,7 @@
 
 # Django settings for salary_calculator project.
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # True if you want use sqlite3 for local development purposes
