@@ -77,6 +77,20 @@ def fill_cargo_univ():
                 lu=cargo.lu, pampa=cargo.pampa, denominacion=cargo.denominacion).save()
 
 
+def fill_cargo_preuniv():
+    json_data = open(CARGOPREUNIV_FILE, 'r')
+
+    data = json.load(json_data)
+    json_data.close()
+
+    for item in data:
+        if not CargoPreUniversitario.objects.filter(pk=item['pk']).exists():
+            cargo = Cargo.objects.get(pk=item['pk'])
+            CargoPreUniversitario(pk=item['pk'], horas=item['fields']['horas'],
+                tipo_horas=item['fields']['tipo_horas'], pago_por_hora=item['fields']['pago_por_hora'],
+                lu=cargo.lu, pampa=cargo.pampa, denominacion=cargo.denominacion).save()
+
+
 if __name__=="__main__":
     fill_periodo()
     fill_denominacion()
