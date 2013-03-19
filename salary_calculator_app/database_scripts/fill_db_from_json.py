@@ -40,7 +40,7 @@ def fill_periodo():
 
     for item in data:
         if not Periodo.objects.filter(pk=item['pk']).exists():
-            Periodo(pk=item['pk'], desde=item['fields']['desde'], hasta=item['fields']['hasta']).save()
+            Periodo(pk=item['pk'], **item['fields']).save()
 
 def fill_denominacion():
     json_data = open(DENOMINACION_FILE, 'r')
@@ -50,7 +50,7 @@ def fill_denominacion():
 
     for item in data:
         if not DenominacionCargo.objects.filter(pk=item['pk']).exists():
-            DenominacionCargo(pk=item['pk'], nombre=item['fields']['nombre']).save()
+            DenominacionCargo(pk=item['pk'], **item['fields']).save()
 
 def fill_cargo():
     json_data = open(CARGO_FILE, 'r')
@@ -60,19 +60,18 @@ def fill_cargo():
 
     for item in data:
         if not Cargo.objects.filter(pk=item['pk']).exists():
-            denominacion = DenominacionCargo.objects.get(pk=item['fields']['denominacion'])
-            Cargo(pk=item['pk'], denominacion=denominacion,
-                  pampa=item['fields']['pampa'], lu=item['fields']['lu']).save()
+            denominacion = DenominacionCargo.objects.get(nombre=item['fields']['denominacion'])
+            Cargo(pk=item['pk'], **item['fields']).save()
 
-def fill_cargo_univ():
-    json_data = open(CARGOUNIV_FILE, 'r')
+#def fill_cargo_univ():
+    #json_data = open(CARGOUNIV_FILE, 'r')
 
-    data = json.load(json_data)
-    json_data.close()
+    #data = json.load(json_data)
+    #json_data.close()
 
-    for item in data:
-        if not CargoUniversitario.objects.filter(pk=item['pk']).exists():
-            CargoUniversitario(pk=item['pk'], dedicacion=item['fields']['dedicacion']).save()
+    #for item in data:
+        #if not CargoUniversitario.objects.filter(pk=item['pk']).exists():
+            #CargoUniversitario(pk=item['pk'], **item['fields']).save()
 
 
 if __name__=="__main__":
