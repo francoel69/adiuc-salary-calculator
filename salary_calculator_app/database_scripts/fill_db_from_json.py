@@ -45,6 +45,7 @@ ANTIGUEDADUNIV_FILE = BASE_FILE + "initial_data_antiguedad_univ.json"
 ANTIGUEDADPREUNIV_FILE = BASE_FILE +"initial_data_antiguedad_preuniv.json"
 
 def fill_periodo():
+    print "Periodo"
     json_data = open(PERIODO_FILE, 'r')
 
     data = json.load(json_data)
@@ -55,6 +56,7 @@ def fill_periodo():
             Periodo(pk=item['pk'], **item['fields']).save()
 
 def fill_denominacion():
+    print "Denominacion"
     json_data = open(DENOMINACION_FILE, 'r')
 
     data = json.load(json_data)
@@ -65,6 +67,7 @@ def fill_denominacion():
             DenominacionCargo(pk=item['pk'], **item['fields']).save()
 
 def fill_cargo():
+    print "Cargo"
     json_data = open(CARGO_FILE, 'r')
 
     data = json.load(json_data)
@@ -77,6 +80,7 @@ def fill_cargo():
                   pampa=item['fields']['pampa'], lu=item['fields']['lu']).save()
 
 def fill_cargo_univ():
+    print "Cargo Universitario"
     json_data = open(CARGOUNIV_FILE, 'r')
 
     data = json.load(json_data)
@@ -90,6 +94,7 @@ def fill_cargo_univ():
 
 
 def fill_cargo_preuniv():
+    print "Cargo PreUniversitario"
     json_data = open(CARGOPREUNIV_FILE, 'r')
 
     data = json.load(json_data)
@@ -102,6 +107,7 @@ def fill_cargo_preuniv():
                 denominacion=cargo.denominacion, **item['fields']).save()
 
 def fill_retencion():
+    print "Retencion"
     json_data = open(RETENCION_FILE, 'r')
 
     data = json.load(json_data)
@@ -112,6 +118,7 @@ def fill_retencion():
             Retencion(pk=item['pk'], **item['fields']).save()
 
 def fill_remuneracion():
+    print "Remuneracion"
     json_data = open(REMUNERACION_FILE, 'r')
 
     data = json.load(json_data)
@@ -122,6 +129,7 @@ def fill_remuneracion():
             Remuneracion(pk=item['pk'], **item['fields']).save()
 
 def fill_retencion_porcentual():
+    print "Retencion Porcentual"
     json_data = open(RETENCIONPORCENTUAL_FILE, 'r')
 
     data = json.load(json_data)
@@ -135,6 +143,7 @@ def fill_retencion_porcentual():
                                 porcentaje=item['fields']['porcentaje']).save()
 
 def fill_remuneracion_porcentual():
+    print "Remuneracion Porcentual"
     json_data = open(REMUNERACIONPORCENTUAL_FILE, 'r')
 
     data = json.load(json_data)
@@ -150,6 +159,7 @@ def fill_remuneracion_porcentual():
                                 nomenclador=item['fields']['nomenclador']).save()
 
 def fill_retencion_fija():
+    print "Retencion Fija"
     json_data = open(RETENCIONFIJA_FILE, 'r')
 
     data = json.load(json_data)
@@ -163,6 +173,7 @@ def fill_retencion_fija():
                                 valor=item['fields']['valor']).save()
 
 def fill_remuneracion_fija():
+    print "Remuneracion Fija"
     json_data = open(REMUNERACIONFIJA_FILE, 'r')
 
     data = json.load(json_data)
@@ -176,6 +187,7 @@ def fill_remuneracion_fija():
                                 valor=item['fields']['valor']).save()
 
 def fill_fondo_solidario():
+    print "Fondo Solidario"
     json_data = open(FONDOSOLIDARIO_FILE, 'r')
 
     data = json.load(json_data)
@@ -188,6 +200,7 @@ def fill_fondo_solidario():
                            retencion=ret.retencion, valor=ret.valor).save()
 
 def fill_remuneracion_fija_cargo():
+    print "Remuneracion fija cargo"
     json_data = open(REMUNERACIONFIJACARGO_FILE, 'r')
 
     data = json.load(json_data)
@@ -202,6 +215,7 @@ def fill_remuneracion_fija_cargo():
 
 
 def fill_remuneracion_nomenclador():
+    print "remuneracion nomenclador"
     json_data = open(REMUNERACIONNOMENCLADOR_FILE, 'r')
 
     data = json.load(json_data)
@@ -217,6 +231,7 @@ def fill_remuneracion_nomenclador():
                    nomenclador=item['fields']['nomenclador'], cargo=cargo).save()
 
 def fill_basico_univ():
+    print "basico univ"
     json_data = open(BASICOUNIV_FILE, 'r')
 
     data = json.load(json_data)
@@ -232,6 +247,7 @@ def fill_basico_univ():
                    cargo=cargo).save()
 
 def fill_basico_preuniv():
+    print "basico pre univ"
     json_data = open(BASICOPREUNIV_FILE, 'r')
 
     data = json.load(json_data)
@@ -247,6 +263,7 @@ def fill_basico_preuniv():
                    cargo=cargo).save()
 
 def fill_antiguedad_univ():
+    print "antiguedad univ"
     json_data = open(ANTIGUEDADUNIV_FILE, 'r')
 
     data = json.load(json_data)
@@ -261,6 +278,7 @@ def fill_antiguedad_univ():
                    nomenclador=item['fields']['nomenclador']).save()
 
 def fill_antiguedad_preuniv():
+    print "antiguedad preuniv"
     json_data = open(ANTIGUEDADPREUNIV_FILE, 'r')
 
     data = json.load(json_data)
