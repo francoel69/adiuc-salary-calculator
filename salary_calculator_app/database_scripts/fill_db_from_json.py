@@ -284,7 +284,7 @@ if __name__=="__main__":
     fill_cargo_preuniv()
     fill_retencion()
     fill_remuneracion()
-    #fill_retencion_porcentual()
+    fill_retencion_porcentual()
     fill_remuneracion_porcentual()
     fill_retencion_fija()
     fill_remuneracion_fija()
