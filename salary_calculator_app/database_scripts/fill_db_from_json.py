@@ -4,6 +4,7 @@
 # author: Franco Rodriguez (ffrodriguez@famaf.unc.edu.ar)
 # date: 18/03/2013
 
+from pprint import pprint
 import json
 import sys
 import os
@@ -139,7 +140,7 @@ def fill_remuneracion_porcentual():
 
     data = json.load(json_data)
     json_data.close()
-
+    pprint(data)
     for item in data:
         if not RemuneracionPorcentual.objects.filter(pk=item['pk']).exists():
             remuneracion = Remuneracion.objects.get(pk=item['fields']['remuneracion'])
