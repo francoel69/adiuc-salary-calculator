@@ -120,19 +120,19 @@ def fill_remuneracion():
         if not Remuneracion.objects.filter(pk=item['pk']).exists():
             Remuneracion(pk=item['pk'], **item['fields']).save()
 
-def fill_retencion_porcentual():
-    json_data = open(RETENCIONPORCENTUAL_FILE, 'r')
+#def fill_retencion_porcentual():
+    #json_data = open(RETENCIONPORCENTUAL_FILE, 'r')
 
-    data = json.load(json_data)
-    json_data.close()
+    #data = json.load(json_data)
+    #json_data.close()
 
-    for item in data:
-        if not RetencionPorcentual.objects.filter(pk=item['pk']).exists():
-            retencion = Retencion.objects.get(pk=item['fields']['retencion'])
-            vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
-            RetencionPorcentual(pk=item['pk'], retencion=retencion,
-                                porcentaje=item['fields']['porcentaje'],
-                                vigencia=vigencia).save()
+    #for item in data:
+        #if not RetencionPorcentual.objects.filter(pk=item['pk']).exists():
+            #retencion = Retencion.objects.get(pk=item['fields']['retencion'])
+            #vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
+            #RetencionPorcentual(pk=item['pk'], retencion=retencion,
+                                #porcentaje=item['fields']['porcentaje'],
+                                #vigencia=vigencia).save()
 
 def fill_remuneracion_porcentual():
     json_data = open(REMUNERACIONPORCENTUAL_FILE, 'r')
