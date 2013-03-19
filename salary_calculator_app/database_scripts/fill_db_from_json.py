@@ -97,8 +97,8 @@ def fill_cargo_preuniv():
     for item in data:
         if not CargoPreUniversitario.objects.filter(pk=item['pk']).exists():
             cargo = Cargo.objects.get(pk=item['pk'])
-            CargoPreUniversitario(pk=item['pk'], **item['fields'],
-                lu=cargo.lu, pampa=cargo.pampa, denominacion=cargo.denominacion).save()
+            CargoPreUniversitario(pk=item['pk'], lu=cargo.lu, pampa=cargo.pampa,
+                denominacion=cargo.denominacion, **item['fields']).save()
 
 def fill_retencion():
     json_data = open(RETENCION_FILE, 'r')
