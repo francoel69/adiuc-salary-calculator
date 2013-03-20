@@ -28,29 +28,31 @@ from salary_calculator_app.models import *
 
 def addPeriodo(desde, hasta):
     if not Periodo.objects.filter(desde=desde, hasta=hasta).exists():
-        Periodo(desde=desde, hasta=hasta).save()
+        r = Periodo(desde=desde, hasta=hasta)
+        r.save()
+    return r
 
-addPeriodo(
+r = addPeriodo(
     desde=date(2011, 9, 01),
     hasta=date(2012, 2, 29)
 )
 
-addPeriodo(
+r = addPeriodo(
     desde=date(2012, 3, 01),
     hasta=date(2012, 5, 31)
 )
 
-addPeriodo(
+r = addPeriodo(
     desde=date(2012, 6, 01),
     hasta=date(2012, 8, 31)
 )
 
-addPeriodo(
+r = addPeriodo(
     desde=date(2012, 9, 01),
     hasta=date(2020, 12, 31)
 )
 
-addPeriodo(
+r = addPeriodo(
     desde=date(2011, 9, 01),
     hasta=date(2020, 12, 31)
 )

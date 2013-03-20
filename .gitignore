@@ -6,3 +6,6 @@ local_settings.py
 .directory
 salary-calculator.sqlsalary-calculator.sql
 initial_data.json
+.project
+.pydevproject
+.settings
