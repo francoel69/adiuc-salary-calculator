@@ -138,8 +138,8 @@ def fill_retencion_porcentual():
     for item in data:
         if not RetencionPorcentual.objects.filter(pk=item['pk']).exists():
             retencion = Retencion.objects.get(pk=item['fields']['retencion'])
-            vigencia = Periodo.objects.get(pk=item['fields']['vigencia'])
-            RetencionPorcentual(pk=item['pk'], retencion=retencion,
+            vigencias = Periodo.objects.get(pk=item['fields']['vigencia'])
+            RetencionPorcentual(pk=item['pk'], retencion=retencion, vigencia=vigencias,
                                 porcentaje=item['fields']['porcentaje']).save()
 
 def fill_remuneracion_porcentual():

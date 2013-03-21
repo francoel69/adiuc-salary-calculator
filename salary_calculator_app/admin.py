@@ -103,33 +103,67 @@ class RemuneracionAdmin(admin.ModelAdmin):
     list_display = (codigo_nombre, 'aplicacion', show_modo, is_remun, is_bonif)
     list_filter = ('aplicacion', 'modo', 'remunerativo', 'bonificable')
 
+def rem_codigo_nombre(obj):
+    return unicode(obj.remuneracion.codigo) + " " + unicode(obj.remuneracion.nombre)
+rem_codigo_nombre.short_description = u'Código y nombre'
+rem_codigo_nombre.admin_order_field = 'codigo'
+
+def rem_aplicacion(obj):
+    return unicode(obj.remuneracion.aplicacion)
+
+def rem_show_modo(obj):
+    return u'Persona' if obj.remuneracion.modo == 'P' else u'Cargo'
+rem_show_modo.short_description = u'Persona o cargo?'
+
+def rem_is_remun(obj):
+    return obj.remuneracion.remunerativo
+rem_is_remun.short_description = u'Remunerativo?'
+rem_is_remun.boolean = True
+
+def rem_is_bonif(obj):
+    return obj.remuneracion.bonificable
+rem_is_bonif.short_description = u'Bonificable?'
+rem_is_bonif.boolean = True
+
+def ret_codigo_nombre(obj):
+    return unicode(obj.retencion.codigo) + " " + unicode(obj.retencion.nombre)
+ret_codigo_nombre.short_description = u'Código y nombre'
+ret_codigo_nombre.admin_order_field = 'codigo'
+
+def ret_aplicacion(obj):
+    if obj.retencion.aplicacion == 'U':
+        return u'Universitarios'
+    elif obj.retencion.aplicacion == 'P':
+        return u'Preuniversitarios'
+    else:
+        return u'Todos'
+
+def ret_show_modo(obj):
+    return u'Persona' if obj.retencion.modo == 'P' else u'Cargo'
+ret_show_modo.short_description = u'Persona o cargo?'
+
 class RemuneracionPorcentualAdmin(admin.ModelAdmin):
-    list_display = ('rem_codigo_nombre', 'rem_aplicacion', 'rem_show_modo', 'rem_is_remun', 'rem_is_bonif')
+    list_display = (rem_codigo_nombre, rem_aplicacion, rem_show_modo, rem_is_remun, rem_is_bonif)
     #list_filter = ('aplicacion', 'modo', 'remunerativo', 'bonificable')
 
-    def rem_codigo_nombre(self, obj):
-        return codigo_nombre(obj.remuneracion)
-    def rem_aplicacion(self, obj):
-        return unicode(obj.remuneracion.aplicacion)
-    def rem_show_modo(self, obj):
-        return show_modo(obj.remuneracion)
-    def rem_is_remun(self, obj):
-        return is_remun(obj.remuneracion)
-    rem_is_remun.short_description = u'Remunerativo?'
-    rem_is_remun.boolean = True
-    def rem_is_bonif(self, obj):
-        return is_bonif(obj.remuneracion)
+class RemuneracionFijaAdmin(admin.ModelAdmin):
+    list_display = (rem_codigo_nombre, rem_aplicacion, rem_show_modo)
 
-#class GarantiaSalarialUniversitariaAdmin(admin.ModelAdmin):
-    #filter_horizontal = ('cargo',)
+class RemuneracionFijaCargoAdmin(admin.ModelAdmin):
+    list_display = (rem_codigo_nombre, 'valor' , rem_aplicacion, rem_show_modo, 'cargo')
 
-#class GarantiaSalarialPreUniversitariaAdmin(admin.ModelAdmin):
-    #filter_horizontal = ('cargo',)
+class RemuneracionNomencladorAdmin(admin.ModelAdmin):
+    list_display = (rem_codigo_nombre, 'porcentaje' , vigencia_desde, vigencia_hasta, 'cargo')
 
-#class AsignacionFamiliarAdmin(admin.ModelAdmin):
-    #list_display= ('concepto', 'valor', 'valor_min', 'valor_max', 'vigencia')
-    #search_fields = ('concepto',)
-    #list_filter = ('vigencia', 'valor_min', 'valor_max')
+class RetencionAdmin(admin.ModelAdmin):
+    list_display = (codigo_nombre, 'aplicacion', show_modo)
+    list_filter = ('aplicacion', 'modo')
+
+class RetencionFijaAdmin(admin.ModelAdmin):
+    list_display = (ret_codigo_nombre, ret_aplicacion, ret_show_modo)
+
+class RetencionPorcentualAdmin(admin.ModelAdmin):
+    list_display = (ret_codigo_nombre, ret_aplicacion, ret_show_modo)
     
 class SalarioBasicoUnivAdmin(admin.ModelAdmin):
     list_display = ('cargo', 'valor', 'vigencia')
@@ -139,42 +173,25 @@ class SalarioBasicoPreUnivAdmin(admin.ModelAdmin):
     list_display = ('cargo', 'valor', 'vigencia')
     list_filter = ('cargo__horas',)
 
-#admin.site.register(SalarioBasicoUniv)
 admin.site.register(SalarioBasicoUniv, SalarioBasicoUnivAdmin)
-#admin.site.register(SalarioBasicoPreUniv)
 admin.site.register(SalarioBasicoPreUniv, SalarioBasicoPreUnivAdmin)
 admin.site.register(DenominacionCargo)
-#admin.site.register(DenominacionCargo, DenominacionCargoAdmin)
-#admin.site.register(CargoUniversitario)
 admin.site.register(CargoUniversitario, CargoUniversitarioAdmin)
-#admin.site.register(CargoPreUniversitario)
 admin.site.register(CargoPreUniversitario, CargoPreUniversitarioAdmin)
-#admin.site.register(Cargo)
 admin.site.register(Periodo)
-
 admin.site.register(GarantiaSalarialUniversitaria)
 admin.site.register(GarantiaSalarialPreUniversitaria)
-
-#admin.site.register(AntiguedadUniversitaria)
 admin.site.register(AntiguedadUniversitaria, AntiguedadUniversitariaAdmin)
-#admin.site.register(AntiguedadPreUniversitaria)
 admin.site.register(AntiguedadPreUniversitaria, AntiguedadPreUniversitariaAdmin)
-
-admin.site.register(Retencion)
-#admin.site.register(Remuneracion)
+admin.site.register(Retencion, RetencionAdmin)
 admin.site.register(Remuneracion, RemuneracionAdmin)
-admin.site.register(RetencionPorcentual)
-admin.site.register(RetencionFija)
-#admin.site.register(RemuneracionPorcentual)
+admin.site.register(RetencionPorcentual, RetencionPorcentualAdmin)
+admin.site.register(RetencionFija, RetencionFijaAdmin)
 admin.site.register(RemuneracionPorcentual, RemuneracionPorcentualAdmin)
-admin.site.register(RemuneracionFija)
-admin.site.register(RemuneracionFijaCargo)
-admin.site.register(RemuneracionNomenclador)
-
-#admin.site.register(AsignacionFamiliar)
+admin.site.register(RemuneracionFija, RemuneracionFijaAdmin)
+admin.site.register(RemuneracionFijaCargo, RemuneracionFijaCargoAdmin)
+admin.site.register(RemuneracionNomenclador, RemuneracionNomencladorAdmin)
 admin.site.register(FondoSolidario)
 admin.site.register(RetencionDaspu)
-
-#admin.site.register(ImpuestoGananciasDeducciones)
-#admin.site.register(ImpuestoGananciasTabla)
-
+admin.site.register(ImpuestoGananciasTabla)
+admin.site.register(ImpuestoGananciasDeducciones)

@@ -1,5 +1,5 @@
 [
-{
+	{
         "pk": 2,
         "model": "salary_calculator_app.retencionporcentual",
         "fields": {
@@ -52,4 +52,5 @@
             "vigencia": 1,
             "porcentaje": 1.5
         }
+    }
 ]
