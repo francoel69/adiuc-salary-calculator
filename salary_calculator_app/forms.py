@@ -37,15 +37,15 @@ import datetime
     #return list(set(result))
 
 
-class DetailsForm(forms.Form):
-    """Formulario con opciones extras."""
+#class DetailsForm(forms.Form):
+    #"""Formulario con opciones extras."""
 
-    sis = forms.BooleanField(label=u'Servicio Integral de  Sepelio (SIS)', required=False)
-    subsidio_fallecimiento  = forms.BooleanField(label=u'Subsidio por Fallecimiento', required=False)
-    fondo_solidario_mayores = forms.IntegerField(label=u'Mayores de 55 años.',
-        widget=forms.Select(choices=[(i, i) for i in range(16)]))
-    fondo_solidario_menores = forms.IntegerField(label=u'Menores de 55 años.',
-        widget=forms.Select(choices=[(i, i) for i in range(16)]))
+    #sis = forms.BooleanField(label=u'Servicio Integral de  Sepelio (SIS)', required=False)
+    #subsidio_fallecimiento  = forms.BooleanField(label=u'Subsidio por Fallecimiento', required=False)
+    #fondo_solidario_mayores = forms.IntegerField(label=u'Mayores de 55 años.',
+        #widget=forms.Select(choices=[(i, i) for i in range(16)]))
+    #fondo_solidario_menores = forms.IntegerField(label=u'Menores de 55 años.',
+        #widget=forms.Select(choices=[(i, i) for i in range(16)]))
 
 
 #class AFamiliaresForm(forms.Form):
@@ -144,11 +144,13 @@ class CommonForm(forms.Form):
         widget=forms.TextInput(attrs={'maxlength':'3', 'style':'width: 40px;'}),
         help_text=u'Porcentaje de caja complementaria de Jubilación'
     )
-    master = forms.BooleanField(label=u'Añadir Título de Maestría', required=False)
     doctorado = forms.BooleanField(label=u'Añadir Título de Doctorado', required=False)
+    master = forms.BooleanField(label=u'Añadir Título de Maestría', required=False)
+    especialista = forms.BooleanField(label=u'Añadir Título de Especialista', required=False)
 
     afiliado = forms.BooleanField(label=u'Afiliado a ADIUC', required=False)
-    daspu = forms.BooleanField(label=u'Considerar servicios DASPU', required=False)
+    
+    #daspu = forms.BooleanField(label=u'Considerar servicios DASPU', required=False)
 
 class CargoUnivForm(forms.Form):
     """Formulario de calculo de salario docente para docentes universitarios."""

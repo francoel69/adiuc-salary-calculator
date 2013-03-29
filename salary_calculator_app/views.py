@@ -45,6 +45,9 @@ doc_preuniv_code = '05/3'
 master_code = '05/2'
 master_preuniv_code = '05/5'
 
+esp_code = '05/?'
+esp_preuniv_code = '05/?'
+
 garantia_code = '11/5'
 garantia_name = u'Garantía Docentes Univ.'
 
@@ -115,11 +118,10 @@ def calculate(request):
         univformset = CargoUnivFormSet(request.POST, prefix='univcargo')
         preunivformset = CargoPreUnivFormSet(request.POST, prefix='preunivcargo')
         commonform = CommonForm(request.POST)
-        detailsform = DetailsForm(request.POST)
+        #detailsform = DetailsForm(request.POST)
         #gananciasform = ImpuestoGananciasForm(request.POST)
 
-        if univformset.is_valid() and preunivformset.is_valid() and commonform.is_valid() \
-             and detailsform.is_valid():
+        if univformset.is_valid() and preunivformset.is_valid() and commonform.is_valid():
 
             # Proceso los formularios de cargos.
             context_univ = processUnivFormSet(commonform, univformset)
@@ -157,14 +159,13 @@ def calculate(request):
 
             # Calculo de las remuneraciones y retenciones que son por persona.
             # Esto modifica el contexto.
-            afiliacion_daspu = commonform.cleaned_data['daspu']
+            #afiliacion_daspu = commonform.cleaned_data['daspu']
+            #afiliacion_daspu = ""
             afiliacion_adiuc = commonform.cleaned_data['afiliado']
             #calcular_ganancias = commonform.cleaned_data['ganancias']
             context = calculateRemRetPorPersona(
                 context,
                 afiliacion_adiuc,
-                afiliacion_daspu,
-                detailsform,
                 nro_forms_univ,
                 nro_forms_preuniv
                 )
@@ -177,7 +178,7 @@ def calculate(request):
             context['univformset'] = univformset
             context['preunivformset'] = preunivformset
             context['commonform'] = commonform
-            context['detailsform'] = detailsform
+            #context['detailsform'] = detailsform
 
     else:
 
@@ -185,12 +186,12 @@ def calculate(request):
         univformset = CargoUnivFormSet(prefix='univcargo')
         preunivformset = CargoPreUnivFormSet(prefix='preunivcargo')
         commonform = CommonForm()
-        detailsform = DetailsForm()
+        #detailsform = DetailsForm()
 
         context['univformset'] = univformset
         context['preunivformset'] = preunivformset
         context['commonform'] = commonform
-        context['detailsform'] = detailsform
+        #context['detailsform'] = detailsform
 
     return render_to_response('calculate.html', context)
 
@@ -212,92 +213,92 @@ def calculate(request):
             #if codigo in map(lambda x: x['pampa'], gu.cargo.values()):
                 # Aplicar la garantía.
                 
-def processDetailsForm(context, detailsform, ret_fija_persona, acum_ret):
+#def processDetailsForm(context, detailsform, ret_fija_persona, acum_ret):
 
-    fecha = context['fecha']
+    #fecha = context['fecha']
     
-    sis = detailsform.cleaned_data['sis']
-    sf = detailsform.cleaned_data['subsidio_fallecimiento']
-    fs_mayores = detailsform.cleaned_data['fondo_solidario_mayores']
-    fs_menores = detailsform.cleaned_data['fondo_solidario_menores']
+    #sis = detailsform.cleaned_data['sis']
+    #sf = detailsform.cleaned_data['subsidio_fallecimiento']
+    #fs_mayores = detailsform.cleaned_data['fondo_solidario_mayores']
+    #fs_menores = detailsform.cleaned_data['fondo_solidario_menores']
     
-    #result = {}
+    ##result = {}
 
-    #en principio estos datos son retenciones por persona
-    #los datos se guardan indicando esa categoria para luego ser procesados en..  (ej: l656+ ) 
+    ##en principio estos datos son retenciones por persona
+    ##los datos se guardan indicando esa categoria para luego ser procesados en..  (ej: l656+ ) 
 
-    if fs_mayores > 0.0:
-        fs_objs= FondoSolidario.objects.filter(
-            retencion__codigo=fs_code,
-            vigencia__desde__lte=fecha,
-            vigencia__hasta__gte=fecha,
-            concepto='Fondo solidario para una persona (mayor a 55 años)'
-            )
-        if not fs_objs.exists():
-            result["error_msg"] = "No hay información sobre Fondo solidario para personas mayores de 55 años."
-        else:
-            fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
-            importe = fs_obj.valor * fs_mayores
-            #result['fs_mayores'] = ('retencion_fija_persona',fs_obj,importe)
-            acum_ret += importe
-            ret_fija_persona.append((fs_obj, importe))
+    #if fs_mayores > 0.0:
+        #fs_objs= FondoSolidario.objects.filter(
+            #retencion__codigo=fs_code,
+            #vigencia__desde__lte=fecha,
+            #vigencia__hasta__gte=fecha,
+            #concepto='Fondo solidario para una persona (mayor a 55 años)'
+            #)
+        #if not fs_objs.exists():
+            #result["error_msg"] = "No hay información sobre Fondo solidario para personas mayores de 55 años."
+        #else:
+            #fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
+            #importe = fs_obj.valor * fs_mayores
+            ##result['fs_mayores'] = ('retencion_fija_persona',fs_obj,importe)
+            #acum_ret += importe
+            #ret_fija_persona.append((fs_obj, importe))
 
-    if fs_menores>0.0:
-        if fs_menores == 1:
-            query='Fondo solidario para una persona (menor a 55 años)'
-        elif fs_menores == 2:
-            query='Fondo solidario para dos personas (menor a 55 años)'
-        elif fs_menores == 3:
-            query='Fondo solidario para tres personas (menor a 55 años)'
-        elif fs_menores ==4:
-            query='Fondo solidario para cuatro personas (menor a 55 años)'
-        else:
-            query='Fondo solidario para cinco personas o más (menor a 55 años)'
+    #if fs_menores>0.0:
+        #if fs_menores == 1:
+            #query='Fondo solidario para una persona (menor a 55 años)'
+        #elif fs_menores == 2:
+            #query='Fondo solidario para dos personas (menor a 55 años)'
+        #elif fs_menores == 3:
+            #query='Fondo solidario para tres personas (menor a 55 años)'
+        #elif fs_menores ==4:
+            #query='Fondo solidario para cuatro personas (menor a 55 años)'
+        #else:
+            #query='Fondo solidario para cinco personas o más (menor a 55 años)'
             
-        fs_objs= FondoSolidario.objects.filter(
-            retencion__codigo=fs_code,
-                vigencia__desde__lte=fecha,
-                vigencia__hasta__gte=fecha,
-                concepto=query
-            )
-        if not fs_objs.exists():
-            result["error_msg"] = "No hay información sobre Fondo solidario"
-        else:
-            fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
-            importe = fs_obj.valor
-            #result['fs_menores'] = ('retencion_fija_persona',fs_obj,importe)
-            acum_ret += importe
-            ret_fija_persona.append((fs_obj, importe))
+        #fs_objs= FondoSolidario.objects.filter(
+            #retencion__codigo=fs_code,
+                #vigencia__desde__lte=fecha,
+                #vigencia__hasta__gte=fecha,
+                #concepto=query
+            #)
+        #if not fs_objs.exists():
+            #result["error_msg"] = "No hay información sobre Fondo solidario"
+        #else:
+            #fs_obj = fs_objs.order_by('vigencia__hasta')[fs_objs.count()-1]
+            #importe = fs_obj.valor
+            ##result['fs_menores'] = ('retencion_fija_persona',fs_obj,importe)
+            #acum_ret += importe
+            #ret_fija_persona.append((fs_obj, importe))
 
-    if sis:    
-        sis_objs= RetencionFija.objects.filter(
-                retencion__codigo=sis_code,
-                vigencia__desde__lte=fecha,
-                vigencia__hasta__gte=fecha
-            )
-        if not sis_objs.exists():
-            result["error_msg"] = "No existe informacion sobre Seguro Integral de Sepelio."
-        else:
-            sis_obj = sis_objs.order_by('vigencia__hasta')[sis_objs.count()-1]
-            #result['sis'] = ('retencion_fija_persona',sis_obj,sis_obj.valor)
-            acum_ret += sis_obj.valor
-            ret_fija_persona.append((sis_obj, sis_obj.valor))
+    #if sis:    
+        #sis_objs= RetencionFija.objects.filter(
+                #retencion__codigo=sis_code,
+                #vigencia__desde__lte=fecha,
+                #vigencia__hasta__gte=fecha
+            #)
+        #if not sis_objs.exists():
+            #result["error_msg"] = "No existe informacion sobre Seguro Integral de Sepelio."
+        #else:
+            #sis_obj = sis_objs.order_by('vigencia__hasta')[sis_objs.count()-1]
+            ##result['sis'] = ('retencion_fija_persona',sis_obj,sis_obj.valor)
+            #acum_ret += sis_obj.valor
+            #ret_fija_persona.append((sis_obj, sis_obj.valor))
 
-    if sf:    
-        sf_objs= RetencionFija.objects.filter(
-                retencion__codigo=subsidio_fallecimiento_code,
-                vigencia__desde__lte=fecha,
-                vigencia__hasta__gte=fecha
-            )
-        if not sf_objs.exists():
-            result["error_msg"] = "No existe informacion sobre Subsidio por Fallecimiento."
-        else:
-            sf_obj = sf_objs.order_by('vigencia__hasta')[sf_objs.count()-1]
-            #result['sf'] = ('retencion_fija_persona',sf_obj,sf_obj.valor)
-            acum_ret += sf_obj.valor
-            ret_fija_persona.append((sf_obj, sf_obj.valor))
+    #if sf:    
+        #sf_objs= RetencionFija.objects.filter(
+                #retencion__codigo=subsidio_fallecimiento_code,
+                #vigencia__desde__lte=fecha,
+                #vigencia__hasta__gte=fecha
+            #)
+        #if not sf_objs.exists():
+            #result["error_msg"] = "No existe informacion sobre Subsidio por Fallecimiento."
+        #else:
+            #sf_obj = sf_objs.order_by('vigencia__hasta')[sf_objs.count()-1]
+            ##result['sf'] = ('retencion_fija_persona',sf_obj,sf_obj.valor)
+            #acum_ret += sf_obj.valor
+            #ret_fija_persona.append((sf_obj, sf_obj.valor))
 
-    return ret_fija_persona, acum_ret
+    #return ret_fija_persona, acum_ret
 
 def calculateDASPU(fecha,remunerativo):
     
@@ -349,8 +350,7 @@ def calculateDASPU(fecha,remunerativo):
         
     return daspu_context
 
-def calculateRemRetPorPersona(context, es_afiliado, afiliacion_daspu, detailsform,
-    nro_forms_univ, nro_forms_preuniv):
+def calculateRemRetPorPersona(context, es_afiliado, nro_forms_univ, nro_forms_preuniv):
 
     fecha = context['fecha']
     total_rem = context['total_rem']
@@ -392,7 +392,7 @@ def calculateRemRetPorPersona(context, es_afiliado, afiliacion_daspu, detailsfor
 
     # Saco las DAS de ret_fp y proceso el formulario de daspu.
     ret_fp = ret_fp.exclude(retencion__codigo__startswith='DAS')
-    ret_fijas_persona, acum_ret = processDetailsForm(context, detailsform, ret_fijas_persona, acum_ret)
+    #ret_fijas_persona, acum_ret = processDetailsForm(context, detailsform, ret_fijas_persona, acum_ret)
 
     for ret in ret_pp:
         importe = (total_rem * ret.porcentaje / 100.0)
@@ -469,7 +469,7 @@ def get_retenciones_remuneraciones(aplicacion, modo, fecha):
 
     return result
 
-def filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, aplicacion):
+def filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, has_especialista, aplicacion):
     """Elimina las remuneraciones porcentuales asociadas a titulos adicionales segun
     lo que haya especificado el usuario."""
 
@@ -479,17 +479,25 @@ def filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, ha
     if aplicacion == 'U':
         m_code = master_code
         d_code = doc_code
+        e_code = esp_code
     elif aplicacion == 'P':
         m_code = master_preuniv_code
         d_code = doc_preuniv_code
+        e_code = esp_preuniv_code
 
     if has_doctorado:
         rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=m_code)
+        rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=e_code)
     elif has_master:
         rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=d_code)
+        rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=e_code)
+    elif has_especialista:
+        rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=d_code)
+        rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=m_code)
     else:
         rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=d_code)
         rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=m_code)
+        rem_porcentuales = rem_porcentuales.exclude(remuneracion__codigo=e_code)
 
     return rem_porcentuales
 
@@ -509,7 +517,7 @@ def get_basico(cargo, fecha):
     )
     return False if not basicos.exists() else basicos[0]
 
-def get_data(cargo_obj, fecha, antig, has_doctorado, has_master, es_afiliado):
+def get_data(cargo_obj, fecha, antig, has_doctorado, has_master, has_especialista, es_afiliado):
     ###### Salario Bruto.
     # Registro el bonificable, el remunerativo, el no remunerativo y los descuentos.
     bonificable = 0.0
@@ -621,7 +629,7 @@ def get_data(cargo_obj, fecha, antig, has_doctorado, has_master, es_afiliado):
     remunerativo += antiguedad_importe
 
     # Adicional titulo doctorado (cod 51), Adicional titulo maestria (cod 52)
-    rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, 'U')
+    rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, has_especialista, 'U')
 
     if not es_afiliado:
         ret_porcentuales = ret_porcentuales.exclude(retencion__codigo = afiliacion_code)
@@ -665,6 +673,7 @@ def processUnivFormSet(commonform, univformset):
     fecha = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
     has_doctorado = commonform.cleaned_data['doctorado']
     has_master = commonform.cleaned_data['master']
+    has_especialista = commonform.cleaned_data['especialista']
     #afiliacion adiuc:
     es_afiliado = commonform.cleaned_data['afiliado']
 
@@ -688,7 +697,7 @@ def processUnivFormSet(commonform, univformset):
         cargo_obj = univform.cleaned_data['cargo']
 
         ###### Obtengo todo lo necesario en un dict.
-        datos = get_data(cargo_obj, fecha, antig, has_doctorado, has_master, es_afiliado)
+        datos = get_data(cargo_obj, fecha, antig, has_doctorado, has_master, has_especialista, es_afiliado)
 
         if datos.has_key('error_msg'):
             context['error_msg'] = datos['error_msg']
@@ -750,6 +759,7 @@ def processPreUnivFormSet(commonform, preunivformset):
     fecha = datetime.date(int(commonform.cleaned_data['anio']), int(commonform.cleaned_data['mes']), 10)
     has_doctorado = commonform.cleaned_data['doctorado']
     has_master = commonform.cleaned_data['master']
+    has_especialista = commonform.cleaned_data['especialista']
     es_afiliado = commonform.cleaned_data['afiliado']
     context = {}
 
@@ -896,7 +906,7 @@ def processPreUnivFormSet(commonform, preunivformset):
         remunerativo += antiguedad_importe        
 
         # Adicional titulo doctorado nivel medio (cod 53), Adicional titulo maestria nivel medio (cod 55)
-        rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, 'P')
+        rem_porcentuales = filter_doc_masters_from_rem_porcentuales(rem_porcentuales, has_doctorado, has_master, has_especialista, 'P')
 
         # FONID.
         #rem_fijas_cargo = RemuneracionFijaCargo.objects.filter(
